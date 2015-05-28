@@ -1,0 +1,63 @@
+// replace text with svg mixin
+@mixin replace-text-with-svg($image-name) {
+  @include replace-text-with-dimensions("#{$image-name}.png");
+  background-image: none, image-url("#{$image-name}.svg");
+  background-position: center center;
+  @include background-size(contain);
+}
+
+// 將文字替換成 svg 圖片，並讓 svg 圖片可隨者視窗縮放大小
+// 缺點，無法在 ie8 時使用，因為 ie8 不支援 background-size 屬性，需要自己進行調整。
+@mixin replace-text-with-scalable-svg($image-name, $support-ie8: none, $element: none) {
+  $width: image-width("#{$image-name}.png");
+  $height: image-height("#{$image-name}.png");
+  display: block;
+  max-width: $width;
+  line-height: 0;
+  @include hide-text;
+  @if $support-ie8 == none {
+    &:after { // 使用 before 並且 display block; 文字本身無法被隱藏。
+      content: "";
+      display: block;
+      @include replace-text-with-dimensions("#{$image-name}.png");
+      background-image: none, image-url("#{$image-name}.svg");
+      background-position: center center;
+      @include background-size(contain);
+      width: 100%;
+      height: 0;
+      padding-top: $height / $width * 100%;
+    }
+  }
+  @else {
+    #{$element} {
+      content: "";
+      display: block;
+      @include replace-text-with-dimensions("#{$image-name}.png");
+      background-image: none, image-url("#{$image-name}.svg");
+      background-position: center center;
+      @include background-size(contain);
+      width: 100%;
+      height: 0;
+      padding-top: $height / $width * 100%;
+    }
+  }
+}
+
+// form placeholder color mixin
+@mixin input-placeholder-color($color) {
+  &::-webkit-input-placeholder { /* WebKit browsers */
+    color: $color;
+    -webkit-font-smoothing: antialiased;
+  }
+  &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: lighten($color, 10%);
+  }
+  &:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: $color;
+  }
+}
+
+

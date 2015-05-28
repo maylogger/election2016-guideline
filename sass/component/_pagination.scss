@@ -1,0 +1,62 @@
+//
+// slim markup:
+//
+// ul.pagination
+//   li: span.is-disable &laquo;
+//   li: a.is-current href="#" 1
+//   li: a href="#"= 2
+//   li: a href="#"= 3
+//   li: a href="#"= 4
+//   li: span.is-disable …
+//   li: a href="#" &raquo;
+//
+// ===========
+
+$pagination-color: #444 !default;
+$pagination-bg-color: transparent !default;
+
+$pagination-hover-color: white !default;
+$pagination-hover-bg-color: #444 !default;
+
+$pagination-current-color: $pagination-hover-color !default;
+$pagination-current-bg-color: $pagination-hover-bg-color !default;
+
+$pagination-disable-color: lighten($pagination-color, 30%) !default;
+$pagination-disable-bg-color: $pagination-bg-color !default;
+
+.pagination {
+  @include pie-clearfix;
+  @include reset-box-model;
+  list-style: none;
+  li {
+    display: inline-block;
+  }
+  a, span {
+    display: block;
+    padding: rhythm(0.125) rhythm(0.5);
+    color: $pagination-color;
+    background-color: $pagination-bg-color;
+    text-align: center;
+    @include adjust-font-size-to(15px);
+    &:hover {
+      text-decoration: none;
+      color: $pagination-hover-color;
+      background-color: $pagination-hover-bg-color;
+    }
+    &.is-current {
+      color: $pagination-current-color;
+      background-color: $pagination-current-bg-color;
+    }
+    &.is-disabled {
+      color: $pagination-disable-color;
+      background-color: $pagination-disable-bg-color;
+      cursor: default;
+    }
+  }
+
+  @include at-breakpoint($pad) {
+    a, span {
+      @include adjust-font-size-to(16px);
+    }
+  }
+}

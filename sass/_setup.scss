@@ -1,0 +1,25 @@
+// ---- compass setting ----
+$base-font-size: 16px;
+$base-line-height: 24px;
+$relative-font-sizing: false;
+
+$legacy-support-for-ie: false;
+$grid-background-baseline-height: $base-line-height;
+
+
+// ---- import compass ----
+@import "compass";
+@import "compass/css3/user-interface";
+
+
+// ---- import susy ----
+@import "susy";
+
+
+// ---- import setup----
+@import "setup/variable";
+@import "setup/normalize";
+@import "setup/helper";
+@import "setup/base";
+@import "setup/layout";
+@import "setup/visibility";

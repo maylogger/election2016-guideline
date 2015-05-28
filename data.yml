@@ -1,0 +1,10 @@
+site-url: "http://localhost:3000"
+site-name: "競選系列網站 Guideline"
+site-title: "競選系列網站 Guideline"
+site-keywords: "競選系列網站 Guideline"
+site-description: "競選系列網站 Guideline"
+
+
+og-type: "website"
+og-image: "http://localhost:3000/fb.png"
+fb-admins: "123456"

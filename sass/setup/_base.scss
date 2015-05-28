@@ -1,0 +1,199 @@
+$text-color            : $text-black;
+$text-color-muted      : $text-gray;
+
+$link-color       : $color-blue-dark;
+$link-color-hover : darken($color-blue-dark, 20%);
+
+// hr & divider
+$divider-color          : $color-gray-light;
+
+// blockquote
+$blockquote-border-width: rhythm(0.125);
+$blockquote-border-color: $color-gray-light;
+$blockquote-padding-left: rhythm(1) - $blockquote-border-width;
+
+// code area style variable
+$code-bg-color: #f3f3f3;
+$code-scroll-shadow-color: #9f9f9f;
+$code-scroll-cover-size: 80px;
+$code-scroll-cover-position: 12.5%;
+$code-scroll-shadow-size: $code-scroll-cover-size * ($code-scroll-cover-position / 100%);
+$code-scroll-shadow-weight: .3;
+
+
+@include establish-baseline; // Establishes a font baseline for the given font-size.
+
+%avenir {
+  font-family: "AvenirNext-DemiBoldItalic", "Avenir-HeavyOblique", "Arial", "STHeitiTC-Light", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+%helvetica {
+    font-family: "Helvetica Neue", "Helvetica", "Arial", "STHeitiTC-Light","Microsoft JhengHei", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+%code-font {
+  font-family: "Anonymous Pro", "Inconsolata", "Consolas Regular Font", "Monaco", "Courier New" ,MonoSpace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+%subpixel {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+body {
+  @extend %helvetica;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  color: $text-color;
+}
+
+// heading
+#{headings()} {
+  @include reset-box-model;
+  font-weight: normal;
+  @include trailer(1);
+}
+h1 {
+  @include adjust-font-size-to(32px, 1.5);
+}
+h2 {
+  @include adjust-font-size-to(24px, 1.25);
+}
+h3 {
+  @include adjust-font-size-to(18px, 1);
+}
+h4 {
+  @include adjust-font-size-to(16px, 1);
+}
+h5 {
+  @include adjust-font-size-to(15px, 0.875);
+}
+h6 {
+  @include adjust-font-size-to(13px, 0.75);
+}
+
+p {
+  @include leader(0);
+  @include trailer(1);
+  @include adjust-font-size-to(16px);
+}
+
+
+// 引用他處文獻
+blockquote {
+  @include reset-box-model;
+  margin: rhythm(1) 0;
+  border-left: $blockquote-border-width solid $blockquote-border-color;
+  padding-left: $blockquote-padding-left;
+  color: $text-color-muted;
+  p {
+    @include trailer(0.25);
+  }
+  small {
+    @include adjust-font-size-to(16px);
+    color: $text-color;
+    display: block;
+    &:before {
+      content: '\2014 \00A0';
+    }
+  }
+}
+
+code {
+  @extend %code-font;
+  @include adjust-font-size-to(13px, 0.75);
+  padding: rhythm(0.125) rhythm(0.25);
+  background-color: $code-bg-color;
+  white-space: nowrap;
+}
+
+// code 示範區（具有陰影提示）
+pre {
+  @include leader(1);
+  @include trailer(1);
+  code {
+    display: block;
+    padding: rhythm(1);
+    @extend %code-scroll;
+  }
+}
+
+%code-scroll {
+  overflow: auto;
+  white-space: pre;
+  -webkit-overflow-scrolling: touch;
+  background-image:
+    /* Shadow covers */
+    linear-gradient(to right, $code-bg-color $code-scroll-cover-position, rgba($code-bg-color, 0) ),
+    linear-gradient(to right, rgba($code-bg-color, 0),  $code-bg-color ( 100% - $code-scroll-cover-position ) ),
+    /* Shadows */
+    radial-gradient(0 50%, farthest-side, rgba($code-scroll-shadow-color, $code-scroll-shadow-weight), rgba($code-scroll-shadow-color, 0) ),
+    radial-gradient(100% 50%,farthest-side, rgba($code-scroll-shadow-color, $code-scroll-shadow-weight), rgba($code-scroll-shadow-color, 0) );
+  background-image:
+    /* Shadow covers */
+    linear-gradient(to right, $code-bg-color $code-scroll-cover-position, rgba($code-bg-color, 0) ),
+    linear-gradient(to right, rgba($code-bg-color, 0),  $code-bg-color ( 100% - $code-scroll-cover-position ) ),
+    /* Shadows */
+    radial-gradient(farthest-side at 0 50%,  rgba($code-scroll-shadow-color, $code-scroll-shadow-weight), rgba( $code-scroll-shadow-color, 0) ),
+    radial-gradient(farthest-side at 100% 50%,  rgba($code-scroll-shadow-color, $code-scroll-shadow-weight), rgba( $code-scroll-shadow-color, 0) );
+  background-repeat: no-repeat;
+  background-color: $code-bg-color;
+  background-size: $code-scroll-cover-size 100%, $code-scroll-cover-size 100%, $code-scroll-shadow-size 110%, $code-scroll-shadow-size 110%;
+  background-attachment: local, local, scroll, scroll;
+  background-position: left center, right center, left center, right center;
+}
+
+// list
+ol, ul {
+  @include leader(1);
+  @include trailer(1);
+  padding-left: 24px;
+  ol, ul {
+    margin: 0;
+  }
+}
+
+dl {
+  @include leader(1);
+  @include trailer(1);
+  dt {
+    font-weight: bold;
+  }
+  dd {
+    margin: 0;
+
+  }
+}
+
+
+// inline style
+a {
+  @include link-colors($link-color, $link-color-hover);
+  @include hover-link;
+  img {
+    border: none;
+  }
+}
+
+.break-all {
+  @include word-break(break-all);
+}
+
+// divider
+hr, .divider {
+  @include leader(1);
+  @include trailer(1);
+  border-top: 1px solid $divider-color;
+}
+
+
+img {
+  max-width: 100%;
+  @include trailer(1);
+}

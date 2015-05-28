@@ -1,0 +1,152 @@
+// input variable
+$form-height: 36px;
+$form-border-width: 1px;
+$form-border-color: #ddd;
+$form-padding: 5px 12px;
+$form-radius-width: $global-radius-width;
+$form-bg-color: white;
+$form-color: #444;
+$form-placeholder-color: #999;
+$form-font-size: 15px;
+
+$form-label-font-size: $form-font-size;
+$form-label-color: black;
+
+$form-content-font-size: $form-font-size;
+$form-content-color: $form-color;
+
+$form-tip-font-size: 13px;
+$form-tip-color: #999;
+
+
+// form 預設樣式
+.form {
+  // Remove default style in iOS.
+  textarea,
+  input:not([type]),
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="datetime"] { -webkit-appearance: none; }
+
+  // restyle input, textarea, select
+  .form-control,
+  textarea,
+  select,
+  input[type="date"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="email"],
+  input[type="month"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="time"],
+  input[type="url"],
+  input[type="week"] {
+    @include box-sizing(border-box);
+    border: $form-border-width solid $form-border-color;
+    padding: $form-padding;
+    min-height: $form-height;
+    @include border-radius($form-radius-width);
+    color: $form-color;
+    @include adjust-font-size-to($form-font-size);
+    background-color: $form-bg-color;
+    @include input-placeholder-color($form-placeholder-color);
+    @include box-shadow(none);
+    outline: none;
+    max-width: 100%; // Responsiveness: Sets a maximum width relative to the parent to scale on narrower viewports
+    &.full-width {
+      width: 100%;
+    }
+  }
+
+  input[type="file"], select {
+    cursor: pointer;
+    outline: none;
+  }
+
+  textarea {
+    vertical-align: top; // Improve readability and alignment in all browsers.
+    min-height: $form-height * 3;
+  }
+
+  select {
+    height: $form-height; // min-height 失效，要使用 height 才能指定高度
+  }
+
+}
+
+
+// =========================================
+// form 排版
+// =========================================
+
+// 垂直排列（預設排版方式）
+.form-row + .form-row {
+  @include leader(0.5);
+}
+
+.form-label {
+  display: block;
+  @include adjust-font-size-to($form-label-font-size);
+  @include trailer(0.125);
+  color: black;
+  @extend %subpixel;
+  .is_required &:after {
+    content: '*';
+    display: inline;
+    font-size: $form-label-font-size + 2px;
+    line-height: 1;
+    color: #c00;
+  }
+}
+
+.form-content {
+  display: block;
+  @include adjust-font-size-to($form-content-font-size);
+  color: $form-content-color;
+}
+
+.form-tip {
+  display: block;
+  margin: 0;
+  @include adjust-font-size-to($form-tip-font-size);
+  color: $form-tip-color;
+}
+
+.radio-group, .checkbox-group {
+  display: block;
+  & + & {
+    @include leader(0.125);
+  }
+}
+
+.radio, .checkbox {
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 12px;
+  input {
+    outline: none;
+    margin-right: 3px;
+  }
+}
+
+.form-action {
+  @include leader(1);
+  .btn {
+    margin-right: 12px;
+  }
+}
+
+
+// 水平排列：
+// 由於在手機版時，表單不適合使用水平排列，
+// 也無法確認在某個版本時，表單的排版就變成水平排列，
+// 所以表單水平排列，就由 partial 的部分在來控制。

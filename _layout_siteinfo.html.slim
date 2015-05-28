@@ -1,0 +1,21 @@
+/ page title
+- if (yield :title)
+  = yield :title
+- else
+  title= data["site-title"]
+
+
+/ page keywords
+- if (yield :keywords)
+  = yield :keywords
+- else
+  meta name="keywords" content= data["site-keywords"]
+
+
+/ page description
+- if (yield :description)
+  = yield :description
+- else
+  meta name="description" content= data["site-description"]
+
+
