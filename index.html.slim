@@ -1,64 +1,64 @@
-h1 競選系列網站 Guideline
+.content
+  .container
+    p
+      a.btn href="#" Button
+    p
+      a.btn.btn_primary href="#" Button
+    p
+      a.btn.btn_danger href="#" Button
+    p
+      a.btn.is-disabled href="#" Button
+    p
+      a.btn.btn_outline href="#" Button
+    p
+      a.btn.btn_outline.is-disabled href="#" Button
 
-p
-  a.btn href="#" Button
-p
-  a.btn.btn_primary href="#" Button
-p
-  a.btn.btn_danger href="#" Button
-p
-  a.btn.is-disabled href="#" Button
-p
-  a.btn.btn_outline href="#" Button
-p
-  a.btn.btn_outline.is-disabled href="#" Button
+    h1= zh_lorem_sentences(1)
+    p= zh_lorem_paragraphs(4)
+    h2= zh_lorem_sentences(1)
+    p= zh_lorem_paragraphs(4)
+    h3= zh_lorem_sentences(1)
+    p= zh_lorem_paragraphs(4)
+    h4= zh_lorem_sentences(1)
+    p= zh_lorem_paragraphs(4)
+    h5= zh_lorem_sentences(1)
+    p= zh_lorem_paragraphs(4)
+    h6= zh_lorem_sentences(2)
+    p
+      = zh_lorem_paragraphs(4)
+      code fake_element.dispatchEvent(fake_event);
 
-h1= zh_lorem_sentences(1)
-p= zh_lorem_paragraphs(4)
-h2= zh_lorem_sentences(1)
-p= zh_lorem_paragraphs(4)
-h3= zh_lorem_sentences(1)
-p= zh_lorem_paragraphs(4)
-h4= zh_lorem_sentences(1)
-p= zh_lorem_paragraphs(4)
-h5= zh_lorem_sentences(1)
-p= zh_lorem_paragraphs(4)
-h6= zh_lorem_sentences(2)
-p
-  = zh_lorem_paragraphs(4)
-  code fake_element.dispatchEvent(fake_event);
-
-ul
-  li= zh_lorem_sentence
-  li= zh_lorem_sentence
-  li
-    = zh_lorem_sentence
     ul
       li= zh_lorem_sentence
       li= zh_lorem_sentence
+      li
+        = zh_lorem_sentence
+        ul
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
       li= zh_lorem_sentence
-  li= zh_lorem_sentence
-  li= zh_lorem_sentence
+      li= zh_lorem_sentence
 
-ol
-  li= zh_lorem_sentence
-  li= zh_lorem_sentence
-  li
-    = zh_lorem_sentence
     ol
       li= zh_lorem_sentence
       li= zh_lorem_sentence
+      li
+        = zh_lorem_sentence
+        ol
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
       li= zh_lorem_sentence
-  li= zh_lorem_sentence
-  li= zh_lorem_sentence
+      li= zh_lorem_sentence
 
-blockquote
-  p 不要因為有配著偉人照片，就隨便相信網路上流傳的名言佳句。
-  small 胡適
-blockquote
-  p 不要相信胡適
-  small 愛因斯坦
+    blockquote
+      p 不要因為有配著偉人照片，就隨便相信網路上流傳的名言佳句。
+      small 胡適
+    blockquote
+      p 不要相信胡適
+      small 愛因斯坦
 
-= render "/partial/code.erb"
+    = render "/partial/code.erb"
 
-= render "/partial/form-demo"
+    = render "/partial/form-demo"
