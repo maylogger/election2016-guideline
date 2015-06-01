@@ -1,0 +1,201 @@
+.footer {
+  padding: rhythm(1) 0 rhythm(1);
+  background-color: #183840;
+  color: #ddd;
+  text-align: center;
+  overflow: hidden;
+  background-image: radial-gradient(100% 100% at 100% 100% , #2B6F69 11%, #183840 79%);
+
+  .site-list {
+    @include trailer(2);
+  }
+
+  .site {
+    @include box-sizing(border-box);
+    margin: 0 auto;
+    padding: 0 12px;
+  }
+
+  .site-thumb {
+    @include trailer(0.5);
+    padding-top: 100%;
+    width: 100%;
+    height: 0;
+    @include border-radius(20px);
+    background-color: rgba(black, 0.25);
+    img {
+      display: block;
+      @include trailer(0);
+    }
+  }
+
+  .site-title {
+    @include adjust-font-size-to(18px);
+    color: white;
+    font-weight: bold;
+  }
+
+  .site-subtitle {
+    @include adjust-font-size-to(15px);
+    color: #aaa;
+  }
+
+  .site_coming-soon {
+    @include opacity(0.5);
+  }
+
+  .form-card-group {
+    position: relative;
+    z-index: 50;
+    padding: 0 7.5%;
+  }
+
+  .form-card {
+    @include trailer(2);
+    @include border-radius(10px);
+    background-color: rgba(white, 0.1);
+  }
+
+  .form-card-title {
+    display: block;
+    padding: rhythm(1) rhythm(1) rhythm(0.5);
+    @include adjust-font-size-to(20px);
+    span {
+      display: block;
+    }
+    .ch {
+      color: white;
+      font-weight: bold;
+    }
+    .en {
+      font-size: 16px;
+      color: #aaa;
+    }
+  }
+
+  .form-card-control {
+    @include box-sizing(border-box);
+    display: block;
+    border: none;
+    padding: 12px 24px;
+    width: 100%;
+    color: #444;
+    background-color: rgba(white, 0.8);
+    @include adjust-font-size-to(16px);
+    outline: none;
+    text-align: center;
+    &:last-child {
+      @include border-radius(0px 0px 10px 10px);
+    }
+  }
+
+  .light-up-taiwan {
+    @include pie-clearfix;
+    position: relative;
+    z-index: 45;
+    @include leader(-6);
+
+    img {
+      display: block;
+      @include trailer(0);
+    }
+
+    .circle {
+      @include opacity(0.3);
+      position: relative;
+      right: -33%;
+      float: right;
+    }
+
+    .text {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
+    }
+
+
+  }
+
+  @include at-breakpoint($pad) {
+    padding: rhythm(2) 0 rhythm(1);
+
+    .footer-inner {
+      margin: 0 auto;
+      padding: 0 48px;
+      width: 85%;
+      max-width: 768px;
+    }
+
+    .site-list {
+      @include pie-clearfix;
+      margin: 0 -12px rhythm(3);
+    }
+
+    .site {
+      @include box-sizing(border-box);
+      float: left;
+      padding: 0 12px;
+      width: 33.3333%;
+    }
+
+    .form-card-group {
+      padding: 0;
+    }
+
+    .form-card {
+      @include pie-clearfix;
+      @include trailer(3);
+      padding: 0;
+    }
+
+    .form-card-title {
+      @include box-sizing(border-box);
+      float: left;
+      @include trailer(0);
+      text-align: left;
+      padding: 12px;
+      width: 35%;
+    }
+
+    .form-card-control {
+      padding: 24px 12px;
+      width: 65%;
+      float: right;
+      text-align: left;
+      @include adjust-font-size-to(20px);
+      &:last-child {
+        @include border-radius(0px 10px 10px 0px);
+      }
+    }
+
+    .light-up-taiwan {
+      max-width: 960px;
+      margin: rhythm(-7) auto rhythm(0.5);
+      // @include leader(-7);
+      // margin-left: auto;
+      // margin-right: auto;
+      .circle {
+        right: -28px;
+        // float: right;
+      }
+      // .text {
+      //   position: absolute;
+      //   right: 24px;
+      //   bottom: 24px;
+      // }
+    }
+
+  }
+
+  @include at-breakpoint($desktop) {
+    background-image: radial-gradient(90% 100% at 70% 100% , #2B6F69 11%, #183840 79%);
+    .site-list {
+      margin: 0 -24px rhythm(3);
+    }
+    .site {
+      padding: 0 24px;
+    }
+  }
+
+
+}
