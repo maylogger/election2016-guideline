@@ -1,8 +1,8 @@
 // ---- susy setting ----
 // basic for susy
 $total-columns  : 4;
-$column-width   : 72px;
-$gutter-width   : 24px;
+$column-width   : 60px;
+$gutter-width   : 20px;
 $grid-padding   : $gutter-width;
 
 // add media
@@ -17,6 +17,19 @@ $page-container: ".container";
 // @import "layout-debug";
 
 // ---- container setting ----
+
+body {
+  background-color: #183840;
+
+}
+
+.page {
+  overflow-x: hidden;
+}
+
+.page-inner {
+  background-color: white;
+}
 
 #{$page-container} {
 
@@ -33,4 +46,12 @@ $page-container: ".container";
     @include set-container-width;
   }
 
+}
+
+
+.content {
+  @include padding-trailer(1);
+  @include at-breakpoint($pad) {
+    @include padding-trailer(2);
+  }
 }
