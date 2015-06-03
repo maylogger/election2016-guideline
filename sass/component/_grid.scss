@@ -1,0 +1,33 @@
+.grid {
+  margin: 0 rhythm(-0.25);
+  @include at-breakpoint($pad) {
+    margin: 0 rhythm(-0.5);
+  }
+}
+
+.grid-item {
+  @include box-sizing(border-box);
+  padding: 0 rhythm(0.25);
+  float: left;
+  @include at-breakpoint($pad) {
+    padding: 0 rhythm(0.5);
+  }
+}
+
+@for $x from 1 through 4 {
+  @for $y from 1 through 4 {
+    @for $z from 1 through 6 {
+
+      .grid_#{$x}-#{$y}-#{$z} .grid-item {
+        width: 100% / $x;
+        @include at-breakpoint($pad) {
+          width: 100% / $y;
+        }
+        @include at-breakpoint($desktop) {
+          width: 100% / $z;
+        }
+      }
+
+    }
+  }
+}

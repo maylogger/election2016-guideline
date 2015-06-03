@@ -20,32 +20,10 @@
     @include pie-clearfix;
   }
 
-  .color-item-group {
-    margin: 0 -6px;
-    @include pie-clearfix;
-  }
   .color-item {
     @include box-sizing(border-box);
     @include trailer(0.5);
-    padding: 0 6px;
     color: white;
-    float: left;
-    width: 100%;
-  }
-  .color-item-gruop_grid2 {
-    .color-item {
-      width: 50%;
-    }
-  }
-  .color-item-gruop_grid3 {
-    .color-item {
-      width: 33.3333%;
-    }
-  }
-  .color-item-gruop_grid4 {
-    .color-item {
-      width: 50%;
-    }
   }
   .color-item-top, .color-item-bottom {
     position: relative;
@@ -70,17 +48,6 @@
     }
     .demo-block-subtitle {
       @include adjust-font-size-to(24px, 1);
-    }
-    .color-item-group {
-      margin: 0 -12px;
-    }
-    .color-item {
-      padding: 0 12px;
-    }
-    .color-item-gruop_grid4 {
-      .color-item {
-        width: 25%;
-      }
     }
     .color-code {
       @include adjust-font-size-to(15px);
