@@ -1,0 +1,24 @@
+.site-info {
+
+  display: none;
+
+  @include at-breakpoint($desktop) {
+
+    padding: rhythm(1) 0;
+    text-align: center;
+
+    .site-name {
+      @include adjust-font-size-to(18px);
+      color: white;
+      font-weight: bold;
+    }
+
+    .site-url {
+      @include adjust-font-size-to(15px);
+      color: #aaa;
+    }
+
+  }
+
+
+}

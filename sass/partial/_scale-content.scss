@@ -1,0 +1,64 @@
+.scale-content {
+
+  @include at-breakpoint($desktop) {
+
+    .page {
+      position: relative;
+      z-index: 105;
+      @include transition(transform 0.5s);
+    }
+
+    .page-inner {
+      @include transform-origin(center, bottom);
+      @include transition(transform 0.5s, border-radius 0.25s);
+      @include box-shadow(0px 0px 50px rgba(black, 0.5));
+    }
+
+    .site-info {
+      display: block;
+      @include opacity(0.25);
+      @include transition(opacity 1s);
+    }
+
+    .footer {
+      position: fixed;
+      top: 20%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 100;
+      @include opacity(0);
+      @include transition(opacity 0.75s 0.2s);
+
+      .site {
+        @include transition(transform 0.5s);
+        @include transform(scale(0));
+      }
+
+      @for $i from 1 through 3 {
+        .site:nth-child(#{$i}) {
+          @include transition-delay((0.1 * $i)+s);
+        }
+      }
+
+    }
+
+    &.is-scaled {
+      .page-inner {
+        @include transform(scale(0.5));
+        @include border-radius(0 0 20px 20px);
+      }
+      .site-info {
+        @include opacity(1);
+      }
+      .footer {
+        @include opacity(1);
+        .site {
+          @include transform(scale(1));
+        }
+      }
+    }
+
+  }
+
+}
