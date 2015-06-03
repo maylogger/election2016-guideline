@@ -275,6 +275,407 @@ body { background-color: #183840; }
 .slick-loading .slick-slide { visibility: hidden; }
 .slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent; }
 
+.card { display: block; margin-bottom: 24px; }
+.card:hover { text-decoration: none; }
+
+.card-header { position: relative; padding-top: 100%; width: 100%; height: 0; background-color: #777; -webkit-border-radius: 10px 10px 0 0; -moz-border-radius: 10px 10px 0 0; -ms-border-radius: 10px 10px 0 0; -o-border-radius: 10px 10px 0 0; border-radius: 10px 10px 0 0; }
+
+.card-title { position: absolute; top: 50%; left: 0; right: 0; padding: 24px; -webkit-transform: translateY(-50%); -moz-transform: translateY(-50%); -ms-transform: translateY(-50%); -o-transform: translateY(-50%); transform: translateY(-50%); font-size: 18px; line-height: 24px; color: white; text-align: center; }
+
+.card-content { padding: 24px; background-color: #eee; -webkit-border-radius: 0 0 10px 10px; -moz-border-radius: 0 0 10px 10px; -ms-border-radius: 0 0 10px 10px; -o-border-radius: 0 0 10px 10px; border-radius: 0 0 10px 10px; }
+
+.card-text { font-size: 15px; line-height: 20px; color: #444; height: 60px; overflow: hidden; }
+
+.grid { margin: 0 -6px; }
+@media (min-width: 640px) { .grid { margin: 0 -12px; } }
+
+.grid-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 6px; float: left; }
+@media (min-width: 640px) { .grid-item { padding: 0 12px; } }
+
+.grid_1-1-1 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-1 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-1 .grid-item { width: 100%; } }
+
+.grid_1-1-2 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-2 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-2 .grid-item { width: 50%; } }
+
+.grid_1-1-3 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-3 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_1-1-4 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-4 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-4 .grid-item { width: 25%; } }
+
+.grid_1-1-5 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-5 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-5 .grid-item { width: 20%; } }
+
+.grid_1-1-6 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-1-6 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_1-1-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_1-2-1 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-1 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-1 .grid-item { width: 100%; } }
+
+.grid_1-2-2 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-2 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-2 .grid-item { width: 50%; } }
+
+.grid_1-2-3 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-3 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_1-2-4 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-4 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-4 .grid-item { width: 25%; } }
+
+.grid_1-2-5 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-5 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-5 .grid-item { width: 20%; } }
+
+.grid_1-2-6 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-2-6 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_1-2-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_1-3-1 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-1 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-1 .grid-item { width: 100%; } }
+
+.grid_1-3-2 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-2 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-2 .grid-item { width: 50%; } }
+
+.grid_1-3-3 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-3 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_1-3-4 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-4 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-4 .grid-item { width: 25%; } }
+
+.grid_1-3-5 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-5 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-5 .grid-item { width: 20%; } }
+
+.grid_1-3-6 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-3-6 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_1-3-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_1-4-1 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-1 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-1 .grid-item { width: 100%; } }
+
+.grid_1-4-2 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-2 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-2 .grid-item { width: 50%; } }
+
+.grid_1-4-3 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-3 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_1-4-4 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-4 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-4 .grid-item { width: 25%; } }
+
+.grid_1-4-5 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-5 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-5 .grid-item { width: 20%; } }
+
+.grid_1-4-6 .grid-item { width: 100%; }
+@media (min-width: 640px) { .grid_1-4-6 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_1-4-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_2-1-1 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-1 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-1 .grid-item { width: 100%; } }
+
+.grid_2-1-2 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-2 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-2 .grid-item { width: 50%; } }
+
+.grid_2-1-3 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-3 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_2-1-4 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-4 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-4 .grid-item { width: 25%; } }
+
+.grid_2-1-5 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-5 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-5 .grid-item { width: 20%; } }
+
+.grid_2-1-6 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-1-6 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_2-1-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_2-2-1 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-1 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-1 .grid-item { width: 100%; } }
+
+.grid_2-2-2 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-2 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-2 .grid-item { width: 50%; } }
+
+.grid_2-2-3 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-3 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_2-2-4 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-4 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-4 .grid-item { width: 25%; } }
+
+.grid_2-2-5 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-5 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-5 .grid-item { width: 20%; } }
+
+.grid_2-2-6 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-2-6 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_2-2-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_2-3-1 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-1 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-1 .grid-item { width: 100%; } }
+
+.grid_2-3-2 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-2 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-2 .grid-item { width: 50%; } }
+
+.grid_2-3-3 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-3 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_2-3-4 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-4 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-4 .grid-item { width: 25%; } }
+
+.grid_2-3-5 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-5 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-5 .grid-item { width: 20%; } }
+
+.grid_2-3-6 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-3-6 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_2-3-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_2-4-1 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-1 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-1 .grid-item { width: 100%; } }
+
+.grid_2-4-2 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-2 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-2 .grid-item { width: 50%; } }
+
+.grid_2-4-3 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-3 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_2-4-4 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-4 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-4 .grid-item { width: 25%; } }
+
+.grid_2-4-5 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-5 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-5 .grid-item { width: 20%; } }
+
+.grid_2-4-6 .grid-item { width: 50%; }
+@media (min-width: 640px) { .grid_2-4-6 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_2-4-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_3-1-1 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-1 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-1 .grid-item { width: 100%; } }
+
+.grid_3-1-2 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-2 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-2 .grid-item { width: 50%; } }
+
+.grid_3-1-3 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-3 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_3-1-4 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-4 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-4 .grid-item { width: 25%; } }
+
+.grid_3-1-5 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-5 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-5 .grid-item { width: 20%; } }
+
+.grid_3-1-6 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-1-6 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_3-1-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_3-2-1 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-1 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-1 .grid-item { width: 100%; } }
+
+.grid_3-2-2 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-2 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-2 .grid-item { width: 50%; } }
+
+.grid_3-2-3 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-3 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_3-2-4 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-4 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-4 .grid-item { width: 25%; } }
+
+.grid_3-2-5 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-5 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-5 .grid-item { width: 20%; } }
+
+.grid_3-2-6 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-2-6 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_3-2-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_3-3-1 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-1 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-1 .grid-item { width: 100%; } }
+
+.grid_3-3-2 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-2 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-2 .grid-item { width: 50%; } }
+
+.grid_3-3-3 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-3 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_3-3-4 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-4 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-4 .grid-item { width: 25%; } }
+
+.grid_3-3-5 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-5 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-5 .grid-item { width: 20%; } }
+
+.grid_3-3-6 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-3-6 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_3-3-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_3-4-1 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-1 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-1 .grid-item { width: 100%; } }
+
+.grid_3-4-2 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-2 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-2 .grid-item { width: 50%; } }
+
+.grid_3-4-3 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-3 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_3-4-4 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-4 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-4 .grid-item { width: 25%; } }
+
+.grid_3-4-5 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-5 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-5 .grid-item { width: 20%; } }
+
+.grid_3-4-6 .grid-item { width: 33.3333333333%; }
+@media (min-width: 640px) { .grid_3-4-6 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_3-4-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_4-1-1 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-1 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-1 .grid-item { width: 100%; } }
+
+.grid_4-1-2 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-2 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-2 .grid-item { width: 50%; } }
+
+.grid_4-1-3 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-3 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_4-1-4 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-4 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-4 .grid-item { width: 25%; } }
+
+.grid_4-1-5 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-5 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-5 .grid-item { width: 20%; } }
+
+.grid_4-1-6 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-1-6 .grid-item { width: 100%; } }
+@media (min-width: 960px) { .grid_4-1-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_4-2-1 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-1 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-1 .grid-item { width: 100%; } }
+
+.grid_4-2-2 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-2 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-2 .grid-item { width: 50%; } }
+
+.grid_4-2-3 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-3 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_4-2-4 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-4 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-4 .grid-item { width: 25%; } }
+
+.grid_4-2-5 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-5 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-5 .grid-item { width: 20%; } }
+
+.grid_4-2-6 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-2-6 .grid-item { width: 50%; } }
+@media (min-width: 960px) { .grid_4-2-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_4-3-1 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-1 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-1 .grid-item { width: 100%; } }
+
+.grid_4-3-2 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-2 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-2 .grid-item { width: 50%; } }
+
+.grid_4-3-3 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-3 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_4-3-4 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-4 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-4 .grid-item { width: 25%; } }
+
+.grid_4-3-5 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-5 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-5 .grid-item { width: 20%; } }
+
+.grid_4-3-6 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-3-6 .grid-item { width: 33.3333333333%; } }
+@media (min-width: 960px) { .grid_4-3-6 .grid-item { width: 16.6666666667%; } }
+
+.grid_4-4-1 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-1 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-1 .grid-item { width: 100%; } }
+
+.grid_4-4-2 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-2 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-2 .grid-item { width: 50%; } }
+
+.grid_4-4-3 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-3 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-3 .grid-item { width: 33.3333333333%; } }
+
+.grid_4-4-4 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-4 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-4 .grid-item { width: 25%; } }
+
+.grid_4-4-5 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-5 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-5 .grid-item { width: 20%; } }
+
+.grid_4-4-6 .grid-item { width: 25%; }
+@media (min-width: 640px) { .grid_4-4-6 .grid-item { width: 25%; } }
+@media (min-width: 960px) { .grid_4-4-6 .grid-item { width: 16.6666666667%; } }
+
 .demo-header .logo { text-align: center; padding: 48px 0; margin-bottom: 0px; font-size: 36px; line-height: 36px; font-weight: bold; }
 @media (min-width: 640px) { .demo-header .logo { padding: 96px 0; font-size: 48px; line-height: 48px; } }
 
@@ -285,7 +686,8 @@ body { background-color: #183840; }
 
 .footer { padding: 72px 0 24px; background-color: #183840; color: #ddd; text-align: center; overflow: hidden; }
 .footer .site-list { margin: 0 auto; padding: 0 24px; max-width: 240px; }
-.footer .site { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 48px; }
+.footer .site { display: block; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 48px; }
+.footer .site:hover { text-decoration: none; }
 .footer .site-thumb { margin-bottom: 12px; padding-top: 100%; width: 100%; height: 0; -webkit-border-radius: 20px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.25); }
 .footer .site-thumb img { display: block; margin-bottom: 0px; }
 .footer .site-title { font-size: 18px; line-height: 24px; color: white; font-weight: bold; }
@@ -316,18 +718,10 @@ body { background-color: #183840; }
 .demo-block .demo-block-subtitle { margin-bottom: 24px; font-size: 20px; line-height: 24px; font-weight: bold; }
 .demo-block .demo-block-content { margin-bottom: 48px; }
 .demo-block .demo-block-content:after { content: ""; display: table; clear: both; }
-.demo-block .color-item-group { margin: 0 -6px; }
-.demo-block .color-item-group:after { content: ""; display: table; clear: both; }
-.demo-block .color-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 12px; padding: 0 6px; color: white; float: left; width: 100%; }
-.demo-block .color-item-gruop_grid2 .color-item { width: 50%; }
-.demo-block .color-item-gruop_grid3 .color-item { width: 33.3333%; }
-.demo-block .color-item-gruop_grid4 .color-item { width: 50%; }
+.demo-block .color-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 12px; color: white; }
 .demo-block .color-item-top, .demo-block .color-item-bottom { position: relative; width: 100%; height: 96px; }
 .demo-block .color-code { position: absolute; bottom: 0; padding: 10px; font-size: 13px; line-height: 24px; font-weight: bold; }
 .demo-block .btn { margin: 0 6px 6px 0; }
 @media (min-width: 640px) { .demo-block .demo-block-title { font-size: 32px; line-height: 36px; }
   .demo-block .demo-block-subtitle { font-size: 24px; line-height: 24px; }
-  .demo-block .color-item-group { margin: 0 -12px; }
-  .demo-block .color-item { padding: 0 12px; }
-  .demo-block .color-item-gruop_grid4 .color-item { width: 25%; }
   .demo-block .color-code { font-size: 15px; line-height: 24px; } }
