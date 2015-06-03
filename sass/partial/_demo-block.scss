@@ -1,0 +1,51 @@
+.demo-block {
+  @include trailer(2);
+
+  .demo-block-title {
+    @include trailer(2);
+    border-bottom: 1px solid #ddd;
+    @include padding-trailer(0.5);
+    @include adjust-font-size-to(24px, 1);
+    font-weight: bold;
+  }
+
+  .demo-block-subtitle {
+    @include trailer(1);
+    @include adjust-font-size-to(20px, 1);
+    font-weight: bold;
+  }
+
+  .demo-block-content {
+    @include trailer(2);
+    @include pie-clearfix;
+  }
+
+  .color-item {
+    margin: 0 6px 6px 0;
+    float: left;
+    .color {
+      width: 100px;
+      height: 100px;
+      @include border-radius(5px);
+    }
+    .color-code {
+      text-align: center;
+    }
+  }
+
+  .btn {
+    margin: 0 6px 6px 0;
+  }
+
+  @include at-breakpoint($pad) {
+    .demo-block-title {
+      @include adjust-font-size-to(32px, 1.5);
+    }
+
+    .demo-block-subtitle {
+      @include adjust-font-size-to(24px, 1);
+    }
+  }
+
+
+}
