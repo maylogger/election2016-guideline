@@ -38,6 +38,7 @@ $pagination-disable-bg-color: $pagination-bg-color !default;
     background-color: $pagination-bg-color;
     text-align: center;
     @include adjust-font-size-to(15px);
+    @include border-radius(5px);
     &:hover {
       text-decoration: none;
       color: $pagination-hover-color;
