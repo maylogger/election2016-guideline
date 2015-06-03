@@ -13,8 +13,12 @@
   }
 
   .site {
+    display: block;
     @include box-sizing(border-box);
     @include trailer(2);
+    &:hover {
+      text-decoration: none;
+    }
   }
 
   .site-thumb {
