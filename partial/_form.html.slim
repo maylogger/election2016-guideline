@@ -1,0 +1,76 @@
+.demo-block
+  h2.demo-block-title Form
+  .demo-block-content
+    form.form
+      .form-row.is_required
+        label.form-label 名稱
+        .form-content
+          input type="text"
+      .form-row.is_required
+        label.form-label  e-mail
+        .form-content
+          input type="email"
+      .form-row
+        label.form-label 電話
+        .form-content
+          input type="tel"
+      .form-row
+        label.form-label 性別
+        .form-content
+          .radio-group
+            label.radio
+              input type="radio" name="sex"
+              |男
+            label.radio
+              input type="radio" name="sex"
+              |女
+      .form-row
+        label.form-label 興趣
+        .form-content
+          .checkbox-group
+            label.checkbox
+              input type="checkbox" name="interest"
+              |運動
+            label.checkbox
+              input type="checkbox" name="interest"
+              |電影
+            label.checkbox
+              input type="checkbox" name="interest"
+              |音樂
+            label.checkbox
+              input type="checkbox" name="interest"
+              |動漫
+            label.checkbox
+              input type="checkbox" name="interest"
+              |旅行
+            label.checkbox
+              input type="checkbox" name="interest"
+              |美食
+
+          p.form-tip 選擇你最喜歡的幾種興趣，可復選。
+
+      .form-row
+        label.form-label 職業
+        .form-content
+          select
+            option value="item" 職業名稱
+            option value="item" 職業名稱
+            option value="item" 職業名稱
+            option value="item" 職業名稱
+            option value="item" 其他...
+      .form-row
+        label.form-label 上傳頭像
+        .form-content
+          input type="file"
+      .form-row
+        label.form-label 部落格
+        .form-content
+          input type="url"
+      .form-row.is_required
+        label.form-label 簡介
+        .form-content
+          textarea rows="4"
+          p.form-tip 建議字數於兩百字以內，不宜過長。
+      .form-action
+        button.btn 取消
+        button.btn.btn_primary 確定

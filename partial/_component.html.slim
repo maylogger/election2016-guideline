@@ -1,0 +1,18 @@
+.demo-block
+  h2.demo-block-title Component
+
+  h3.demo-block-subtitle Pagination
+  .demo-block-content
+    ul.pagination
+      li: span.is-disable &laquo;
+      li: a.is-current href="#" 1
+      - (rand(5)+2).times do |i|
+        li: a href="#"= ( i+2 )
+      li: span.is-disabled …
+      li: a href="#" &raquo;
+
+  h3.demo-block-subtitle Card
+  .demo-block-content
+
+  h3.demo-block-subtitle Lightbox
+  .demo-block-content

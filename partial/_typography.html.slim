@@ -1,0 +1,69 @@
+.demo-block
+  h2.demo-block-title Typograph
+
+  h3.demo-block-subtitle Headings
+  .demo-block-content
+    - @sentense= zh_lorem_words(20)
+    h1= "h1 - #{@sentense}"
+    h2= "h2 - #{@sentense}"
+    h3= "h3 - #{@sentense}"
+    h4= "h4 - #{@sentense}"
+    h5= "h5 - #{@sentense}"
+    h6= "h6 - #{@sentense}"
+
+  h3.demo-block-subtitle Paragraph
+  .demo-block-content
+    p= zh_lorem_paragraphs(4)
+    p= zh_lorem_paragraphs(4)
+    p= zh_lorem_paragraphs(4)
+
+  h3.demo-block-subtitle List
+  .demo-block-content
+    ul
+      li= zh_lorem_sentence
+      li= zh_lorem_sentence
+      li
+        = zh_lorem_sentence
+        ul
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+      li= zh_lorem_sentence
+      li= zh_lorem_sentence
+    ol
+      li= zh_lorem_sentence
+      li= zh_lorem_sentence
+      li
+        = zh_lorem_sentence
+        ol
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+          li= zh_lorem_sentence
+      li= zh_lorem_sentence
+      li= zh_lorem_sentence
+
+  h3.demo-block-subtitle Blockquote
+  .demo-block-content
+    blockquote
+      p 不要因為有配著偉人照片，就隨便相信網路上流傳的名言佳句。
+      small 胡適
+    blockquote
+      p 不要相信胡適
+      small 愛因斯坦
+
+  h3.demo-block-subtitle Code Block
+  .demo-block-content
+    = render "/partial/code.erb"
+
+  h3.demo-block-subtitle Inline Element
+  .demo-block-content
+    p You can link to <a href="#">somewhere</a>.
+    p You can use the mark tag to <mark>highlight</mark> text.
+    p <del>This line of text is meant to be treated as deleted text.</del>
+    p <s>This line of text is meant to be treated as no longer accurate.</s>
+    p <ins>This line of text is meant to be treated as an addition to the document.</ins>
+    p <u>This line of text will render as underlined</u>
+    p <small>This line of text is meant to be treated as fine print.</small>
+    p <strong>This line rendered as bold text.</strong>
+    p <em>This line rendered as italicized text.</em>
+    p Test code <code>Hellow world</code>.
