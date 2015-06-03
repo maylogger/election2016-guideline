@@ -13,6 +13,19 @@
 
   h3.demo-block-subtitle Card
   .demo-block-content
+    .grid.grid_1-2-3
+      - 6.times do
+        .grid-item
+          a.card href="#"
+            .card-header
+              .card-title= zh_lorem_words(10 + rand(5))
+            .card-content
+              .card-text= zh_lorem_paragraph
+
 
   h3.demo-block-subtitle Lightbox
   .demo-block-content
+
+
+
+
