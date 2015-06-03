@@ -188,11 +188,11 @@ body { background-color: #183840; }
 
 .page-inner { background-color: white; }
 
-.container { padding-left: 20px; padding-right: 20px; margin-left: auto; margin-right: auto; }
+.container { padding-left: 24px; padding-right: 24px; margin-left: auto; margin-right: auto; }
 .container:after { content: ""; display: table; clear: both; }
-@media (min-width: 640px) { .container { padding-left: 40px; padding-right: 40px; margin-left: auto; margin-right: auto; }
+@media (min-width: 640px) { .container { padding-left: 48px; padding-right: 48px; margin-left: auto; margin-right: auto; }
   .container:after { content: ""; display: table; clear: both; } }
-@media (min-width: 960px) { .container { max-width: 940px; } }
+@media (min-width: 960px) { .container { max-width: 984px; } }
 
 .content { padding-bottom: 24px; }
 @media (min-width: 640px) { .content { padding-bottom: 48px; } }
@@ -284,7 +284,7 @@ body { background-color: #183840; }
   .site-info .site-url { font-size: 15px; line-height: 24px; color: #aaa; } }
 
 .footer { padding: 72px 0 24px; background-color: #183840; color: #ddd; text-align: center; overflow: hidden; }
-.footer .site-list { margin: 0 auto; padding: 0 20px; max-width: 240px; }
+.footer .site-list { margin: 0 auto; padding: 0 24px; max-width: 240px; }
 .footer .site { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 48px; }
 .footer .site-thumb { margin-bottom: 12px; padding-top: 100%; width: 100%; height: 0; -webkit-border-radius: 20px; -moz-border-radius: 20px; -ms-border-radius: 20px; -o-border-radius: 20px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.25); }
 .footer .site-thumb img { display: block; margin-bottom: 0px; }
@@ -292,10 +292,10 @@ body { background-color: #183840; }
 .footer .site-subtitle { font-size: 15px; line-height: 24px; color: #aaa; }
 .footer .site_coming-soon { opacity: 0.5; }
 @media (min-width: 640px) { .footer { padding: 96px 0 48px; }
-  .footer .footer-inner { margin: 0 auto; padding: 0 40px; width: 85%; max-width: 768px; }
+  .footer .footer-inner { margin: 0 auto; padding: 0 48px; width: 85%; max-width: 768px; }
   .footer .site-list { max-width: 768px; padding: 0; }
   .footer .site-list:after { content: ""; display: table; clear: both; }
-  .footer .site { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; padding: 0 10px; width: 33.3333%; } }
+  .footer .site { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; float: left; padding: 0 12px; width: 33.3333%; } }
 @media (min-width: 960px) { .footer .site { padding: 0 24px; } }
 
 @media (min-width: 960px) { .scale-content .page { position: relative; z-index: 105; -webkit-transition: -webkit-transform 0.5s; -moz-transition: -moz-transform 0.5s; -o-transition: -o-transform 0.5s; transition: transform 0.5s; }
@@ -316,9 +316,18 @@ body { background-color: #183840; }
 .demo-block .demo-block-subtitle { margin-bottom: 24px; font-size: 20px; line-height: 24px; font-weight: bold; }
 .demo-block .demo-block-content { margin-bottom: 48px; }
 .demo-block .demo-block-content:after { content: ""; display: table; clear: both; }
-.demo-block .color-item { margin: 0 6px 6px 0; float: left; }
-.demo-block .color-item .color { width: 100px; height: 100px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -ms-border-radius: 5px; -o-border-radius: 5px; border-radius: 5px; }
-.demo-block .color-item .color-code { text-align: center; }
+.demo-block .color-item-group { margin: 0 -6px; }
+.demo-block .color-item-group:after { content: ""; display: table; clear: both; }
+.demo-block .color-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 12px; padding: 0 6px; color: white; float: left; width: 100%; }
+.demo-block .color-item-gruop_grid2 .color-item { width: 50%; }
+.demo-block .color-item-gruop_grid3 .color-item { width: 33.3333%; }
+.demo-block .color-item-gruop_grid4 .color-item { width: 50%; }
+.demo-block .color-item-top, .demo-block .color-item-bottom { position: relative; width: 100%; height: 96px; }
+.demo-block .color-code { position: absolute; bottom: 0; padding: 10px; font-size: 13px; line-height: 24px; font-weight: bold; }
 .demo-block .btn { margin: 0 6px 6px 0; }
 @media (min-width: 640px) { .demo-block .demo-block-title { font-size: 32px; line-height: 36px; }
-  .demo-block .demo-block-subtitle { font-size: 24px; line-height: 24px; } }
+  .demo-block .demo-block-subtitle { font-size: 24px; line-height: 24px; }
+  .demo-block .color-item-group { margin: 0 -12px; }
+  .demo-block .color-item { padding: 0 12px; }
+  .demo-block .color-item-gruop_grid4 .color-item { width: 25%; }
+  .demo-block .color-code { font-size: 15px; line-height: 24px; } }
