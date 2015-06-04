@@ -18,7 +18,9 @@
         .grid-item
           a.card href="#"
             .card-header
-              .card-title= zh_lorem_words(10 + rand(5))
+              .card-header-inner
+                .card-title= zh_lorem_words(5 + rand(10))
+                .card-subtitle= zh_lorem_words(5 + rand(10))
             .card-content
               .card-text= zh_lorem_paragraph
 

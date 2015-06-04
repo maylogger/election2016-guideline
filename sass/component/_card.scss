@@ -1,6 +1,7 @@
 .card {
   display: block;
   @include trailer(1);
+  text-align: center;
   &:hover {
     text-decoration: none;
   }
@@ -14,27 +15,37 @@
   @include border-radius(10px 10px 0 0);
 }
 
-.card-title {
+.card-header-inner {
   position: absolute;
   top: 50%;
   left: 0;
   right: 0;
   padding: 24px;
   @include translateY(-50%);
-  @include adjust-font-size-to(18px);
+}
+
+.card-title {
+  @include trailer(0.125);
+  @include adjust-font-size-to(20px);
   color: white;
-  text-align: center;
+  font-weight: bold;
+}
+
+.card-subtitle {
+  @include adjust-font-size-to(16px);
+  color: rgba(white, 0.5);
 }
 
 .card-content {
   padding: 24px;
-  background-color: #eee;
+  background-color: #f3f3f3;
   @include border-radius(0 0 10px 10px);
 }
 
 .card-text {
-  @include adjust-font-size-to(15px, 5/6);
+  @include adjust-font-size-to(16px);
   color: #444;
-  height: 60px;
+  height: 72px;
   overflow: hidden;
+  text-align: left;
 }
