@@ -10,14 +10,14 @@
 @import "component/pagination";
 @import "component/slick";
 @import "component/card";
-@import "component/grid";
+@import "component/grid"; // guideline 專用
 
 // ==== partial ====
-@import "partial/demo-header";
+@import "partial/demo-header"; // guideline 專用
 @import "partial/site-info";
 @import "partial/footer";
 @import "partial/scale-content";
-@import "partial/demo-block";
+@import "partial/demo-block"; // guideline 專用
 
 // ==== page ====
 
