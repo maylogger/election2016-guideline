@@ -1,9 +1,9 @@
 // input variable
 $form-height: 36px;
-$form-border-width: 1px;
+$form-border-width: 2px;
 $form-border-color: #ddd;
-$form-padding: 5px 12px;
-$form-radius-width: $global-radius-width;
+$form-padding: 4px 12px;
+$form-radius-width: 5px;
 $form-bg-color: white;
 $form-color: #444;
 $form-placeholder-color: #999;
@@ -99,7 +99,7 @@ $form-tip-color: #999;
   @include trailer(0.125);
   color: black;
   @extend %subpixel;
-  .is_required &:after {
+  .is_required &:before {
     content: '*';
     display: inline;
     font-size: $form-label-font-size + 2px;
@@ -144,9 +144,3 @@ $form-tip-color: #999;
     margin-right: 12px;
   }
 }
-
-
-// 水平排列：
-// 由於在手機版時，表單不適合使用水平排列，
-// 也無法確認在某個版本時，表單的排版就變成水平排列，
-// 所以表單水平排列，就由 partial 的部分在來控制。

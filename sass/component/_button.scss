@@ -14,8 +14,8 @@
   @extend %subpixel;
   display: inline-block;
   margin-bottom: 0;
-  padding: 5px 23px;
-  border: 1px solid $color-gray-light;
+  padding: 4px 22px;
+  border: 2px solid $color-gray-light;
   @include border-radius($global-radius-width);
   @include adjust-font-size-to(15px);
   background-image: none;
@@ -27,6 +27,7 @@
   @include user-select(none);
   color: $color-black;
   background-color: $color-gray-light;
+  @include transition(border .25s, background-color .25s);
   &:hover {
     text-decoration: none;
     color: $color-black;
@@ -44,12 +45,12 @@
 // Modifiers
 .btn_primary {
   color: white;
-  border-color: $color-black;
-  background-color: $color-black;
+  border-color: #55B36C;
+  background-color: #55B36C;
   &:hover {
     color: white;
-    border-color: $color-black;
-    background-color: $color-black;
+    border-color: lighten(#55B36C, 7.5%);
+    background-color: lighten(#55B36C, 7.5%);
   }
   &:disabled , &.is-disabled {
     cursor: default;
