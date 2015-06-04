@@ -1,0 +1,100 @@
+.form-row {
+  @include adjust-font-size-to(15px);
+}
+
+.form-row + .form-row {
+  @include leader(0.5);
+}
+
+.form-content.action {
+  @include leader();
+}
+
+.form-control {
+  @include reset-box-model;
+  @include box-sizing(border-box);
+  width: 100%;
+  min-height: 36px;
+  padding: 4px 9px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  @include appearance(none);
+  @include transition(border-color .25s);
+
+  &:focus {
+    outline: none;
+    border-color: #55B36C;
+  }
+}
+
+.form-select {
+  position: relative;
+  @include box-sizing(border-box);
+  height: 36px;
+  line-height: 32px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  @include transition(border-color .25s);
+
+  &:focus {
+    outline: none;
+    border-color: #55B36C;
+  }
+}
+
+.group-radio, .group-checkbox {
+  label {
+    margin-right: 12px;
+  }
+  input[type="radio"], input[type="checkbox"] {
+    margin-right: 3px;
+  }
+}
+
+.form-tip, .form-error {
+  padding: 6px 9px;
+  border-radius: 5px;
+  p {
+    margin: 0;
+    @include adjust-font-size-to(15px);
+  }
+}
+
+.form-tip {
+  background-color: rgba(#A7CD6B, .15);
+}
+
+.form-error {
+  color: #E65E50;
+  font-weight: bold;
+  background-color: rgba(#E65E50, .15);
+}
+
+.form-error + .form-tip {
+  @include leader(.5);
+}
+
+
+@include at-breakpoint($pad) {
+  .form-row {
+    @include pie-clearfix;
+  }
+  .form-label {
+    @include box-sizing(border-box);
+    float: left;
+    width: 25%;
+    padding-right: 12px;
+    line-height: 36px;
+    text-align: right;
+  }
+  .form-content {
+    @include box-sizing(border-box);
+    float: right;
+    width: 75%;
+    line-height: 36px;
+  }
+  .form-control {
+    width: auto;
+  }
+}
