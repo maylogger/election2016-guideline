@@ -1,0 +1,29 @@
+.member {
+  @include box-sizing(border-box);
+  text-align: center;
+  @include trailer(1);
+}
+
+.member-avatar {
+  display: inline-block;
+  @include trailer(0.25);
+  width: 80%;
+  height: 0;
+  padding-top: 80%;
+  @include border-radius(50%);
+  background-color: #ddd;
+}
+
+.member-name {
+  @include adjust-font-size-to(20px);
+  color: black;
+  font-weight: bold;
+  @include trailer(0.5);
+}
+
+.member-intro {
+  @include adjust-font-size-to(16px);
+  white-space: normal;
+  text-align: left;
+}
+
