@@ -1,0 +1,46 @@
+.block {
+  padding: rhythm(4) 0;
+  text-align: center;
+  background-color: #f3f3f3;
+  @include background-size(cover);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.block-title {
+  @include adjust-font-size-to(48px, 2);
+  @include trailer(0.25);
+}
+
+.block-subtitle {
+  @include adjust-font-size-to(24px, 1);
+  color: #aaa;
+}
+
+.block-text {
+  @include leader(1);
+  @include adjust-font-size-to(18px);
+  max-width: 440px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #777;
+}
+
+.block_black-bg {
+  background-color: #444;
+  .block-title {
+    color: white;
+  }
+
+  .block-subtitle {
+    color: #999;
+  }
+
+  .block-text {
+    color: #ddd;
+  }
+}
+
+.block_large {
+  padding: rhythm(8) 0;
+}

@@ -1,0 +1,25 @@
+.page-header {
+  padding: rhythm(4) 0;
+  text-align: center;
+  background-color: #f3f3f3;
+  @include background-size(cover);
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
+
+.page-header-title {
+  @include adjust-font-size-to(48px, 2);
+}
+
+
+.page-header_black-bg {
+  background-color: #444;
+  .page-header-title {
+    color: white;
+  }
+}
+
+.page-header_large {
+  padding: rhythm(8) 0;
+}
