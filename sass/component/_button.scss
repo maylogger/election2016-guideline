@@ -45,12 +45,12 @@
 // Modifiers
 .btn_primary {
   color: white;
-  border-color: #55B36C;
-  background-color: #55B36C;
+  border-color: #50B584;
+  background-color: #50B584;
   &:hover {
     color: white;
-    border-color: lighten(#55B36C, 7.5%);
-    background-color: lighten(#55B36C, 7.5%);
+    border-color: lighten(#50B584, 7.5%);
+    background-color: lighten(#50B584, 7.5%);
   }
   &:disabled , &.is-disabled {
     cursor: default;
