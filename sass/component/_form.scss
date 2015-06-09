@@ -10,6 +10,21 @@
   @include leader();
 }
 
+.form-label {
+  display: block;
+  @include trailer(0.125);
+  color: black;
+  @extend %subpixel;
+  .is_required &:before {
+    content: '*';
+    display: inline;
+    margin-right: 3px;
+    font-size: 16px;
+    line-height: 1;
+    color: #c00;
+  }
+}
+
 .form-control {
   @include reset-box-model;
   @include box-sizing(border-box);
@@ -62,10 +77,12 @@
 }
 
 .form-tip {
+  @include box-sizing(border-box);
   background-color: rgba(#A7CD6B, .15);
 }
 
 .form-error {
+  @include box-sizing(border-box);
   color: #E65E50;
   font-weight: bold;
   background-color: rgba(#E65E50, .15);
