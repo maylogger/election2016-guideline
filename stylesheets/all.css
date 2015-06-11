@@ -724,7 +724,7 @@ body { background-color: #183840; position: relative; }
 @media (min-width: 960px) { .site-info { padding: 24px 0; text-align: center; }
   .site-info .site-name { font-size: 18px; line-height: 24px; color: white; font-weight: bold; }
   .site-info .site-url { font-size: 15px; line-height: 24px; color: rgba(255, 255, 255, 0.3); } }
-.site-info a { color: inherit; text-decoration: inherit; cursor: inherit; }
+.site-info a { color: inherit; text-decoration: inherit; cursor: inherit; cursor: pointer; }
 .site-info a:active, .site-info a:focus { outline: none; }
 
 .footer { position: relative; padding: 72px 0 360px; background-color: #183840; color: #ddd; text-align: center; overflow: hidden; background-image: radial-gradient(circle at 85% 85%, #2b6f69 5%, #183840 60%); }
