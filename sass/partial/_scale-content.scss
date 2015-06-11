@@ -1,60 +1,76 @@
 .scale-content {
 
   @include at-breakpoint($desktop) {
-
+    $delay: .5;
+    $delay-sec: $delay + s;
     .page {
       position: relative;
       z-index: 105;
-      @include transition(transform 0.5s);
+      @include transition(transform .2s);
     }
 
     .page-inner {
       @include transform-origin(center, bottom);
-      @include transition(transform 0.5s, border-radius 0.25s);
-      @include box-shadow(0px 0px 50px rgba(black, 0.5));
+      @include transition(transform .2s, border-radius .2s);
+      @include box-shadow(0 0 50px rgba(black, .5));
     }
 
     .site-info {
       display: block;
-      @include opacity(0.25);
-      @include transition(opacity 1s);
+      @include opacity(0);
+      @include transition(opacity .3s);
     }
 
     .footer {
+      padding: 0;
       position: fixed;
-      top: 20%;
+      top: 180px;
       left: 0;
       right: 0;
       bottom: 0;
       z-index: 100;
-      @include opacity(0);
-      @include transition(opacity 0.75s 0.2s);
 
       .site {
-        @include transition(transform 0.5s);
+        @include opacity(0);
         @include transform(scale(0));
+        @include transition(transform .3s, opacity .3s);
       }
-
-      @for $i from 1 through 3 {
-        .site:nth-child(#{$i}) {
-          @include transition-delay((0.1 * $i)+s);
-        }
+      .site-meta {
+        @include opacity(0);
+        @include transition(opacity .3s);
       }
 
     }
 
     &.is-scaled {
+      .page {
+        @include transition(transform .5s);
+      }
       .page-inner {
-        @include transform(scale(0.5));
-        @include border-radius(0 0 20px 20px);
+        @include transform(scale(.5));
+        @include border-radius(0 0 10px 10px);
+        @include transition(transform .5s, border-radius .5s);
       }
       .site-info {
         @include opacity(1);
+        @include transition(opacity 1s 1s);
       }
       .footer {
-        @include opacity(1);
         .site {
+          @include opacity(1);
           @include transform(scale(1));
+        }
+      }
+      @for $i from 1 through 3 {
+        .site:nth-child(#{$i}) {
+          $site-delay: .1 * $i + $delay + s;
+          @include transition(transform .5s $site-delay, opacity .5s $site-delay);
+          .site-meta {
+            $site-meta-delay: .1 * $i + 1 + s;
+            @include opacity(1);
+            @include transition(opacity 1s $site-meta-delay);
+          }
+
         }
       }
     }

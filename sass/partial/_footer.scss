@@ -22,11 +22,12 @@
   }
 
   .site-thumb {
+    @include box-sizing(border-box);
     @include trailer(0.5);
     padding-top: 100%;
     width: 100%;
     height: 0;
-    @include border-radius(20px);
+    @include border-radius(10px);
     background-color: rgba(black, 0.25);
     img {
       display: block;
@@ -34,19 +35,29 @@
     }
   }
 
+  .site_coming-soon {
+    .site-thumb {
+      border: 1px dashed rgba(white,.2);
+      background: none;
+    }
+  }
+
   .site-title {
-    @include adjust-font-size-to(18px);
+    @include adjust-font-size-to(15px, 2/3);
     color: white;
     font-weight: bold;
   }
 
   .site-subtitle {
-    @include adjust-font-size-to(15px);
-    color: #aaa;
+    @include adjust-font-size-to(13px);
+    color: rgba(white,.3);
   }
 
   .site_coming-soon {
     @include opacity(0.5);
+    .site-title {
+      color: rgba(white,.5);
+    }
   }
 
   @include at-breakpoint($pad) {
