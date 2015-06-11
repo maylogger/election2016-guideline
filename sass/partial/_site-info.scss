@@ -15,7 +15,7 @@
 
     .site-url {
       @include adjust-font-size-to(15px);
-      color: #aaa;
+      color: rgba(white,.3);
     }
 
   }

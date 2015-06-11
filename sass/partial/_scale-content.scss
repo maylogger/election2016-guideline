@@ -22,18 +22,45 @@
     }
 
     .footer {
-      padding: 180px 0 0;
-      position: fixed;
-      top: 0px;
+      padding: 0;
+      position: absolute;
       left: 0;
       right: 0;
       bottom: 0;
+      height: 100vh;
+      min-height: 600px;
       z-index: 100;
 
+      &:before {
+        left: -10%;
+        bottom: -10%;
+        width: 50%;
+        padding-top: 50%;
+        height: 0;
+        @include transform( translate(-100%, 100%) rotate(-120deg) );
+        @include transition(.3s);
+        max-width: 700px;
+        background-position: left bottom;
+      }
+
+      .footer-logo {
+        position: absolute;
+        right: 128px;
+        bottom: 128px;
+        @include opacity(0);
+        @include transition(.3s);
+      }
+      .copy {
+        right: 130px;
+        bottom: 72px;
+      }
       .site {
         @include opacity(0);
         @include transform(scale(0));
         @include transition(transform .3s, opacity .3s);
+      }
+      .site-list {
+        padding-top: 180px;
       }
       .site-meta {
         @include opacity(0);
@@ -56,30 +83,23 @@
         @include transition(opacity 1s 1s);
       }
       .footer {
-        &:before {
-          left: -5%;
-          bottom: -10%;
-          width: 50%;
-          padding-top: 50%;
-          height: 0;
-        }
-
-        .footer-logo {
-          position: absolute;
-          right: 48px;
-          bottom: 48px;
-          z-index: 50;
-          @include replace-text-with-svg(footer/footer-title);
-        }
         .site {
           @include opacity(1);
           @include transform(scale(1));
+        }
+        &:before {
+          @include transform( translate(0,0) rotate(0deg) );
+          @include transition(10s .5s);
+        }
+        .footer-logo {
+          @include opacity(1);
+          @include transition(3s 1s);
         }
       }
       @for $i from 1 through 3 {
         .site:nth-child(#{$i}) {
           $site-delay: .1 * $i + $delay + s;
-          @include transition(transform .5s $site-delay, opacity .5s $site-delay);
+          @include transition(transform .5s $site-delay);
           .site-meta {
             $site-meta-delay: .1 * $i + 1 + s;
             @include opacity(1);
@@ -90,6 +110,20 @@
       }
     }
 
+  }
+  @media (min-width: 1025px) and (max-height: 768px) {
+    .footer .footer-logo {
+      display: none;
+    }
+    .footer .site-list {
+      padding-top: 250px;
+    }
+    .footer .copy {
+      bottom: 32px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
 
 }
