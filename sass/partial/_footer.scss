@@ -1,15 +1,36 @@
 .footer {
-  padding: rhythm(3) 0 rhythm(1);
+  @include pie-clearfix;
+  position: relative;
+  padding: rhythm(3) 0 rhythm(6);
   background-color: #183840;
   color: #ddd;
   text-align: center;
   overflow: hidden;
-  // background-image: radial-gradient(100% 100% at 100% 100% , #2B6F69 11%, #183840 79%);
+  background-image: radial-gradient(circle at 75% 75% , #2B6F69 5%, #183840 60%);
+  &:before {
+    content: '';
+    position: absolute;
+    left: -50px;
+    bottom: -50px;
+    height: 0;
+    @include opacity(0.25);
+    @include replace-text-with-svg(footer/footer-vi);
+  }
+
+  .footer-logo {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 50;
+    @include replace-text-with-svg(footer/footer-title);
+  }
 
   .site-list {
     margin: 0 auto;
     padding: 0 rhythm(1);
     max-width: 240px;
+    position: relative;
+    z-index: 50;
   }
 
   .site {
@@ -21,35 +42,61 @@
     }
   }
 
-  .site-thumb {
+  .site-logo {
     @include box-sizing(border-box);
-    @include trailer(0.5);
+    @include trailer(0.75);
     padding-top: 100%;
     width: 100%;
     height: 0;
+    @include background-size(contain);
+    background-position: center;
+    background-repeat: no-repeat;
     @include border-radius(10px);
-    background-color: rgba(black, 0.25);
+    background-color: white;
     img {
       display: block;
       @include trailer(0);
     }
   }
 
+  .site-logo_donate {
+    background-image: url('/images/footer/logo-donate-256.png');
+    background-image: none, url('/images/footer/logo-donate-256.svg');
+  }
+
+  .site-logo_melody {
+    background-image: url('/images/footer/logo-melody-256.png');
+    background-image: none, url('/images/footer/logo-melody-256.svg');
+  }
+
+  .site-logo_hope {
+    background-image: url('/images/footer/logo-hope-256.png');
+    background-image: none, url('/images/footer/logo-hope-256.svg');
+  }
+
+  .site-logo_main {
+    background-image: url('/images/footer/logo-main-256.png');
+    background-image: none, url('/images/footer/logo-main-256.svg');
+  }
+
+
   .site_coming-soon {
-    .site-thumb {
+    .site-logo {
+      background-color: rgba(black, 0.25);
       border: 1px dashed rgba(white,.2);
       background: none;
     }
   }
 
   .site-title {
-    @include adjust-font-size-to(15px, 2/3);
+    @include adjust-font-size-to(18px, 3/4);
     color: white;
     font-weight: bold;
+    @include trailer(0.125);
   }
 
   .site-subtitle {
-    @include adjust-font-size-to(13px);
+    @include adjust-font-size-to(15px);
     color: rgba(white,.3);
   }
 
@@ -62,7 +109,7 @@
 
   @include at-breakpoint($pad) {
 
-    padding: rhythm(4) 0 rhythm(2);
+    padding: rhythm(4) 0 rhythm(10);
 
     .footer-inner {
       margin: 0 auto;
@@ -87,6 +134,7 @@
   }
 
   @include at-breakpoint($desktop) {
+
     .site {
       padding: 0 24px;
     }

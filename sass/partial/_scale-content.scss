@@ -22,9 +22,9 @@
     }
 
     .footer {
-      padding: 0;
+      padding: 180px 0 0;
       position: fixed;
-      top: 180px;
+      top: 0px;
       left: 0;
       right: 0;
       bottom: 0;
@@ -56,6 +56,21 @@
         @include transition(opacity 1s 1s);
       }
       .footer {
+        &:before {
+          left: -5%;
+          bottom: -10%;
+          width: 50%;
+          padding-top: 50%;
+          height: 0;
+        }
+
+        .footer-logo {
+          position: absolute;
+          right: 48px;
+          bottom: 48px;
+          z-index: 50;
+          @include replace-text-with-svg(footer/footer-title);
+        }
         .site {
           @include opacity(1);
           @include transform(scale(1));
