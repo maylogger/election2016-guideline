@@ -15,12 +15,10 @@ if( !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navig
         var x = -($(window).height() * 0.8) + 'px';
         page.css('transform', 'translateY('+x+')');
         body.addClass('is-scaled');
-        console.log("in");
       }
     } else {
       body.removeClass('is-scaled');
       page.css('transform', 'translateY(0)');
-      console.log("out");
     }
   });
 

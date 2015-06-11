@@ -132,7 +132,7 @@ body { font-family: "Helvetica Neue", "Helvetica", "Arial", "STHeitiTC-Light","M
 
 code { font-family: "Anonymous Pro", "Inconsolata", "Consolas Regular Font", "Monaco", "Courier New" ,MonoSpace; font-weight: 400; font-style: normal; }
 
-.btn { -webkit-font-smoothing: subpixel-antialiased; }
+.btn, .form-label { -webkit-font-smoothing: subpixel-antialiased; }
 
 body { -webkit-text-size-adjust: 100%; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; color: #444444; }
 
@@ -219,6 +219,9 @@ body { background-color: #183840; }
 
 .form-content.action { margin-top: 24px; }
 
+.form-label { display: block; margin-bottom: 3px; color: black; }
+.is_required .form-label:before { content: '*'; display: inline; margin-right: 3px; font-size: 16px; line-height: 1; color: #c00; }
+
 .form-control { margin: 0; padding: 0; border: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; min-height: 36px; padding: 4px 9px; border: 2px solid #ddd; border-radius: 5px; -webkit-appearance: none; -moz-appearance: none; appearance: none; -webkit-transition: border-color 0.25s; -moz-transition: border-color 0.25s; -o-transition: border-color 0.25s; transition: border-color 0.25s; }
 .form-control:focus { outline: none; border-color: #50B584; }
 
@@ -231,9 +234,9 @@ body { background-color: #183840; }
 .form-tip, .form-error { padding: 6px 9px; border-radius: 5px; }
 .form-tip p, .form-error p { margin: 0; font-size: 15px; line-height: 24px; }
 
-.form-tip { background-color: rgba(167, 205, 107, 0.15); }
+.form-tip { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; background-color: rgba(167, 205, 107, 0.15); }
 
-.form-error { color: #E65E50; font-weight: bold; background-color: rgba(230, 94, 80, 0.15); }
+.form-error { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; color: #E65E50; font-weight: bold; background-color: rgba(230, 94, 80, 0.15); }
 
 .form-error + .form-tip { margin-top: 12px; }
 
