@@ -724,6 +724,8 @@ body { background-color: #183840; }
 @media (min-width: 960px) { .site-info { padding: 24px 0; text-align: center; }
   .site-info .site-name { font-size: 18px; line-height: 24px; color: white; font-weight: bold; }
   .site-info .site-url { font-size: 15px; line-height: 24px; color: #aaa; } }
+.site-info a { color: inherit; text-decoration: inherit; cursor: inherit; }
+.site-info a:active, .site-info a:focus { outline: none; }
 
 .footer { padding: 72px 0 24px; background-color: #183840; color: #ddd; text-align: center; overflow: hidden; }
 .footer .site-list { margin: 0 auto; padding: 0 24px; max-width: 240px; }

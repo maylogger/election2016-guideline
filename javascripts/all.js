@@ -28,6 +28,7 @@ if(Modernizr.csstransitions && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMob
     } else {
       body.addClass('scale-content');
       push_page();
+      $("html, body").scrollTop(doc.height());
     }
   });
 
@@ -42,4 +43,7 @@ if(Modernizr.csstransitions && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMob
 
 }
 
-
+$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
