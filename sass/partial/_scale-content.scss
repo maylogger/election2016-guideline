@@ -6,12 +6,12 @@
     .page {
       position: relative;
       z-index: 105;
-      @include transition(transform .2s);
+      @include transition(transform .2s .5s);
     }
 
     .page-inner {
       @include transform-origin(center, bottom);
-      @include transition(transform .2s, border-radius .2s);
+      @include transition(transform .2s .5s, border-radius .2s .5s);
       @include box-shadow(0 0 50px rgba(black, .5));
     }
 
