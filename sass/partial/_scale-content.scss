@@ -1,17 +1,20 @@
 .scale-content {
 
+  position: relative;
+
   @include at-breakpoint($desktop) {
     $delay: .5;
     $delay-sec: $delay + s;
     .page {
       position: relative;
       z-index: 105;
-      @include transition(transform .2s .5s);
+      @include transition(transform .2s .3s);
     }
 
     .page-inner {
+      min-height: 110vh; // 避免頁面內容不足以撐滿一個畫面的時候，導致 footer 無法正常使用的問題。
       @include transform-origin(center, bottom);
-      @include transition(transform .2s .5s, border-radius .2s .5s);
+      @include transition(transform .2s .3s, border-radius .2s .3s);
       @include box-shadow(0 0 50px rgba(black, .5));
     }
 
@@ -27,6 +30,7 @@
       left: 0;
       right: 0;
       bottom: 0;
+      padding-top: 400px;
       height: 100vh;
       min-height: 600px;
       z-index: 100;
