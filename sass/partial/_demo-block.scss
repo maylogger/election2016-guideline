@@ -20,6 +20,29 @@
     @include pie-clearfix;
   }
 
+  .demo-icon-list {
+    @include pie-clearfix;
+    @include reset-box-model;
+    list-style: none;
+    margin: 0 auto;
+    li {
+      display: inline-block;
+      margin: 0 6px 12px;
+      text-align: center;
+    }
+    [class^="icon-map-"], [class*=" icon-map-"] {
+      background-color: #444;
+      width: 72px;
+      height: 72px;
+      display: block;
+    }
+    .icon-name {
+      display: block;
+      @include adjust-font-size-to(15px);
+    }
+
+  }
+
   .color-item {
     @include box-sizing(border-box);
     @include trailer(0.5);
