@@ -1,8 +1,8 @@
 $text-color            : $text-black;
 $text-color-muted      : $text-gray;
 
-$link-color       : $color-blue-dark;
-$link-color-hover : darken($color-blue-dark, 20%);
+$link-color       : $color-primary;
+$link-color-hover : darken($color-primary, 10%);
 
 // hr & divider
 $divider-color          : $color-gray-light;
