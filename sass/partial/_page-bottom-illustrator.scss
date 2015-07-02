@@ -1,0 +1,52 @@
+.page-bottom-illustrator {
+
+  position: relative;
+  padding-bottom: 264px;
+  overflow: hidden;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 48px;
+    width: 100%;
+    height: 0;
+    padding-bottom: 192px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    @include background-size(cover);
+  }
+
+  &:before {
+    left: -24px;
+    background-image: url('/images/page-bottom-illustrator/left.png');
+    background-image: none, url('/images/page-bottom-illustrator/left.svg');
+    background-position: left bottom;
+  }
+
+  @include at-breakpoint($pad) {
+    padding-bottom: 296px;
+    &:before, &:after {
+      padding-bottom: 240px;
+      @include background-size(contain);
+    }
+    &:after {
+      right: -24px;
+      background-image: url('/images/page-bottom-illustrator/right.png');
+      background-image: none, url('/images/page-bottom-illustrator/right.svg');
+      background-position: right bottom;
+    }
+  }
+
+  @include at-breakpoint($desktop) {
+    padding-top: 200px;
+    padding-bottom: 30%;
+
+    &:before, &:after {
+      padding-bottom: 20%;
+      margin-bottom: 10%;
+    }
+
+  }
+
+}
