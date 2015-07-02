@@ -27,7 +27,7 @@
   @include user-select(none);
   color: $color-black;
   background-color: $color-gray-white;
-  @include transition(border .25s, background-color .25s);
+  @include transition(border .25s, background-color .25s, color .25s);
   &:hover {
     text-decoration: none;
     color: $color-black;
@@ -82,7 +82,8 @@
   background-color: transparent;
   &:hover {
     border-color: $color-black;
-    background-color: transparent;
+    background-color: $color-black;
+    color: white;
   }
   &:disabled , &.is-disabled {
     color: $color-gray;
@@ -96,9 +97,9 @@
   color: $color-primary;
   background-color: transparent;
   &:hover {
-    border-color: darken($color-primary, 5%);
-    color: darken($color-primary, 5%);
-    background-color: transparent;
+    border-color: $color-primary;
+    background-color: $color-primary;
+    color: white;
   }
   &:disabled , &.is-disabled {
     color: $color-gray;
