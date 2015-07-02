@@ -1,51 +1,90 @@
 .card {
-  display: block;
   @include trailer(1);
-  text-align: center;
+  display: block;
+  text-align: left;
+  @extend %subpixel;
+  @include border-radius(10px);
   &:hover {
     text-decoration: none;
   }
 }
+
 .card-header {
   position: relative;
   padding-top: 100%;
+  @include trailer(0.5);
   width: 100%;
   height: 0;
-  background-color: #777;
-  @include border-radius(10px 10px 0 0);
+  background-color: #444;
+  @include border-radius(10px);
+  @include background-size(cover);
+  background-repeat: no-repeat;
+  background-position: center;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(black, 0.125);
+    @include border-radius(10px);
+    @include background-image(linear-gradient(to bottom, rgba(black, 0), rgba(black, 0.6)));
+    @include transition(background-color 0.25s);
+  }
+  .card:hover &:before {
+    background-color: rgba(black, 0.5);
+  }
 }
+
 
 .card-header-inner {
   position: absolute;
-  top: 50%;
   left: 0;
   right: 0;
+  bottom: 0;
   padding: 24px;
-  @include translateY(-50%);
+}
+
+.card-city {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 12px;
+}
+
+.card-city-icon {
+  float: right;
+  width: 60px;
+  height: 60px;
+}
+.card-city-name {
+  clear: both;
+  margin-right: 8px;
+  text-align: right;
+  font-size: 13px;
+  line-height: 1;
+  color: white;
 }
 
 .card-title {
-  @include trailer(0.125);
-  @include adjust-font-size-to(20px);
+  @include adjust-font-size-to(24px, 1.25);
   color: white;
-  font-weight: bold;
+  @include trailer(0.35);
 }
 
-.card-subtitle {
-  @include adjust-font-size-to(16px);
-  color: rgba(white, 0.5);
+.card-category {
+  @include adjust-font-size-to(15px, 3/4);
+  color: white;
 }
 
 .card-content {
-  padding: 24px;
-  background-color: #f3f3f3;
-  @include border-radius(0 0 10px 10px);
+  padding: 0 24px;
 }
 
-.card-text {
-  @include adjust-font-size-to(16px);
-  color: #444;
-  height: 72px;
-  overflow: hidden;
-  text-align: left;
+.card-subtitle {
+  @include adjust-font-size-to(18px);
+  color: black;
+  @include trailer(0.5);
+  text-align: center;
 }

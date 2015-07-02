@@ -19,10 +19,10 @@
           a.card href="#"
             .card-header
               .card-header-inner
-                .card-title= zh_lorem_words(5 + rand(10))
-                .card-subtitle= zh_lorem_words(5 + rand(10))
+                h3.card-title.auto-break-text= zh_lorem_words(5 + rand(5))
+                .card-category.filter_category= zh_lorem_words(4)
             .card-content
-              .card-text= zh_lorem_paragraph
+              h4.card-subtitle.auto-break-text= zh_lorem_sentence
 
   h3.demo-block-subtitle Member
   .demo-block-content
