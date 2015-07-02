@@ -4,12 +4,12 @@
   h3.demo-block-subtitle Pagination
   .demo-block-content
     ul.pagination
-      li: span.is-disable &laquo;
-      li: a.is-current href="#" 1
+      li: span.pagination-item.is-disable &laquo;
+      li: a.pagination-item.is-current href="#" 1
       - (rand(5)+2).times do |i|
-        li: a href="#"= ( i+2 )
-      li: span.is-disabled …
-      li: a href="#" &raquo;
+        li: a.pagination-item href="#"= ( i+2 )
+      li: span.pagination-item.is-disabled …
+      li: a.pagination-item href="#" &raquo;
 
   h3.demo-block-subtitle Card
   .demo-block-content
