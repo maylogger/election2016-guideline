@@ -16,15 +16,36 @@
 
 @for $x from 1 through 4 {
   @for $y from 1 through 4 {
-    @for $z from 1 through 6 {
+    @for $z from 1 through 4 {
 
       .grid_#{$x}-#{$y}-#{$z} .grid-item {
         width: 100% / $x;
+        @if $x > 1 {
+          &:nth-child(#{$x}n+1) {
+            clear: left;
+          }
+        }
         @include at-breakpoint($pad) {
           width: 100% / $y;
+          @if $y > 1 {
+            &:nth-child(#{$x}n+1) {
+              clear: none;
+            }
+            &:nth-child(#{$y}n+1) {
+              clear: left;
+            }
+          }
         }
         @include at-breakpoint($desktop) {
           width: 100% / $z;
+          @if $z > 1 {
+            &:nth-child(#{$y}n+1) {
+              clear: none;
+            }
+            &:nth-child(#{$z}n+1) {
+              clear: left;
+            }
+          }
         }
       }
 
