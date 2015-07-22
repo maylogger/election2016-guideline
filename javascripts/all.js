@@ -16,8 +16,8 @@ if(Modernizr.csstransitions && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMob
   }
   function reset_page(){
     page.css({
-      "-webkit-transform": 'translate(0,0)',
-      "transform": 'translate(0,0)'
+      "-webkit-transform": 'none',
+      "transform": 'none'
     });
     body.removeClass('is-scaled');
   }
