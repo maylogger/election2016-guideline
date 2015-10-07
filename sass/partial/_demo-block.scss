@@ -31,7 +31,7 @@
       text-align: center;
     }
     [class^="icon-map-"], [class*=" icon-map-"] {
-      background-color: #444;
+      // background-color: #444;
       width: 72px;
       height: 72px;
       display: block;
@@ -40,7 +40,6 @@
       display: block;
       @include adjust-font-size-to(15px);
     }
-
   }
 
   .color-item {
@@ -71,6 +70,12 @@
     }
     .demo-block-subtitle {
       @include adjust-font-size-to(24px, 1);
+    }
+    .demo-icon-list {
+      [class^="icon-map-"], [class*=" icon-map-"] {
+        width: 128px;
+        height: 128px;
+      }
     }
     .color-code {
       @include adjust-font-size-to(15px);
