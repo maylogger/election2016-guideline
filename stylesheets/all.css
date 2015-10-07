@@ -199,47 +199,47 @@ body { background-color: #183840; position: relative; }
 
 [class^="icon-map-"], [class*=" icon-map-"] { display: block; text-indent: 110%; white-space: nowrap; overflow: hidden; background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; background-repeat: no-repeat; width: 128px; height: 128px; }
 
-.icon-map-changhua { background-image: url('/images/map/changhua.png?1435830696'); background-image: none, url('/images/map/changhua.svg?1435830696'); }
+.icon-map-changhua { background-image: url('/images/map-black/changhua.png?1444209128'); background-image: none, url('/images/map-black/changhua.svg?1444209128'); }
 
-.icon-map-chiayi { background-image: url('/images/map/chiayi.png?1435830696'); background-image: none, url('/images/map/chiayi.svg?1435830696'); }
+.icon-map-chiayi { background-image: url('/images/map-black/chiayi.png?1444209128'); background-image: none, url('/images/map-black/chiayi.svg?1444209128'); }
 
-.icon-map-chiayicity { background-image: url('/images/map/chiayicity.png?1435830696'); background-image: none, url('/images/map/chiayicity.svg?1435830696'); }
+.icon-map-chiayicity { background-image: url('/images/map-black/chiayicity.png?1444209128'); background-image: none, url('/images/map-black/chiayicity.svg?1444209128'); }
 
-.icon-map-hsinchu { background-image: url('/images/map/hsinchu.png?1435830696'); background-image: none, url('/images/map/hsinchu.svg?1435830696'); }
+.icon-map-hsinchu { background-image: url('/images/map-black/hsinchu.png?1444209128'); background-image: none, url('/images/map-black/hsinchu.svg?1444209128'); }
 
-.icon-map-hsinchucity { background-image: url('/images/map/hsinchucity.png?1435830696'); background-image: none, url('/images/map/hsinchucity.svg?1435830696'); }
+.icon-map-hsinchucity { background-image: url('/images/map-black/hsinchucity.png?1444209128'); background-image: none, url('/images/map-black/hsinchucity.svg?1444209128'); }
 
-.icon-map-hualien { background-image: url('/images/map/hualien.png?1435830696'); background-image: none, url('/images/map/hualien.svg?1435830696'); }
+.icon-map-hualien { background-image: url('/images/map-black/hualien.png?1444209128'); background-image: none, url('/images/map-black/hualien.svg?1444209128'); }
 
-.icon-map-kaohsiung { background-image: url('/images/map/kaohsiung.png?1435830696'); background-image: none, url('/images/map/kaohsiung.svg?1435830696'); }
+.icon-map-kaohsiung { background-image: url('/images/map-black/kaohsiung.png?1444209128'); background-image: none, url('/images/map-black/kaohsiung.svg?1444209128'); }
 
-.icon-map-keelungcity { background-image: url('/images/map/keelungcity.png?1435830696'); background-image: none, url('/images/map/keelungcity.svg?1435830696'); }
+.icon-map-keelungcity { background-image: url('/images/map-black/keelungcity.png?1444209128'); background-image: none, url('/images/map-black/keelungcity.svg?1444209128'); }
 
-.icon-map-miaoli { background-image: url('/images/map/miaoli.png?1435830696'); background-image: none, url('/images/map/miaoli.svg?1435830696'); }
+.icon-map-miaoli { background-image: url('/images/map-black/miaoli.png?1444209128'); background-image: none, url('/images/map-black/miaoli.svg?1444209128'); }
 
-.icon-map-nantou { background-image: url('/images/map/nantou.png?1435830696'); background-image: none, url('/images/map/nantou.svg?1435830696'); }
+.icon-map-nantou { background-image: url('/images/map-black/nantou.png?1444209128'); background-image: none, url('/images/map-black/nantou.svg?1444209128'); }
 
-.icon-map-newtaipeicity { background-image: url('/images/map/newtaipeicity.png?1435830696'); background-image: none, url('/images/map/newtaipeicity.svg?1435830696'); }
+.icon-map-newtaipeicity { background-image: url('/images/map-black/newtaipeicity.png?1444209127'); background-image: none, url('/images/map-black/newtaipeicity.svg?1444209127'); }
 
-.icon-map-penghu { background-image: url('/images/map/penghu.png?1435830696'); background-image: none, url('/images/map/penghu.svg?1435830696'); }
+.icon-map-penghu { background-image: url('/images/map-black/penghu.png?1444209128'); background-image: none, url('/images/map-black/penghu.svg?1444209128'); }
 
-.icon-map-pingtung { background-image: url('/images/map/pingtung.png?1435830696'); background-image: none, url('/images/map/pingtung.svg?1435830696'); }
+.icon-map-pingtung { background-image: url('/images/map-black/pingtung.png?1444209128'); background-image: none, url('/images/map-black/pingtung.svg?1444209128'); }
 
-.icon-map-taichung { background-image: url('/images/map/taichung.png?1435830696'); background-image: none, url('/images/map/taichung.svg?1435830696'); }
+.icon-map-taichung { background-image: url('/images/map-black/taichung.png?1444209128'); background-image: none, url('/images/map-black/taichung.svg?1444209128'); }
 
-.icon-map-tainan { background-image: url('/images/map/tainan.png?1435830696'); background-image: none, url('/images/map/tainan.svg?1435830696'); }
+.icon-map-tainan { background-image: url('/images/map-black/tainan.png?1444209128'); background-image: none, url('/images/map-black/tainan.svg?1444209128'); }
 
-.icon-map-taipei { background-image: url('/images/map/taipei.png?1435830696'); background-image: none, url('/images/map/taipei.svg?1435830696'); }
+.icon-map-taipei { background-image: url('/images/map-black/taipei.png?1444209127'); background-image: none, url('/images/map-black/taipei.svg?1444209127'); }
 
-.icon-map-taitung { background-image: url('/images/map/taitung.png?1435830696'); background-image: none, url('/images/map/taitung.svg?1435830696'); }
+.icon-map-taitung { background-image: url('/images/map-black/taitung.png?1444209128'); background-image: none, url('/images/map-black/taitung.svg?1444209128'); }
 
-.icon-map-taiwan { background-image: url('/images/map/taiwan.png?1435830696'); background-image: none, url('/images/map/taiwan.svg?1435830696'); }
+.icon-map-taiwan { background-image: url('/images/map-black/taiwan.png?1444209128'); background-image: none, url('/images/map-black/taiwan.svg?1444209128'); }
 
-.icon-map-taoyuan { background-image: url('/images/map/taoyuan.png?1435830696'); background-image: none, url('/images/map/taoyuan.svg?1435830696'); }
+.icon-map-taoyuan { background-image: url('/images/map-black/taoyuan.png?1444209127'); background-image: none, url('/images/map-black/taoyuan.svg?1444209127'); }
 
-.icon-map-yilan { background-image: url('/images/map/yilan.png?1435830696'); background-image: none, url('/images/map/yilan.svg?1435830696'); }
+.icon-map-yilan { background-image: url('/images/map-black/yilan.png?1444209128'); background-image: none, url('/images/map-black/yilan.svg?1444209128'); }
 
-.icon-map-yunlin { background-image: url('/images/map/yunlin.png?1435830696'); background-image: none, url('/images/map/yunlin.svg?1435830696'); }
+.icon-map-yunlin { background-image: url('/images/map-black/yunlin.png?1444209128'); background-image: none, url('/images/map-black/yunlin.svg?1444209128'); }
 
 .btn { display: inline-block; margin-bottom: 0; padding: 4px 22px; border: 2px solid #f1f1f1; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; font-size: 15px; line-height: 24px; background-image: none; text-align: center; text-shadow: none; cursor: pointer; outline: none; white-space: nowrap; -webkit-user-select: none; -moz-user-select: none; user-select: none; color: #444444; background-color: #f1f1f1; -webkit-transition: border 0.25s, background-color 0.25s, color 0.25s; -moz-transition: border 0.25s, background-color 0.25s, color 0.25s; -o-transition: border 0.25s, background-color 0.25s, color 0.25s; transition: border 0.25s, background-color 0.25s, color 0.25s; }
 .btn:hover { text-decoration: none; color: #444444; border-color: #dddddd; background-color: #dddddd; }
@@ -959,7 +959,7 @@ body { background-color: #183840; position: relative; }
 .demo-block .demo-icon-list { margin: 0; padding: 0; border: 0; list-style: none; margin: 0 auto; }
 .demo-block .demo-icon-list:after { content: ""; display: table; clear: both; }
 .demo-block .demo-icon-list li { display: inline-block; margin: 0 6px 12px; text-align: center; }
-.demo-block .demo-icon-list [class^="icon-map-"], .demo-block .demo-icon-list [class*=" icon-map-"] { background-color: #444; width: 72px; height: 72px; display: block; }
+.demo-block .demo-icon-list [class^="icon-map-"], .demo-block .demo-icon-list [class*=" icon-map-"] { width: 72px; height: 72px; display: block; }
 .demo-block .demo-icon-list .icon-name { display: block; font-size: 15px; line-height: 24px; }
 .demo-block .color-item { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin-bottom: 12px; color: white; }
 .demo-block .color-item-top, .demo-block .color-item-bottom { position: relative; width: 100%; height: 96px; }
@@ -967,6 +967,7 @@ body { background-color: #183840; position: relative; }
 .demo-block .btn { margin: 0 6px 6px 0; }
 @media (min-width: 640px) { .demo-block .demo-block-title { font-size: 32px; line-height: 36px; }
   .demo-block .demo-block-subtitle { font-size: 24px; line-height: 24px; }
+  .demo-block .demo-icon-list [class^="icon-map-"], .demo-block .demo-icon-list [class*=" icon-map-"] { width: 128px; height: 128px; }
   .demo-block .color-code { font-size: 15px; line-height: 24px; } }
 
 .page-bottom-illustrator { position: relative; padding-bottom: 264px; overflow: hidden; }
