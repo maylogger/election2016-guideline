@@ -1,0 +1,14 @@
+.header {
+  @include pie-clearfix;
+  @include trailer(1);
+  .logo {
+    @include adjust-font-size-to(24px, 1);
+    @include trailer(0);
+    padding: 6px 0 6px 12px;
+    float: left;
+    a {
+      display: block;
+      @include replace-text-with-svg('logo');
+    }
+  }
+}
