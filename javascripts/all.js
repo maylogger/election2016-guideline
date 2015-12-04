@@ -58,3 +58,9 @@ $("a[href='#top']").click(function() {
   $("html, body").animate({ scrollTop: 0 }, "slow");
   return false;
 });
+
+// open menu
+$('.menu-btn, .off-canvas-mask').on('click', function () {
+  $('body').toggleClass('is-open-menu');
+  $('.menu-btn').toggleClass('is-open-menu');
+});

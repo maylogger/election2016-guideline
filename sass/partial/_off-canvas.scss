@@ -1,0 +1,50 @@
+.off-canvas {
+
+  .off-canvas-content {
+    @include transition(transform 0.5s);
+  }
+
+  .off-canvas-menu {
+    position: fixed;
+    right: -260px;
+    top: 0;
+    width: 260px;
+  }
+
+  .off-canvas-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000;
+    cursor: pointer;
+  }
+
+  &.is-open-menu {
+
+    .off-canvas-content {
+      @include translateX(-260px);
+    }
+
+    .off-canvas-mask {
+      bottom: 0;
+    }
+
+  }
+
+  @include at-breakpoint($desktop) {
+
+    &.is-open-menu {
+
+      .off-canvas-content {
+        @include transform(none);
+      }
+
+      .off-canvas-mask {
+        bottom: auto;
+      }
+    }
+
+  }
+
+}
