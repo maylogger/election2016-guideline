@@ -8,14 +8,14 @@
     float: left;
     a {
       display: block;
-      @include replace-text-with-svg('logo');
+      @include replace-text-with-svg('guideline-logo');
     }
   }
 
   .menu-btn {
     position: absolute;
     top: 14px;
-    right: 10px;
+    right: 12px;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -81,7 +81,18 @@
   //   @include reset-list-style;
   // }
 
+  @include at-breakpoint($pad) {
+
+    .menu-btn {
+      top: 26px;
+      right: 44px;
+    }
+
+  }
+
   @include at-breakpoint($desktop) {
+    border-bottom: none;
+
     .logo {
       padding: 0;
     }
