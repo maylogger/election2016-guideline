@@ -34,6 +34,12 @@
 
   @include at-breakpoint($desktop) {
 
+    .off-canvas-menu {
+      position: static;
+      width: auto;
+      right: 0;
+    }
+
     &.is-open-menu {
 
       .off-canvas-content {
