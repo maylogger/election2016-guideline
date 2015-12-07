@@ -9,6 +9,7 @@ $grid-padding   : $gutter-width;
 $phone          : $total-columns;
 $pad            : 640px 8;
 $desktop        : 960px 12;
+$wide-desktop        : 1280px 12;
 
 // page-container
 $page-container: ".container";
@@ -31,27 +32,37 @@ body {
   background-color: white;
 }
 
-#{$page-container} {
-
-  $container-style: fluid;
-  @include container;
-
-  @include at-breakpoint($pad) {
-    $grid-padding   : $gutter-width * 2;
-    @include container;
-  }
-
+.container {
+  max-width: 1280px;
   @include at-breakpoint($desktop) {
-    $container-style: magic;
-    @include set-container-width;
+    margin: 0 auto;
+    padding: 36px 48px 0;
   }
-
+  @include at-breakpoint($wide-desktop) {
+    padding: 60px 96px 0;
+  }
 }
 
+.header {
+  @include at-breakpoint($desktop) {
+    float: left;
+    padding-right: 24px;
+  }
+  @include at-breakpoint($wide-desktop) {
+    padding-right: 48px;
+  }
+}
 
 .content {
-  @include padding-trailer(1);
+  padding: 0 24px 24px;
   @include at-breakpoint($pad) {
-    @include padding-trailer(2);
+    padding: 0 48px 48px;
+  }
+  @include at-breakpoint($desktop) {
+    overflow: hidden;
+    padding: 0 0 48px 24px;
+  }
+  @include at-breakpoint($wide-desktop) {
+    padding: 0 0 48px 48px;
   }
 }

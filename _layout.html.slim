@@ -7,8 +7,9 @@ html.no-js lang="zh-TW"
   body.off-canvas
     .page
       .page-inner.off-canvas-content
-        = render "/partial/header"
-        = yield
+        .container
+          = render "/partial/header"
+          = yield
         .page-bottom-illustrator
         .off-canvas-mask
       = render "/partial/site-info"
