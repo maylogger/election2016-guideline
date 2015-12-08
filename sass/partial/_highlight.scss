@@ -14,8 +14,9 @@
   .hljs-meta-keyword,
   .hljs-doctag,
   .hljs-name {
-    font-weight: bold;
+
   }
+
 
   .hljs-built_in,
   .hljs-literal,
@@ -32,7 +33,11 @@
   .hljs-link,
   .hljs-selector-attr,
   .hljs-selector-pseudo {
-    color: #BC6060;
+    color: #A079B4;
+  }
+
+  .hljs-attr{
+    color: #A079B4;
   }
 
   .hljs-type,
@@ -43,7 +48,7 @@
   .hljs-quote,
   .hljs-template-tag,
   .hljs-deletion {
-    color: #880000;
+    color: #3E9482;
   }
 
   .hljs-title,
