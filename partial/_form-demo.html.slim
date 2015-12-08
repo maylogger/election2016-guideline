@@ -1,8 +1,8 @@
-.demo-block
+.demo-block#form
   h2.demo-block-title Form
   p.demo-block-text= zh_lorem_paragraphs(2)
 
-  h3.demo-block-subtitle Input
+  h3.demo-block-subtitle#input Input
   p.demo-block-text= zh_lorem_paragraph
   .demo-block-example
     input.form-control type="text"
@@ -10,7 +10,7 @@
     markdown:
       \<input class="form-control" type="text" />
 
-  h3.demo-block-subtitle Select
+  h3.demo-block-subtitle#select Select
   p.demo-block-text= zh_lorem_paragraph
   .demo-block-example
     select.form-select
@@ -29,7 +29,7 @@
         \<option value="其他...">其他...</option>
       \</select>
 
-  h3.demo-block-subtitle Form Groups
+  h3.demo-block-subtitle#form-groups Form Groups
   p.demo-block-text= zh_lorem_paragraph
   .demo-block-example
     .form-row.is_required
