@@ -1,6 +1,6 @@
 # Require any additional compass plugins here.
 require 'slim'
-Slim::Engine.set_default_options :pretty => true, :disable_escape => true, :format => :html5
+Slim::Engine.set_default_options :pretty => false, :disable_escape => true, :format => :html5
 
 # Set this to the root of your project when deployed:
 http_path = "/"

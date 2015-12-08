@@ -65,21 +65,70 @@
     }
   }
 
-  // .menu {
-  //   clear: both;
-  // }
+  .menu {
+    // @extend %subpixel;
+  }
 
-  // .menu-title {
+  .menu-title {
+    padding: 18px 24px;
+    @include adjust-font-size-to(18px);
+    color: white;
+  }
 
-  // }
+  .menu-list {
+    @include reset-list-style;
 
-  // .menu-list {
-  //   @include reset-list-style;
-  // }
+  }
 
-  // .menu-sub-list {
-  //   @include reset-list-style;
-  // }
+  .menu-list-item {
+
+  }
+
+  .menu-list-item-title {
+    display: block;
+    color: white;
+    padding: 8px 24px;
+    @include adjust-font-size-to(15px);
+    @include transition(background-color 0.25s);
+    &:hover {
+      text-decoration: none;
+      background-color: rgba(black, 0.2);
+    }
+    &.icon-arrow:before {
+      content: "\e902";
+      float: left;
+      display: block;
+      font-size: 16px;
+      width: 24px;
+    }
+    &.is-active {
+      background-color: rgba(black, 0.2);
+    }
+    // &.is-active.icon-arrow:before {
+    //   content: "\e901";
+    // }
+  }
+
+  .menu-sub-list {
+    @include reset-list-style;
+  }
+
+  .menu-sub-list-item {
+    a {
+      padding: 8px 24px 8px 48px;
+      display: block;
+      color: rgba(white, 0.75);
+      @include adjust-font-size-to(15px);
+      @include transition(background-color 0.25s);
+      &:hover {
+        text-decoration: none;
+        background-color: rgba(black, 0.2);
+      }
+    }
+    &.is-active a {
+      background-color: rgba(black, 0.2);
+    }
+  }
 
   @include at-breakpoint($pad) {
 
@@ -94,11 +143,54 @@
     border-bottom: none;
 
     .logo {
+      float: none;
       padding: 0;
+      @include trailer(1.5);
+      position: relative;
+      left: -4px;
     }
     .menu-btn {
       display: none;
     }
+
+    .menu-title {
+      display: none;
+    }
+
+    .menu-list-item-title {
+      padding: 8px 0;
+      color: black;
+      @include adjust-font-size-to(16px);
+      @include transition(color 0.25s);
+      &:hover {
+        color: darken($color-primary, 10%);
+        background-color: transparent;
+      }
+      &.is-active {
+        color: darken($color-primary, 10%);
+        background-color: transparent;
+      }
+    }
+
+    .menu-sub-list-item {
+      a {
+        padding: 8px 0 8px 24px;
+        display: block;
+        color: #444;
+        @include transition(color 0.25s);
+        @include adjust-font-size-to(16px);
+        &:hover {
+          color: darken($color-primary, 10%);
+          text-decoration: none;
+          background-color: transparent;
+        }
+      }
+      &.is-active a {
+        color: darken($color-primary, 10%);
+        background-color: transparent;
+      }
+    }
+
   }
 
 }
