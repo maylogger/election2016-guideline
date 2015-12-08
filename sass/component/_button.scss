@@ -107,3 +107,19 @@
     background-color: transparent;
   }
 }
+
+.btn_outline-danger {
+  border-color: $color-red;
+  color: $color-red;
+  background-color: transparent;
+  &:hover {
+    border-color: $color-red;
+    background-color: $color-red;
+    color: white;
+  }
+  &:disabled , &.is-disabled {
+    color: $color-gray;
+    border-color: $color-gray-white;
+    background-color: transparent;
+  }
+}

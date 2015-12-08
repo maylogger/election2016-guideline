@@ -1,5 +1,5 @@
 .demo-block {
-  @include padding-leader(2);
+  @include padding-leader(0.5);
   &:first-child {
     @include padding-leader(0);
   }
@@ -7,33 +7,67 @@
   .demo-block-title {
     @include trailer(0.5);
     border-bottom: 1px solid #ddd;
-    @include padding-leader(1);
     @include padding-trailer(0.5);
-    @include adjust-font-size-to(24px, 1);
+    @include adjust-font-size-to(22px, 1);
     color: black;
   }
 
   .demo-block-subtitle {
-    @include padding-leader(1);
-    @include trailer(0.5);
-    @include adjust-font-size-to(20px, 1);
+    @include padding-leader(0.5);
+    @include trailer(0.25);
+    @include adjust-font-size-to(18px, 1);
     color: black;
   }
 
   .demo-block-text {
-    @include trailer(0.5);
+    @include trailer(1);
     color: #444;
     @include adjust-font-size-to(15px);
   }
 
-  .demo-block-example {
-    border: 1px solid #ddd;
-    padding: 12px;
+  .demo-block-note {
+    @include adjust-font-size-to(13px, 3/4);
+    color: #666;
+  }
+
+  .demo-block-content {
     @include pie-clearfix;
+    @include trailer(0.5);
+  }
+
+  .demo-block-example {
+    @include leader(1);
+    border: 1px solid #ddd;
+    padding: 48px 12px 24px;
+    @include pie-clearfix;
+    position: relative;
+    &:before {
+      content: 'Example';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include adjust-font-size-to(15px);
+      padding: 6px 12px;
+      font-weight: bold;
+      color: #aaa;
+    }
   }
   .demo-block-code {
     @include pie-clearfix;
-    @include trailer(1);
+    border: 1px solid #ddd;
+    code {
+      padding: 12px;
+      line-height: 0;
+    }
+    p {
+      @include adjust-font-size-to(13px, 5/6);
+    }
+  }
+
+  .demo-block-example + .demo-block-code {
+    border-top: none;
+    @include leader(0);
   }
 
   .demo-icon-list {
@@ -45,16 +79,21 @@
       display: inline-block;
       margin: 0 6px 12px;
       text-align: center;
+      width: 128px;
+      vertical-align: top;
     }
     [class^="icon-map-"], [class*=" icon-map-"] {
-      // background-color: #444;
-      width: 72px;
-      height: 72px;
       display: block;
+      margin: 0 auto;
     }
     .icon-name {
       display: block;
       @include adjust-font-size-to(15px);
+    }
+    .icon-class {
+      display: block;
+      @include adjust-font-size-to(13px, 3/4);
+      color: #999;
     }
   }
 
@@ -81,11 +120,18 @@
   }
 
   @include at-breakpoint($pad) {
+    @include padding-leader(1);
+
     .demo-block-title {
-      @include adjust-font-size-to(32px, 1.5);
+      @include adjust-font-size-to(28px, 1.5);
     }
     .demo-block-subtitle {
-      @include adjust-font-size-to(24px, 1);
+      @include padding-leader(1);
+      @include trailer(0.5);
+      @include adjust-font-size-to(22px, 1);
+    }
+    .demo-block-text {
+      @include adjust-font-size-to(16px);
     }
     .demo-icon-list {
       [class^="icon-map-"], [class*=" icon-map-"] {
@@ -96,8 +142,6 @@
     .color-code {
       @include adjust-font-size-to(15px);
     }
-
   }
-
 
 }
