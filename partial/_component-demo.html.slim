@@ -1,46 +1,82 @@
 .demo-block
   h2.demo-block-title Component
+  p.demo-block-text= zh_lorem_paragraphs(2)
 
   h3.demo-block-subtitle Pagination
-  .demo-block-content
-    ul.pagination
-      li: span.pagination-item.is-disable &laquo;
-      li: a.pagination-item.is-current href="#" 1
-      - (rand(5)+2).times do |i|
-        li: a.pagination-item href="#"= ( i+2 )
-      li: span.pagination-item.is-disabled …
-      li: a.pagination-item href="#" &raquo;
-
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    .pagination
+      span.pagination-item.first
+        a href="" «
+      span.pagination-item.prev
+        a href="" rel="prev"  ‹
+      span.pagination-item
+        a href="" rel="prev"  1
+      span.pagination-item.current 2
+      span.pagination-item
+        a href="" rel="next"  3
+      span.pagination-item.gap ...
+      span.pagination-item.next
+        a href="" rel="next"  ›
+      span.pagination-item.last
+        a href=""  »
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<div class="pageaction">
+        \<span class="pagination-item first"><a href="">«</a></span>
+        \<span class="pagination-item prev"><a href="" rel="prev">‹</a></span>
+        \<span class="pagination-item"><a href="" rel="prev">1</a></span>
+        \<span class="pagination-item current">2</span>
+        \<span class="pagination-item"><a href="" rel="next">3</a></span>
+        \<span class="pagination-item gap">...</span>
+        \<span class="pagination-item next"><a href="" rel="next">›</a></span>
+        \<span class="pagination-item last"><a href="">»</a></span>
+      \</div>
   h3.demo-block-subtitle Card
-  .demo-block-content
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
     .grid.grid_1-2-3
-      - 6.times do
-        .grid-item
-          a.card href="#"
-            .card-header
-              .card-header-inner
-                h3.card-title.auto-break-text= zh_lorem_words(5 + rand(5))
-                .card-category.filter_category= zh_lorem_words(4)
-            .card-content
-              h4.card-subtitle.auto-break-text= zh_lorem_sentence
+      .grid-item
+        a.card href="#"
+          .card-header
+            .card-header-inner
+              h3.card-title.auto-break-text 這是一句標題文字
+              .card-category.filter_category 卡片分類
+          .card-content
+            h4.card-subtitle.auto-break-text 這是一段副標題文字
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<a class="card" href="#">
+        \<div class="card-header">
+          \<div class="card-header-inner">
+            \<h3 class="card-title">這是一句標題文字
+            \</h3>
+            \<div class="card-category filter_category">卡片分類
+            \</div>
+          \</div>
+        \</div>
+        \<div class="card-content">
+          \<h4 class="card-subtitle">這是一段副標題文字
+          \</h4>
+        \</div>
+      \</a>
+      ...
 
   h3.demo-block-subtitle Member
-  .demo-block-content
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
     .grid.grid_1-3-3
-      - 3.times do
-        .grid-item
-          .member
-            .member-avatar
-            .member-name= zh_lorem_name
-            .member-intro 最適合中國人。把我們龍頭割去！忘記他的伴侶，這是如何的決意！呢個禮拜，光明已在前頭，盲目地前進！
-
-  h3.demo-block-subtitle Page Header
-  .demo-block-content
-    a href="/page-header/" Demo
-
-  h3.demo-block-subtitle Block
-  .demo-block-content
-    a href="/block/" Demo
-
+      .grid-item
+        .member
+          .member-avatar
+          .member-name 人物名稱
+          .member-intro 但反正你是老闆嘛，幫朋友設計不收錢都被當天經地義。
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<div class="member">
+        \<div class="member-avatar"></div>
+        \<div class="member-name">人物名稱</div>
+        \<div class="member-intro">人物介紹...</div>
+      \</div>
 
 
