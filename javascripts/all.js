@@ -64,3 +64,6 @@ $('.menu-btn, .off-canvas-mask').on('click', function () {
   $('body').toggleClass('is-open-menu');
   $('.menu-btn').toggleClass('is-open-menu');
 });
+
+hljs.initHighlightingOnLoad();
+

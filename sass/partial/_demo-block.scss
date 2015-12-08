@@ -1,23 +1,39 @@
 .demo-block {
-  @include trailer(2);
+  @include padding-leader(2);
+  &:first-child {
+    @include padding-leader(0);
+  }
 
   .demo-block-title {
-    @include trailer(2);
+    @include trailer(0.5);
     border-bottom: 1px solid #ddd;
+    @include padding-leader(1);
     @include padding-trailer(0.5);
     @include adjust-font-size-to(24px, 1);
-    font-weight: bold;
+    color: black;
   }
 
   .demo-block-subtitle {
-    @include trailer(1);
+    @include padding-leader(1);
+    @include trailer(0.5);
     @include adjust-font-size-to(20px, 1);
-    font-weight: bold;
+    color: black;
   }
 
-  .demo-block-content {
-    @include trailer(2);
+  .demo-block-text {
+    @include trailer(0.5);
+    color: #444;
+    @include adjust-font-size-to(15px);
+  }
+
+  .demo-block-example {
+    border: 1px solid #ddd;
+    padding: 12px;
     @include pie-clearfix;
+  }
+  .demo-block-code {
+    @include pie-clearfix;
+    @include trailer(1);
   }
 
   .demo-icon-list {
