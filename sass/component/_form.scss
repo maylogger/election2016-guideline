@@ -45,16 +45,32 @@
 .form-select {
   position: relative;
   @include box-sizing(border-box);
+  vertical-align: top;
   height: 36px;
+  margin: 0 6px 6px 0;
+  padding: 0 30px 0 9px;
   line-height: 32px;
-  border: 2px solid #ddd;
+  border: 2px solid #dddddd;
   border-radius: 5px;
   background-color: white;
-  @include transition(border-color .25s);
-
+  background-image: image-url("down.png");
+  background-image: none, image-url("down.svg");
+  background-repeat: no-repeat;
+  background-position: right 11px;
+  @include transition(border-color 0.25s);
+  @include appearance(none);
   &:focus {
     outline: none;
-    border-color: #50B584;
+    border-color: #50b584;
+  }
+  &.tiny {
+    max-width: 60px;
+  }
+  &.small {
+    max-width: 160px;
+  }
+  .error & {
+    border-color: #e65e50;
   }
 }
 
