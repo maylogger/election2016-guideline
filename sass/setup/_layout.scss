@@ -8,7 +8,7 @@ $grid-padding   : $gutter-width;
 // add media
 $phone          : $total-columns;
 $pad            : 640px 8;
-$desktop        : 960px 12;
+$desktop        : 840px 12;
 $wide-desktop        : 1280px 12;
 
 // page-container
@@ -57,9 +57,9 @@ body {
 }
 
 .content {
-  padding: 0 16px 24px;
+  padding: 60px 16px 24px;
   @include at-breakpoint($pad) {
-    padding: 0 48px 48px;
+    padding: 84px 48px 48px;
   }
   @include at-breakpoint($desktop) {
     overflow: hidden;

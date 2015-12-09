@@ -60,7 +60,7 @@ $("a[href='#top']").click(function() {
 });
 
 // open menu
-$('.menu-btn, .off-canvas-mask, .menu-list-item-title, .menu-sub-list-item > a').on('click', function () {
+$('.menu-btn, .off-canvas-mask, .close-btn, .menu-list-item-title, .menu-sub-list-item > a').on('click', function () {
   $('body').toggleClass('is-open-menu');
   $('.menu-btn').toggleClass('is-open-menu');
 });

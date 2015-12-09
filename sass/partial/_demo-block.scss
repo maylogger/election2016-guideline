@@ -1,8 +1,6 @@
 .demo-block {
-  @include padding-leader(0.5);
-  &:first-child {
-    @include padding-leader(0);
-  }
+  @include leader(-2.5);
+  @include padding-leader(3.5);
 
   .demo-block-title {
     @include trailer(0.5);
@@ -13,7 +11,8 @@
   }
 
   .demo-block-subtitle {
-    @include padding-leader(0.5);
+    @include leader(-3.5);
+    @include padding-leader(3.5);
     @include trailer(0.25);
     @include adjust-font-size-to(18px, 1);
     color: black;
@@ -120,15 +119,17 @@
   }
 
   @include at-breakpoint($pad) {
-    @include padding-leader(1);
+    @include leader(-3);
+    @include padding-leader(4);
 
     .demo-block-title {
-      @include adjust-font-size-to(28px, 1.5);
+      @include adjust-font-size-to(24px, 1.25);
     }
     .demo-block-subtitle {
-      @include padding-leader(1);
+      @include leader(-3);
+      @include padding-leader(4);
       @include trailer(0.5);
-      @include adjust-font-size-to(22px, 1);
+      @include adjust-font-size-to(21px, 1);
     }
     .demo-block-text {
       @include adjust-font-size-to(16px);
@@ -143,5 +144,17 @@
       @include adjust-font-size-to(15px);
     }
   }
+
+  @include at-breakpoint($desktop) {
+    @include leader(-1);
+    @include padding-leader(1);
+    @include trailer(2);
+
+    .demo-block-subtitle {
+      @include leader(0);
+      @include padding-leader(1);
+    }
+  }
+
 
 }
