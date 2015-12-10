@@ -6,6 +6,10 @@
   background-color: rgba(white, 0.9);
   z-index: 1000;
 
+  .header-inner {
+    width: auto !important;
+  }
+
   .logo {
     @include adjust-font-size-to(24px, 1);
     @include trailer(0);
@@ -87,7 +91,7 @@
 
   .menu-list {
     @include reset-list-style;
-    padding-bottom: 12px;
+    padding-bottom: 24px;
   }
 
   .menu-list-item {
@@ -98,7 +102,7 @@
     position: relative;
     display: block;
     color: white;
-    padding: 8px 24px 8px;
+    padding: 6px 24px 6px;
     @include adjust-font-size-to(15px);
     @include transition(background-color 0.25s);
     &:hover {
@@ -106,7 +110,7 @@
       background-color: rgba(black, 0.2);
     }
     &.icon-arrow {
-      padding: 8px 24px 8px 48px;
+      padding: 6px 24px 6px 48px;
     }
     &.icon-arrow:before {
       content: "\e902";
@@ -121,9 +125,6 @@
     &.is-active {
       background-color: rgba(black, 0.2);
     }
-    // &.is-active.icon-arrow:before {
-    //   content: "\e901";
-    // }
   }
 
   .menu-sub-list {
@@ -149,6 +150,10 @@
 
   @include at-breakpoint($pad) {
 
+    .logo {
+      padding: 18px 36px;
+    }
+
     .menu-btn {
       top: 26px;
       right: 44px;
@@ -162,26 +167,25 @@
       padding: 30px 24px;
     }
 
-    // .menu-list-item-title {
-    //   @include adjust-font-size-to(16px);
-    // }
-
-    // .menu-sub-list-item {
-    //   @include adjust-font-size-to(16px);
-    // }
-
   }
 
   @include at-breakpoint($desktop) {
+    $header-desktop-width: 222px;
     position: static;
     border-bottom: none;
+    width: $header-desktop-width;
+
+    .header-inner {
+      left: auto !important;
+    }
 
     .logo {
       float: none;
       padding: 0;
-      @include trailer(1.5);
+      @include trailer(1);
       position: relative;
       left: -4px;
+      top: -4px;
     }
     .menu-btn, .close-btn {
       display: none;
@@ -214,9 +218,9 @@
 
     .menu-sub-list-item {
       a {
-        padding: 8px 0 8px 24px;
+        padding: 8px 0 8px 18px;
         display: block;
-        color: #444;
+        color: #777;
         @include transition(color 0.25s);
         @include adjust-font-size-to(16px);
         &:hover {
@@ -231,6 +235,32 @@
       }
     }
 
+    // 移動裝置呈現桌面版樣式時
+    // &.is-mobile {
+      // height: 1px;
+
+      // .header-inner {
+      //   position: fixed;
+      //   top: 0;
+      //   bottom: 0;
+      //   width: $header-desktop-width !important;
+      //   padding-right: 24px;
+      //   overflow: auto;
+      //   -webkit-overflow-scrolling: touch;
+      // }
+
+      // .logo {
+      //   padding-top: 32px;
+      // }
+    // }
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    // &.is-mobile {
+      // .logo {
+      //   padding-top: 60px;
+      // }
+    // }
   }
 
 }

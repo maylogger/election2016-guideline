@@ -8,7 +8,7 @@ $grid-padding   : $gutter-width;
 // add media
 $phone          : $total-columns;
 $pad            : 640px 8;
-$desktop        : 840px 12;
+$desktop        : 960px 12;
 $wide-desktop        : 1280px 12;
 
 // page-container
@@ -44,9 +44,6 @@ body {
 }
 
 .header {
-  @include at-breakpoint($pad) {
-    padding: 12px 32px;
-  }
   @include at-breakpoint($desktop) {
     float: left;
     padding: 0 24px 0 0;

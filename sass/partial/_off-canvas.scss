@@ -34,14 +34,6 @@
 
   }
 
-  // @include at-breakpoint($pad) {
-  //   .off-canvas-menu {
-  //     width: 300px;
-  //     @include translateX(300px);
-  //   }
-  // }
-
-
   @include at-breakpoint($desktop) {
 
     .off-canvas-menu {

@@ -1,4 +1,6 @@
-if(Modernizr.csstransitions && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+var is_mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+if(Modernizr.csstransitions && !is_mobile ) {
 
   var doc = $(document);
   var body = $('body');
@@ -54,16 +56,58 @@ if(Modernizr.csstransitions && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMob
 
 }
 
-$("a[href='#top']").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-  return false;
-});
-
 // open menu
 $('.menu-btn, .off-canvas-mask, .close-btn, .menu-list-item-title, .menu-sub-list-item > a').on('click', function () {
   $('body').toggleClass('is-open-menu');
   $('.menu-btn').toggleClass('is-open-menu');
 });
 
+// smooth scroll
+$('.smooth-scroll-link').smoothScroll();
+
+
+// 程式展示區塊自動上色
 hljs.initHighlightingOnLoad();
 
+// 桌面版 menu sticky
+if (!Modernizr.touchevents && !is_mobile) {
+  $('.header-inner').hcSticky({
+      top: 24,
+      bottomEnd: 100,
+      wrapperClassName: 'sidebar-sticky',
+      responsive: true,
+      offResolutions: -960,
+      stickTo: '.container',
+  });
+}
+
+// 移動裝置呈現
+// if (Modernizr.touchevents && is_mobile) {
+  // $('.header').addClass('is-mobile');
+
+  // var ScrollFix = function(elem) {
+  //   // Variables to track inputs
+  //   var startY, startTopScroll;
+
+  //   elem = elem || document.querySelector(elem);
+
+  //   // If there is no element, then do nothing
+  //   if(!elem)
+  //     return;
+
+  //   // Handle the start of interactions
+  //   elem.addEventListener('touchstart', function(event){
+  //     startY = event.touches[0].pageY;
+  //     startTopScroll = elem.scrollTop;
+
+  //     if(startTopScroll <= 0)
+  //       elem.scrollTop = 1;
+
+  //     if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+  //       elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+  //   }, false);
+  // };
+
+  // var scrollable = document.getElementById("scrollable");
+  // new ScrollFix(scrollable);
+// }
