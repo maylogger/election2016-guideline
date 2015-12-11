@@ -1,10 +1,16 @@
 .header {
   @include pie-clearfix;
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   background-color: rgba(white, 0.9);
   z-index: 1000;
+  @include transition(top 0.25s);
+
+  &.nav-up {
+    top: -60px;
+  }
 
   .header-inner {
     width: auto !important;
@@ -149,6 +155,10 @@
   }
 
   @include at-breakpoint($pad) {
+
+    &.nav-up {
+      top: -84px;
+    }
 
     .logo {
       padding: 18px 36px;
