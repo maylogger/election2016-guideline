@@ -6,13 +6,11 @@ html.no-js lang="zh-TW"
     = render "/layout_og"
   body.off-canvas
     .page
-      .page-inner.off-canvas-content
-        .container
-          = render "/partial/header"
-          = yield
-        .page-bottom-illustrator
-      = render "/partial/site-info"
-    = render "/partial/footer"
+      = render "/partial/header"
+      = yield
+        / .page-bottom-illustrator
+      / = render "/partial/site-info"
+    / = render "/partial/footer"
 
     = render "/layout_foot"
     = render "/layout_livereload"

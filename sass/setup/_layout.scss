@@ -19,20 +19,20 @@ $page-container: ".container";
 
 // ---- container setting ----
 
-body {
-  background-color: #183840;
-  position: relative;
-}
+// body {
+  // background-color: #183840;
+  // position: relative;
+// }
+
+// .page {
+  // overflow-x: hidden;
+// }
+
+// .page-inner {
+  // background-color: white;
+// }
 
 .page {
-  overflow-x: hidden;
-}
-
-.page-inner {
-  background-color: white;
-}
-
-.container {
   max-width: 1280px;
   @include at-breakpoint($desktop) {
     margin: 0 auto;
