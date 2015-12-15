@@ -6,10 +6,13 @@
   right: 0;
   background-color: rgba(white, 0.9);
   z-index: 1000;
-  @include transition(top 0.25s);
+  @include transition(opacity 0.5s, transform 0.5s);
+  @include opacity(1);
 
-  &.nav-up {
-    top: -60px;
+  &.is-hide {
+    // top: -60px;
+    @include translate3d(0, -60px, 0);
+    @include opacity(0);
   }
 
   .header-inner {
@@ -156,8 +159,8 @@
 
   @include at-breakpoint($pad) {
 
-    &.nav-up {
-      top: -84px;
+    &.is-hide {
+      @include translate3d(0, -84px, 0);
     }
 
     .logo {
@@ -184,8 +187,15 @@
     position: static;
     border-bottom: none;
     width: $header-desktop-width;
+    @include opacity(1);
+
+    &.is-hide {
+      @include transform(none);
+      @include opacity(1);
+    }
 
     .header-inner {
+      @include translate3d(0, 0, 0);
       left: auto !important;
     }
 
@@ -247,9 +257,12 @@
 
     // 移動裝置呈現桌面版樣式時
     // &.is-mobile {
+
       // height: 1px;
 
       // .header-inner {
+      //   @include transition(none);
+      //   position: fixed;
       //   position: fixed;
       //   top: 0;
       //   bottom: 0;

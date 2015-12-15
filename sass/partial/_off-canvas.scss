@@ -8,7 +8,7 @@
     width: 248px;
     overflow: auto;
     background-color: #183840;
-    @include translateX(248px);
+    @include translate3d(248px, 0, 0);
     @include transition(transform 0.5s);
     -webkit-overflow-scrolling: touch;
     z-index: 1100;

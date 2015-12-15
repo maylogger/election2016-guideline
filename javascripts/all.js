@@ -69,18 +69,6 @@ $('.smooth-scroll-link').smoothScroll();
 // 程式展示區塊自動上色
 hljs.initHighlightingOnLoad();
 
-// 桌面版 menu sticky
-if (!Modernizr.touchevents && !is_mobile) {
-  $('.header-inner').hcSticky({
-      top: 24,
-      bottomEnd: 100,
-      wrapperClassName: 'sidebar-sticky',
-      responsive: true,
-      offResolutions: -960,
-      stickTo: '.page',
-  });
-}
-
 // 移動裝置呈現
 // if (Modernizr.touchevents && is_mobile) {
   // $('.header').addClass('is-mobile');
@@ -115,38 +103,125 @@ if (!Modernizr.touchevents && !is_mobile) {
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
-var delta = 5;
+var delta = 10;
 var navbarHeight = $('.header').outerHeight();
 
 $(window).scroll(function(event){
-    didScroll = true;
+  didScroll = true;
 });
 
 setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
+  if (didScroll) {
+    hasScrolled();
+    didScroll = false;
+  }
 }, 250);
 
 function hasScrolled() {
-    var st = $(this).scrollTop();
+  var st = $(this).scrollTop();
+  var touch_bottom = $(document).height() - $(window).height() - 120;
 
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
+  // Make sure they scroll more than delta
+  if(Math.abs(lastScrollTop - st) <= delta)
+    return;
 
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        $('.header').removeClass('nav-down').addClass('nav-up');
-    } else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
-            $('.header').removeClass('nav-up').addClass('nav-down');
-        }
+  // If they scrolled down and are past the navbar, add class .nav-up.
+  // This is necessary so you never see what is "behind" the navbar.
+  if (st > lastScrollTop && st > navbarHeight){
+    // Scroll Down
+    $('.header, .back-to-top').removeClass('is-active').addClass('is-hide');
+    $('body').removeClass('is-open-menu');
+
+    // 當頁面接近底部的動作
+    if ( st > touch_bottom ) {
+      $('.header, .back-to-top').removeClass('is-hide').addClass('is-active');
+      $('body').removeClass('is-open-menu');
     }
+  } else {
+    // Scroll Up
+    if(st + $(window).height() < $(document).height()) {
+      $('.header, .back-to-top').removeClass('is-hide').addClass('is-active');
+      $('body').removeClass('is-open-menu');
+    }
+  }
+  // 當捲動還沒超出 menu 高度的時候
+  if (st < navbarHeight) {
+    $('.back-to-top').removeClass('is-active');
+  }
+  // 當滾到底部
 
-    lastScrollTop = st;
+  lastScrollTop = st;
 }
+
+// 桌面版 menu sticky
+if (!Modernizr.touchevents && !is_mobile) {
+  $('.header-inner').hcSticky({
+      top: 24,
+      bottomEnd: 100,
+      noContainer: true,
+      responsive: true,
+      offResolutions: -960,
+      stickTo: '.page',
+  });
+}
+
+// mobile版 menu sticky
+// if (Modernizr.touchevents && is_mobile) {
+  // var menu_offset_top = navbarHeight - $(window).height();
+  // var touch_bottom = $(document).height() - $(window).height() - 120;
+  // $('.header').css({
+  //   'height': navbarHeight
+  // })
+  // $(window).on('scroll', function(){
+  //   var st = $(this).scrollTop();
+
+  //   if ( menu_offset_top < 0 ) {
+  //     $('.header-inner').css({
+  //       'position': 'fixed',
+  //       'top': 36
+  //     })
+  //   } else if ( st >= menu_offset_top + 36 ) {
+  //     $('.header-inner').css({
+  //       'position': 'fixed',
+  //       'top': -menu_offset_top
+  //     })
+  //     if (st >= touch_bottom ){
+  //       $('.header-inner').css({
+  //         'position': 'absolute',
+  //         'top': touch_bottom - menu_offset_top
+  //       })
+  //     }
+  //   } else if (st < menu_offset_top + 36) {
+  //     $('.header-inner').css({
+  //       'position': 'static',
+  //     })
+  //   }
+
+  // })
+  // $('.header-inner').hcSticky({
+  //   innerSticker: '.menu',
+  //   bottomEnd: 100,
+  //   wrapperClassName: 'sidebar-sticky',
+  //   responsive: true,
+  //   offResolutions: -960,
+  //   stickTo: '.page',
+  //   followScroll: false,
+  // });
+
+  // $('.header').addClass('is-mobile');
+  // $(window).on('scroll', function(){
+  //   var st = $(this).scrollTop();
+  //   if (st >= menu_offset_top) {
+  //     st = menu_offset_top;
+  //   }
+  //   $('.header-inner').css({
+  //     "-webkit-transform": 'translate(0,'+ (-st + 'px') +')',
+  //     "transform": 'translate(0,'+ (-st + 'px') +')'
+  //   });
+  // });
+
+  // page.css({
+  //   "-webkit-transform": 'translate(0,'+ (st + 'px') +')',
+  //   "transform": 'translate(0,'+ (st + 'px') +')'
+  // });
+// }
