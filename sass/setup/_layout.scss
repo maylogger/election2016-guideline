@@ -33,7 +33,7 @@ $page-container: ".container";
 // }
 
 .page {
-  max-width: 1280px;
+  max-width: 1120px;
   @include at-breakpoint($desktop) {
     margin: 0 auto;
     padding: 36px 48px 0;
