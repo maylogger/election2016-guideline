@@ -54,15 +54,15 @@ $page-container: ".container";
 }
 
 .content {
-  padding: 60px 16px 24px;
+  padding: 60px 16px 72px;
   @include at-breakpoint($pad) {
-    padding: 84px 48px 48px;
+    padding: 84px 48px 72px;
   }
   @include at-breakpoint($desktop) {
     overflow: hidden;
-    padding: 0 0 48px 24px;
+    padding: 0 0 48px 72px;
   }
   @include at-breakpoint($wide-desktop) {
-    padding: 0 0 48px 48px;
+    padding: 0 0 48px 72px;
   }
 }

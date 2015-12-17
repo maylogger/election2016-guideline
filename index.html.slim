@@ -2,30 +2,13 @@
   = render "/partial/guideline-summary"
   = render "/partial/principle"
   = render "/partial/color-demo"
-
-  .demo-block#logo
-    h2.demo-block-title 標誌與文字排列
-
-  .demo-block#web-icon
-    h2.demo-block-title 網站圖示
-    p.demo-block-text 代表這次系列網站的圖示
-    .demo-block-example.grid.grid_2-4-4
-      .grid-item
-        .site-logo.site-logo_main
-        .site-name 競選官網
-      .grid-item
-        .site-logo.site-logo_donate
-        .site-name 小額捐款
-      .grid-item
-        .site-logo.site-logo_melody
-        .site-name 台灣美樂蒂
-      .grid-item
-        .site-logo.site-logo_hope
-        .site-name 在地希望
-    p.demo-block-text
-      a href="" download="download" 網站圖示下載
-
+  = render "/partial/logo-demo"
+  = render "/partial/website-icon"
   = render "/partial/icon-demo"
   = render "/partial/ui-demo"
   = render "/partial/partial-demo"
 
+  .demo-block
+    hr
+    h3.demo-block-subtitle 有任何設計上的問題？
+    p.demo-block-text 如果對這份設計規範有任何意見，請聯絡 <a href="http://fb.com/unfoldgroup/">unfold group 展開集合</a>

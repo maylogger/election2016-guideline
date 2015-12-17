@@ -50,6 +50,10 @@
       @include box-sizing(border-box);
       width: 100%;
     }
+    img {
+      display: block;
+      margin: 0 auto rhythm(1);
+    }
     // border: 1px solid #ddd;
     // padding: 48px 12px 24px;
     // @include pie-clearfix;
@@ -179,6 +183,7 @@
   //   padding-top: 50%;
   // }
   .rectangle-gradient {
+    @include trailer(1);
     padding-top: 50%;
     background-color: #50B584;
     @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
