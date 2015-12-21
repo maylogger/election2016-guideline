@@ -36,7 +36,7 @@ $page-container: ".container";
   max-width: 1120px;
   @include at-breakpoint($desktop) {
     margin: 0 auto;
-    padding: 36px 48px 0;
+    padding: 40px 48px 0;
   }
   @include at-breakpoint($wide-desktop) {
     padding: 60px 96px 0;
@@ -60,9 +60,9 @@ $page-container: ".container";
   }
   @include at-breakpoint($desktop) {
     overflow: hidden;
-    padding: 0 0 48px 72px;
+    padding: 0 0 48px 24px;
   }
   @include at-breakpoint($wide-desktop) {
-    padding: 0 0 48px 72px;
+    padding: 0 0 48px 36px;
   }
 }

@@ -117,7 +117,7 @@
     position: relative;
     display: block;
     color: white;
-    padding: 6px 24px 6px;
+    padding: 12px 24px;
     @include adjust-font-size-to(15px);
     @include transition(background-color 0.25s);
     &:hover {
@@ -172,7 +172,7 @@
     }
 
     .logo {
-      padding: 18px 36px;
+      padding: 18px 44px;
     }
 
     .menu-btn {
