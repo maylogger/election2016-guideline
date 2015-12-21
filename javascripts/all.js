@@ -15,7 +15,7 @@ hljs.initHighlightingOnLoad();
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
-var delta = 24;
+var delta = 120;
 var navbarHeight = $('.header-inner').outerHeight();
 $(window).resize(function(){
   navbarHeight = $('.header-inner').outerHeight();
@@ -143,3 +143,30 @@ if (Modernizr.touchevents && is_mobile) {
   }
 
 }
+
+
+// scrollfix
+var ScrollFix = function(elem) {
+  // Variables to track inputs
+  var startY, startTopScroll;
+
+  elem = elem || document.querySelector(elem);
+
+  // If there is no element, then do nothing
+  if(!elem)
+    return;
+
+  // Handle the start of interactions
+  elem.addEventListener('touchstart', function(event){
+    startY = event.touches[0].pageY;
+    startTopScroll = elem.scrollTop;
+
+    if(startTopScroll <= 0)
+      elem.scrollTop = 1;
+
+    if(startTopScroll + elem.offsetHeight >= elem.scrollHeight)
+      elem.scrollTop = elem.scrollHeight - elem.offsetHeight - 1;
+  }, false);
+};
+var scrollable = document.getElementById("scrollable");
+new ScrollFix(scrollable);
