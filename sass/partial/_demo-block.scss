@@ -53,6 +53,7 @@
     }
     .btn {
       display: block;
+      width: 100%;
     }
     input, select {
       @include box-sizing(border-box);
