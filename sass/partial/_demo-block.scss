@@ -6,7 +6,8 @@
     @include trailer(0.5);
     border-bottom: 1px solid #ddd;
     @include padding-trailer(0.5);
-    @include adjust-font-size-to(22px, 1);
+    // @include adjust-font-size-to(22px, 1);
+    @include adjust-font-size-to(24px, 1.25);
     color: black;
   }
 
@@ -16,6 +17,7 @@
     @include trailer(0.25);
     @include adjust-font-size-to(18px, 1);
     color: black;
+    font-weight: bold;
   }
 
   .demo-block-text {
@@ -36,7 +38,10 @@
 
   .demo-block-example {
     @include leader(1);
+    @include trailer(1);
     @include pie-clearfix;
+    background-color: $highlight-block-bg-color;
+    padding: 24px 24px 0 24px;
     &.grid {
       @include leader(0);
     }
@@ -52,8 +57,11 @@
     }
     img {
       display: block;
-      margin: 0 auto rhythm(1);
     }
+    > *:last-child {
+      @include trailer(1);
+    }
+
     // border: 1px solid #ddd;
     // padding: 48px 12px 24px;
     // @include pie-clearfix;
@@ -128,6 +136,7 @@
     text-align: center;
     @include adjust-font-size-to(15px);
     color: #444;
+    @include trailer(0.5);
   }
 
   .demo-icon-list {
@@ -184,7 +193,7 @@
   // }
   .rectangle-gradient {
     @include trailer(1);
-    padding-top: 50%;
+    padding-top: 40%;
     background-color: #50B584;
     @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
   }
@@ -219,13 +228,13 @@
     @include padding-leader(4);
 
     .demo-block-title {
-      @include adjust-font-size-to(24px, 1.25);
+      // @include adjust-font-size-to(24px, 1.25);
     }
     .demo-block-subtitle {
       @include leader(-3);
       @include padding-leader(4);
       @include trailer(0.5);
-      @include adjust-font-size-to(21px, 1);
+      // @include adjust-font-size-to(21px, 1);
     }
     .demo-block-text {
       @include adjust-font-size-to(16px);
@@ -242,6 +251,13 @@
     }
     .color-code {
       @include adjust-font-size-to(15px);
+    }
+
+    .demo-block-example {
+      padding: 24px 24px 0 24px;
+      > *:last-child {
+        @include trailer(1);
+      }
     }
 
     // .ui-demo {

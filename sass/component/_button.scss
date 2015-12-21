@@ -15,7 +15,7 @@
   display: inline-block;
   margin-bottom: 0;
   padding: 4px 22px;
-  border: 2px solid $color-gray-white;
+  border: 2px solid $color-gray-light;
   @include border-radius($global-radius-width);
   @include adjust-font-size-to(15px);
   background-image: none;
@@ -26,7 +26,7 @@
   @include nowrap;
   @include user-select(none);
   color: $color-black;
-  background-color: $color-gray-white;
+  background-color: $color-gray-light;
   @include transition(border .25s, background-color .25s, color .25s);
   &:hover {
     text-decoration: none;
@@ -37,8 +37,8 @@
   &:disabled , &.is-disabled {
     cursor: default;
     color: $color-gray;
-    border-color: $color-gray-white;
-    background-color: $color-gray-white;
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
   }
 }
 
@@ -55,8 +55,8 @@
   &:disabled , &.is-disabled {
     cursor: default;
     color: $color-gray;
-    border-color: $color-gray-white;
-    background-color: $color-gray-white;
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
   }
 }
 
@@ -72,8 +72,8 @@
   &:disabled , &.is-disabled {
     cursor: default;
     color: $color-gray;
-    border-color: $color-gray-white;
-    background-color: $color-gray-white;
+    border-color: $color-gray-light;
+    background-color: $color-gray-light;
   }
 }
 
@@ -87,7 +87,7 @@
   }
   &:disabled , &.is-disabled {
     color: $color-gray;
-    border-color: $color-gray-white;
+    border-color: $color-gray-light;
     background-color: transparent;
   }
 }
@@ -103,7 +103,7 @@
   }
   &:disabled , &.is-disabled {
     color: $color-gray;
-    border-color: $color-gray-white;
+    border-color: $color-gray-light;
     background-color: transparent;
   }
 }
@@ -119,7 +119,7 @@
   }
   &:disabled , &.is-disabled {
     color: $color-gray;
-    border-color: $color-gray-white;
+    border-color: $color-gray-light;
     background-color: transparent;
   }
 }
