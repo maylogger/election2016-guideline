@@ -6,7 +6,6 @@
     @include trailer(0.5);
     border-bottom: 1px solid #ddd;
     @include padding-trailer(0.5);
-    // @include adjust-font-size-to(22px, 1);
     @include adjust-font-size-to(24px, 1.25);
     color: black;
   }
@@ -18,6 +17,10 @@
     @include adjust-font-size-to(18px, 1);
     color: black;
     font-weight: bold;
+  }
+
+  .demo-block-title + .demo-block-subtitle {
+    @include padding-leader(4);
   }
 
   .demo-block-text {
@@ -61,40 +64,7 @@
     > *:last-child {
       @include trailer(1);
     }
-
-    // border: 1px solid #ddd;
-    // padding: 48px 12px 24px;
-    // @include pie-clearfix;
-    // position: relative;
-    // &:before {
-    //   content: 'Example';
-    //   display: block;
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   @include adjust-font-size-to(15px);
-    //   padding: 6px 12px;
-    //   font-weight: bold;
-    //   color: #aaa;
-    // }
   }
-  // .demo-block-code {
-  //   @include pie-clearfix;
-  //   border: 1px solid #ddd;
-  //   code {
-  //     padding: 12px;
-  //     line-height: 0;
-  //   }
-  //   p {
-  //     @include adjust-font-size-to(13px, 5/6);
-  //   }
-  // }
-
-  // .demo-block-example + .demo-block-code {
-  //   border-top: none;
-  //   @include leader(0);
-  // }
-
   .site-logo {
     @include box-sizing(border-box);
     padding-top: 100%;
@@ -227,15 +197,15 @@
     @include leader(-3);
     @include padding-leader(4);
 
-    .demo-block-title {
-      // @include adjust-font-size-to(24px, 1.25);
-    }
     .demo-block-subtitle {
       @include leader(-3);
-      @include padding-leader(4);
-      @include trailer(0.5);
-      // @include adjust-font-size-to(21px, 1);
+      @include padding-leader(3.5);
     }
+
+    .demo-block-title + .demo-block-subtitle {
+      @include padding-leader(3.5);
+    }
+
     .demo-block-text {
       @include adjust-font-size-to(16px);
     }
@@ -279,8 +249,17 @@
 
     .demo-block-subtitle {
       @include leader(0);
-      @include padding-leader(1);
+      @include padding-leader(0.5);
     }
+
+    .demo-block-title + .demo-block-subtitle {
+      @include padding-leader(0.5);
+    }
+
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    // @include trailer(2.5);
   }
 
 
