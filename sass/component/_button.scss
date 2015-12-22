@@ -31,8 +31,8 @@
   &:hover {
     text-decoration: none;
     color: $color-black;
-    border-color: $color-gray-light;
-    background-color: $color-gray-light;
+    border-color: darken($color-gray-light, 5%);
+    background-color: darken($color-gray-light, 5%);
   }
   &:disabled , &.is-disabled {
     cursor: default;
