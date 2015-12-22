@@ -35,26 +35,24 @@
   z-index: 500;
   left: 50%;
   bottom: 24px;
-  @include box-shadow(0px 0px 3px rgba(black, 0.3));
+  @include box-shadow(0px 0px 5px rgba(black, 0.15));
   @include border-radius(24px);
   padding: 6px 24px;
   @include adjust-font-size-to(15px, 1);
   font-weight: bold;
   text-align: center;
-  @include opacity(0);
-  @include transition(opacity 0.5s, transform 0.5s);
+  @include transition(transform 0.5s);
   @include translate3d(-50%, 72px, 0);
-  background-color: $color-primary;
-  color: white;
+  background-color: rgba(white, 0.9);
+  color: $color-primary;
   &:hover {
     text-decoration: none;
-    color: white;
+    color: $color-primary;
   }
   &.is-hide {
     @include translate3d(-50%, 72px, 0);
   }
   &.is-active {
     @include translate3d(-50%, 0, 0);
-    @include opacity(0.9);
   }
 }
