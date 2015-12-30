@@ -1,4 +1,6 @@
 .grid {
+  @include pie-clearfix;
+
   margin: 0 rhythm(-0.25);
   @include at-breakpoint($pad) {
     margin: 0 rhythm(-0.5);

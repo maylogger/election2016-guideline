@@ -1,0 +1,127 @@
+.demo-block#basic-ui
+  h2.demo-block-title 基礎使用者介面
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    .grid.grid_1-4-4
+      .grid-item
+        button.btn 一般按鈕
+      .grid-item
+        button.btn.btn_primary 閱讀更多
+      .grid-item
+        button.btn.btn_danger onclick="alert('叫你不要按還按？我喜歡')" 不要按
+      .grid-item
+        button.btn.is-disabled 暫停開放
+    .grid.grid_1-2-2
+      .grid-item
+        input.form-control type="text" placeholder="請輸入文字"
+      .grid-item
+        select.form-select
+          option value="" disabled="disabled" selected="selected" 請選擇你的身份
+          option value="路過的鄉民" 路過的鄉民
+          option value="火星入侵者" 火星入侵者
+          option value="Taiwan NO.1" Taiwan NO.1
+          option value="其他..." 其他...
+    .grid
+      .pagination
+        span.pagination-item.first
+          a href="" «
+        span.pagination-item.prev
+          a href="" rel="prev"  ‹
+        span.pagination-item
+          a href="" rel="prev"  1
+        span.pagination-item.current 2
+        span.pagination-item
+          a href="" rel="next"  3
+        span.pagination-item.gap ...
+        span.pagination-item.next
+          a href="" rel="next"  ›
+        span.pagination-item.last
+          a href=""  »
+    / .grid-item
+    /   a.btn.btn_outline href="#" 一般按鈕
+    / .grid-item
+    /   a.btn.btn_outline-primary href="#" 閱讀更多
+    / .grid-item
+    /   a.btn.btn_outline-danger href="#" 自爆按鈕
+    / .grid-item
+    /   a.btn.btn_outline.is-disabled href="#" 暫停開放
+
+
+  / h3.demo-block-subtitle#pagination Pagination
+  / p.demo-block-text= zh_lorem_paragraph
+  / .demo-block-example
+  /   .pagination
+  /     span.pagination-item.first
+  /       a href="" «
+  /     span.pagination-item.prev
+  /       a href="" rel="prev"  ‹
+  /     span.pagination-item
+  /       a href="" rel="prev"  1
+  /     span.pagination-item.current 2
+  /     span.pagination-item
+  /       a href="" rel="next"  3
+  /     span.pagination-item.gap ...
+  /     span.pagination-item.next
+  /       a href="" rel="next"  ›
+  /     span.pagination-item.last
+  /       a href=""  »
+  / pre.html.demo-block-code.highlight: code
+  /   markdown:
+  /     \<div class="pageaction">
+  /       \<span class="pagination-item first"><a href="">«</a></span>
+  /       \<span class="pagination-item prev"><a href="" rel="prev">‹</a></span>
+  /       \<span class="pagination-item"><a href="" rel="prev">1</a></span>
+  /       \<span class="pagination-item current">2</span>
+  /       \<span class="pagination-item"><a href="" rel="next">3</a></span>
+  /       \<span class="pagination-item gap">...</span>
+  /       \<span class="pagination-item next"><a href="" rel="next">›</a></span>
+  /       \<span class="pagination-item last"><a href="">»</a></span>
+  /     \</div>
+  / h3.demo-block-subtitle#card Card
+  / p.demo-block-text= zh_lorem_paragraph
+  / .demo-block-example
+  /   .grid.grid_1-2-3
+  /     .grid-item
+  /       a.card href="#"
+  /         .card-header
+  /           .card-header-inner
+  /             h3.card-title.auto-break-text 這是一句標題文字
+  /             .card-category.filter_category 卡片分類
+  /         .card-content
+  /           h4.card-subtitle.auto-break-text 這是一段副標題文字
+  / pre.html.demo-block-code.highlight: code
+  /   markdown:
+  /     \<a class="card" href="#">
+  /       \<div class="card-header">
+  /         \<div class="card-header-inner">
+  /           \<h3 class="card-title">這是一句標題文字
+  /           \</h3>
+  /           \<div class="card-category filter_category">卡片分類
+  /           \</div>
+  /         \</div>
+  /       \</div>
+  /       \<div class="card-content">
+  /         \<h4 class="card-subtitle">這是一段副標題文字
+  /         \</h4>
+  /       \</div>
+  /     \</a>
+  /     ...
+
+  / h3.demo-block-subtitle#member Member
+  / p.demo-block-text= zh_lorem_paragraph
+  / .demo-block-example
+  /   .grid.grid_1-3-3
+  /     .grid-item
+  /       .member
+  /         .member-avatar
+  /         .member-name 人物名稱
+  /         .member-intro 但反正你是老闆嘛，幫朋友設計不收錢都被當天經地義。
+  / pre.html.demo-block-code.highlight: code
+  /   markdown:
+  /     \<div class="member">
+  /       \<div class="member-avatar"></div>
+  /       \<div class="member-name">人物名稱</div>
+  /       \<div class="member-intro">人物介紹...</div>
+  /     \</div>
+
+
