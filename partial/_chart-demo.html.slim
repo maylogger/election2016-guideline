@@ -1,10 +1,28 @@
 .demo-block#chart
   h2.demo-block-title 圖表
-  p.demo-block-text 這是一段測試文字... 這是一段測試文字... 這是一段測試文字...
-  h3.demo-block-subtitle 圖表副標題
-  .demo-block-example
-    img src="http://placehold.it/900x450"
-  h3.demo-block-subtitle 圖表副標題
-  p.demo-block-text 這是一段測試文字... 這是一段測試文字... 這是一段測試文字...
-  .demo-block-example
-    img src="http://placehold.it/900x450"
+  p.demo-block-text 包含進場畫面的圖表，使用向量方式生成，支持跨裝置瀏覽，由<a href="http://muyueh.com/">李慕約公司</a>設計、GPL v2 開源釋出。（<a href="https://github.com/sheethub/2016electionchart"> github 原始碼 </a>）
+
+  h3.demo-block-subtitle 原力佈局 (Force Layout)
+  p.demo-block-text 原力佈局 (Force Layout)，適合拿來做為「人口統計分佈」的圖表，背後使用撞擊測試演算法，來模擬粒子互動的物理限制
+  div.demo-block-example
+    div.chart-force
+    span(style="float:right; color:grey;").
+     資料來源：<a href="http://www.hakka.gov.tw/np.asp?ctNode=1893"> 客委會 客語使用情況調查101-102</a>
+
+  h3.demo-block-subtitle 甜甜圈圖
+  p.demo-block-text 有進場畫面的甜甜圈圖 (Donut Chart)，適合做比例的比較
+  div.demo-block-example(style="height: 300px; width: 100%;")
+    div#donut1(style="height: 300px; width: 300px; float: left;")
+    div#donut2(style="height: 300px; width: 300px; float: left;")
+    div#donut3(style="height: 300px; width: 300px; float: left;")
+
+  div _
+  h3.demo-block-subtitle 直條圖
+  p.demo-block-text 有進場畫面的直條圖 (Bar Chart)，適合做跨項目的比較
+  div.demo-block-example
+    div.chart-bar
+
+  h3.demo-block-subtitle 折線圖
+  p.demo-block-text 有進場畫面的折線圖 (Line Chart)，適合做跨時間的比較
+  div.demo-block-example
+    div.chart-line
