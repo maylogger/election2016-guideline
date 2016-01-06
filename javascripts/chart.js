@@ -154,10 +154,10 @@ donutChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 100,
-    left: 50,
-    right: 50,
-    bottom: 50
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
   };
   chrt.w = 500 - chrt.margin.left - chrt.margin.right;
   chrt.h = 500 - chrt.margin.top - chrt.margin.bottom;
@@ -304,10 +304,10 @@ forceChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 10,
-    left: 10,
-    right: 20,
-    bottom: 20
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
   };
   chrt.w = 800 - chrt.margin.left - chrt.margin.right;
   chrt.h = 400 - chrt.margin.top - chrt.margin.bottom;

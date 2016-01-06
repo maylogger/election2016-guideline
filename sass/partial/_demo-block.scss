@@ -48,6 +48,9 @@
     &.grid {
       @include leader(0);
     }
+    .grid {
+      margin-bottom: 0 !important;
+    }
     .grid-item {
       @include trailer(1);
     }
@@ -66,6 +69,13 @@
       @include trailer(1);
     }
   }
+
+  .demo-block-example-tip {
+    @include margin-leader(-0.75);
+    @include trailer(1);
+    @include adjust-font-size-to(13px, 3/4);
+  }
+
   .site-logo {
     @include box-sizing(border-box);
     padding-top: 100%;
