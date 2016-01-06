@@ -6,17 +6,19 @@
   p.demo-block-text 原力佈局 (Force Layout)，適合拿來做為「人口統計分佈」的圖表，背後使用撞擊測試演算法，來模擬粒子互動的物理限制
   div.demo-block-example
     div.chart-force
-    span(style="float:right; color:grey;").
-     資料來源：<a href="http://www.hakka.gov.tw/np.asp?ctNode=1893"> 客委會 客語使用情況調查101-102</a>
+    p.demo-block-text style="text-align: center;": small 資料來源：<a href="http://www.hakka.gov.tw/np.asp?ctNode=1893">客委會 - 客語使用情況調查101-102</a>
 
   h3.demo-block-subtitle 甜甜圈圖
   p.demo-block-text 有進場畫面的甜甜圈圖 (Donut Chart)，適合做比例的比較
-  div.demo-block-example(style="height: 300px; width: 100%;")
-    div#donut1(style="height: 300px; width: 300px; float: left;")
-    div#donut2(style="height: 300px; width: 300px; float: left;")
-    div#donut3(style="height: 300px; width: 300px; float: left;")
+  .demo-block-example
+    .grid.grid_1-3-3
+      .grid-item
+        div#donut1(style="")
+      .grid-item
+        div#donut2(style="")
+      .grid-item
+        div#donut3(style="")
 
-  div _
   h3.demo-block-subtitle 直條圖
   p.demo-block-text 有進場畫面的直條圖 (Bar Chart)，適合做跨項目的比較
   div.demo-block-example
