@@ -33,24 +33,25 @@ $page-container: ".container";
 // }
 
 .page {
-  max-width: 1120px;
-  @include at-breakpoint($desktop) {
-    margin: 0 auto;
-    padding: 40px 48px 0;
-  }
-  @include at-breakpoint($wide-desktop) {
-    padding: 60px 96px 0;
-  }
+  max-width: 960px;
+  margin: 0 auto;
+  // @include at-breakpoint($desktop) {
+  //   margin: 0 auto;
+  //   padding: 40px 48px 0;
+  // }
+  // @include at-breakpoint($wide-desktop) {
+  //   padding: 60px 96px 0;
+  // }
 }
 
 .header {
-  @include at-breakpoint($desktop) {
-    float: left;
-    padding: 0 24px 0 0;
-  }
-  @include at-breakpoint($wide-desktop) {
-    padding-right: 48px;
-  }
+  // @include at-breakpoint($desktop) {
+  //   float: left;
+  //   padding: 0 24px 0 0;
+  // }
+  // @include at-breakpoint($wide-desktop) {
+  //   padding-right: 48px;
+  // }
 }
 
 .content {
@@ -58,11 +59,11 @@ $page-container: ".container";
   @include at-breakpoint($pad) {
     padding: 84px 48px 160px;
   }
-  @include at-breakpoint($desktop) {
-    overflow: hidden;
-    padding: 0 0 160px 24px;
-  }
-  @include at-breakpoint($wide-desktop) {
-    padding: 0 0 160px 36px;
-  }
+  // @include at-breakpoint($desktop) {
+  //   overflow: hidden;
+  //   padding: 0 0 160px 24px;
+  // }
+  // @include at-breakpoint($wide-desktop) {
+  //   padding: 0 0 160px 36px;
+  // }
 }

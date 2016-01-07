@@ -69,80 +69,80 @@ function hasScrolled() {
 }
 
 // 桌面版 menu sticky
-if (!Modernizr.touchevents && !is_mobile) {
-  $('.header-inner').hcSticky({
-      top: 24,
-      bottomEnd: 100,
-      noContainer: true,
-      responsive: true,
-      offResolutions: -960,
-      stickTo: '.page',
-  });
-}
+// if (!Modernizr.touchevents && !is_mobile) {
+//   $('.header-inner').hcSticky({
+//       top: 24,
+//       bottomEnd: 100,
+//       noContainer: true,
+//       responsive: true,
+//       offResolutions: -960,
+//       stickTo: '.page',
+//   });
+// }
 
 // 手機版 menu sticky
-if (Modernizr.touchevents && is_mobile) {
+// if (Modernizr.touchevents && is_mobile) {
 
-  var menu_height = $('.header-inner').outerHeight();
-  var touch_top = 36;
-  var touch_buttom = 120;
-  var menu_offset_top = menu_height - $(window).height();
-  var touch_bottom = $(document).height() - $(window).height() - touch_buttom;
+//   var menu_height = $('.header-inner').outerHeight();
+//   var touch_top = 36;
+//   var touch_buttom = 120;
+//   var menu_offset_top = menu_height - $(window).height();
+//   var touch_bottom = $(document).height() - $(window).height() - touch_buttom;
 
-  $(window).resize(function(){
-    menu_height = $('.header-inner').outerHeight();
-    touch_top = 36;
-    touch_buttom = 120;
-    menu_offset_top = menu_height - $(window).height();
-    touch_bottom = $(document).height() - $(window).height() - touch_buttom;
-    mobileMenuSticky();
-  })
+//   $(window).resize(function(){
+//     menu_height = $('.header-inner').outerHeight();
+//     touch_top = 36;
+//     touch_buttom = 120;
+//     menu_offset_top = menu_height - $(window).height();
+//     touch_bottom = $(document).height() - $(window).height() - touch_buttom;
+//     mobileMenuSticky();
+//   })
 
-  $(window).on('scroll', function(){
-    mobileMenuSticky();
-  })
+//   $(window).on('scroll', function(){
+//     mobileMenuSticky();
+//   })
 
-  function mobileMenuSticky() {
+//   function mobileMenuSticky() {
 
-    if ( $(window).width() > 960 ) {
-      $('.header').css({
-        'height': menu_height
-      })
-      var st = $(this).scrollTop();
-      if ( menu_offset_top < 0 ) {
-        $('.header-inner').css({
-          'position': 'fixed',
-          'top': touch_top
-        })
-      } else if ( st >= menu_offset_top + touch_top ) {
-        $('.header-inner').css({
-          'position': 'fixed',
-          'top': -menu_offset_top
-        })
-        if (st >= touch_bottom ){
-          $('.header-inner').css({
-            'position': 'absolute',
-            'top': touch_bottom - menu_offset_top
-          })
-        }
-      } else if (st < menu_offset_top + touch_top) {
-        $('.header-inner').css({
-          'position': 'static',
-          'top': 'auto',
-        })
-      }
-    } else {
-      $('.header').css({
-        'height': 'auto'
-      })
-      $('.header-inner').css({
-        'position': 'static',
-        'top': 'auto'
-      })
-    }
-  }
+//     if ( $(window).width() > 960 ) {
+//       $('.header').css({
+//         'height': menu_height
+//       })
+//       var st = $(this).scrollTop();
+//       if ( menu_offset_top < 0 ) {
+//         $('.header-inner').css({
+//           'position': 'fixed',
+//           'top': touch_top
+//         })
+//       } else if ( st >= menu_offset_top + touch_top ) {
+//         $('.header-inner').css({
+//           'position': 'fixed',
+//           'top': -menu_offset_top
+//         })
+//         if (st >= touch_bottom ){
+//           $('.header-inner').css({
+//             'position': 'absolute',
+//             'top': touch_bottom - menu_offset_top
+//           })
+//         }
+//       } else if (st < menu_offset_top + touch_top) {
+//         $('.header-inner').css({
+//           'position': 'static',
+//           'top': 'auto',
+//         })
+//       }
+//     } else {
+//       $('.header').css({
+//         'height': 'auto'
+//       })
+//       $('.header-inner').css({
+//         'position': 'static',
+//         'top': 'auto'
+//       })
+//     }
+//   }
 
-}
+// }
 
 
 // scrollfix

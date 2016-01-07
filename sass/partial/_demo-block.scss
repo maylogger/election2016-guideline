@@ -253,25 +253,25 @@
 
   }
 
-  @include at-breakpoint($desktop) {
-    @include leader(-1);
-    @include padding-leader(1);
-    @include trailer(2);
+  // @include at-breakpoint($desktop) {
+  //   @include leader(-1);
+  //   @include padding-leader(1);
+  //   @include trailer(2);
 
-    .demo-block-subtitle {
-      @include leader(0);
-      @include padding-leader(0.5);
-    }
+  //   .demo-block-subtitle {
+  //     @include leader(0);
+  //     @include padding-leader(0.5);
+  //   }
 
-    .demo-block-title + .demo-block-subtitle {
-      @include padding-leader(0.5);
-    }
+  //   .demo-block-title + .demo-block-subtitle {
+  //     @include padding-leader(0.5);
+  //   }
 
-  }
+  // }
 
-  @include at-breakpoint($wide-desktop) {
-    // @include trailer(2.5);
-  }
+  // @include at-breakpoint($wide-desktop) {
+  //   // @include trailer(2.5);
+  // }
 
 
 }
