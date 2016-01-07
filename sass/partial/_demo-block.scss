@@ -6,7 +6,7 @@
     @include trailer(0.5);
     border-bottom: 1px solid #ddd;
     @include padding-trailer(0.5);
-    @include adjust-font-size-to(24px, 1.25);
+    @include adjust-font-size-to(20px, 1);
     color: black;
   }
 
@@ -14,7 +14,8 @@
     @include leader(-3.5);
     @include padding-leader(3.5);
     @include trailer(0.25);
-    @include adjust-font-size-to(18px, 1);
+    @include adjust-font-size-to(15px, 1);
+    letter-spacing: 0.15em;
     color: black;
     font-weight: bold;
   }
@@ -27,6 +28,7 @@
     @include trailer(1);
     color: #444;
     @include adjust-font-size-to(15px);
+    max-width: 600px;
   }
 
   .demo-block-note {
@@ -205,8 +207,9 @@
 
 
   @include at-breakpoint($pad) {
-    @include leader(-3);
-    @include padding-leader(4);
+    @include leader(0);
+    @include trailer(0);
+    @include padding-leader(3);
 
     .demo-block-subtitle {
       @include leader(-3);

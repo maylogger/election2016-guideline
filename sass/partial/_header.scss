@@ -1,8 +1,8 @@
 .header {
 
-  .header-inner {
+  // .header-inner {
     // width: auto !important;
-  }
+  // }
 
   .header-top {
     @include pie-clearfix;
@@ -168,8 +168,14 @@
   @include at-breakpoint($pad) {
 
     .header-top {
+      top: 0px;
+      // @include transition(opacity 0.5s, transform 0.5s, padding-top 0.5s);
       &.is-hide {
         @include translate3d(0, -84px, 0);
+      }
+      &.is-top {
+        padding-top: 78px;
+        position: absolute;
       }
     }
 
@@ -178,7 +184,8 @@
     }
 
     .menu-btn {
-      top: 26px;
+      top: auto;
+      bottom: 26px;
       right: 44px;
     }
     .close-btn {
