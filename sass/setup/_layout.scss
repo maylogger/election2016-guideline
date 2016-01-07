@@ -57,7 +57,7 @@ $page-container: ".container";
 .content {
   padding: 60px 16px 160px;
   @include at-breakpoint($pad) {
-    padding: 84px 48px 160px;
+    padding: 168px 48px 160px;
   }
   // @include at-breakpoint($desktop) {
   //   overflow: hidden;
