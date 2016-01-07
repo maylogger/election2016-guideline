@@ -1,6 +1,8 @@
-.demo-block
-  h2.demo-block-title Color
-  h3.demo-block-subtitle 主色調
+.demo-block#color-guideline
+  h2.demo-block-title 色彩規範
+  p.demo-block-text 取自「永真急制workshop」設計之商標規範，並改作為網站需要的配色。
+  h3.demo-block-subtitle#main-color 主色調
+  p.demo-block-text 使用在明亮、主要裝飾以及主要動作按鈕與連結。
   .demo-block-content
     .grid.grid_3-3-3
       .grid-item
@@ -16,13 +18,14 @@
           .color-item-top style="background-color: #E7E879;": .color-code #E7E879
           .color-item-bottom style="background-color: #A7CD6B;": .color-code #A7CD6B
 
-  h3.demo-block-subtitle 深⾊調
+  h3.demo-block-subtitle#dark-color 深⾊調
+  p.demo-block-text 使用在需要高對比的環境區塊與背景。
   .demo-block-content
     .grid.grid_3-3-3
       .grid-item
         .color-item
-          .color-item-top style="background-color: #63927D;": .color-code #63927D
-          .color-item-bottom style="background-color: #2C513E;": .color-code #2C513E
+          .color-item-top style="background-color: #0D353F;": .color-code #0D353F
+          .color-item-bottom style="background-color: #0B2229;": .color-code #0B2229
       .grid-item
         .color-item
           .color-item-top style="background-color: #817E93;": .color-code #817E93
@@ -32,7 +35,8 @@
           .color-item-top style="background-color: #918871;": .color-code #918871
           .color-item-bottom style="background-color: #464237;": .color-code #464237
 
-  h3.demo-block-subtitle 醒⺫、強調色調
+  h3.demo-block-subtitle#strong-color 醒目、強調色調
+  p.demo-block-text 使用在警告、錯誤訊息以及重大決策的按鈕與連結。
   .demo-block-content
     .grid.grid_2-4-4
       .grid-item
@@ -45,10 +49,22 @@
           .color-item-bottom style="background-color: #E1AF31;": .color-code #E1AF31
       .grid-item
         .color-item
-          .color-item-top style="background-color: #57C0C7;": .color-code #57C0C7
-          .color-item-bottom style="background-color: #4AA6AC;": .color-code #4AA6AC
+          .color-item-top style="background-color: #4ABEB2;": .color-code #4ABEB2
+          .color-item-bottom style="background-color: #3CA59A;": .color-code #3CA59A
       .grid-item
         .color-item
           .color-item-top style="background-color: #A079B4;": .color-code #A079B4
           .color-item-bottom style="background-color: #7E5F8E;": .color-code #7E5F8E
 
+  h3.demo-block-subtitle#rectangle-gradient 矩形漸層
+  p.demo-block-text 使用在讀取圖片前的暫代區塊、或各種標頭
+  .rectangle-gradient
+
+  h3.demo-block-subtitle#circle-gradient 圓形漸層
+  p.demo-block-text 若文字疊在圖片上方，則使用此圓形漸層作為凸顯、區隔文字之用
+  .demo-block-example
+    img src="/images/blur.png" alt=""
+  / p.demo-block-text 靜態/動態前後效果示範：
+  / .demo-block-example
+  /   img src="/images/flag.png" alt=""
+  /   img src="/images/flag-hover.png" alt=""

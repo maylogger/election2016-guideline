@@ -1,73 +1,155 @@
-.demo-block
+.demo-block#form
   h2.demo-block-title Form
-  .demo-block-content
-    form
-      .form-row.is_required
-        label.form-label 名稱
-        .form-content
-          input.form-control type="text"
-      .form-row.is_required
-        label.form-label  e-mail
-        .form-content
-          input.form-control type="email"
-      .form-row
-        label.form-label 電話
-        .form-content
-          input.form-control type="tel"
-      .form-row
-        label.form-label 性別
-        .form-content
-          .group-radio
-            label
-              input type="radio" name="sex" 男
-            label
-              input type="radio" name="sex" 女
-      .form-row
-        label.form-label 興趣
-        .form-content
-          .group-checkbox
-            label
-              input type="checkbox" name="interest" 運動
-            label
-              input type="checkbox" name="interest" 電影
-            label
-              input type="checkbox" name="interest" 音樂
-            label
-              input type="checkbox" name="interest" 動漫
-            label
-              input type="checkbox" name="interest" 旅行
-            label
-              input type="checkbox" name="interest" 美食
+  p.demo-block-text= zh_lorem_paragraphs(2)
 
-          .form-tip
-            p 選擇你最喜歡的幾種興趣，可復選。
+  h3.demo-block-subtitle#input Input
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    input.form-control type="text"
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<input class="form-control" type="text" />
 
-      .form-row
-        label.form-label 職業
-        .form-content
-          select.form-select
-            option value="item" 職業名稱
-            option value="item" 職業名稱
-            option value="item" 職業名稱
-            option value="item" 職業名稱
-            option value="item" 其他...
-      .form-row
-        label.form-label 上傳頭像
-        .form-content
-          input type="file"
-      .form-row
-        label.form-label 部落格
-        .form-content
-          input.form-control type="url"
-      .form-row.is_required
-        label.form-label 簡介
-        .form-content
-          textarea.form-control rows="4"
-          .form-error
-            p 你知道你過長了嗎
-          .form-tip
-            p 建議字數於兩百字以內，不宜過長。
-      .form-row
-        .form-content.action
-          button.btn 取消
-          button.btn.btn_primary 確定
+  h3.demo-block-subtitle#select Select
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    select.form-select
+      option value="item 1" item 1
+      option value="item 2" item 2
+      option value="item 3" item 3
+      option value="item 4" item 4
+      option value="其他..." 其他...
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<select class="form-select">
+        \<option value="item 1">item 1</option>
+        \<option value="item 2">item 2</option>
+        \<option value="item 3">item 3</option>
+        \<option value="item 4">item 4</option>
+        \<option value="其他...">其他...</option>
+      \</select>
+
+  h3.demo-block-subtitle#form-groups Form Groups
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    .form-row.is_required
+      label.form-label 名稱
+      .form-content
+        input.form-control type="text"
+    .form-row
+      label.form-label 性別
+      .form-content
+        .group-radio
+          label
+            input type="radio" name="sex" 男
+          label
+            input type="radio" name="sex" 女
+    .form-row
+      label.form-label 興趣
+      .form-content
+        .group-checkbox
+          label
+            input type="checkbox" name="interest" 運動
+          label
+            input type="checkbox" name="interest" 電影
+          label
+            input type="checkbox" name="interest" 音樂
+          label
+            input type="checkbox" name="interest" 動漫
+          label
+            input type="checkbox" name="interest" 旅行
+          label
+            input type="checkbox" name="interest" 美食
+    .form-row
+      label.form-label 職業
+      .form-content
+        select.form-select
+          option value="item" 職業名稱
+          option value="item" 職業名稱
+          option value="item" 職業名稱
+          option value="item" 職業名稱
+          option value="item" 其他...
+    .form-row
+      label.form-label 上傳頭像
+      .form-content
+        input type="file"
+    .form-row.is_required
+      label.form-label 簡介
+      .form-content
+        textarea.form-control rows="4"
+        .form-error
+          p 你知道你過長了嗎
+        .form-tip
+          p 建議字數於兩百字以內，不宜過長。
+    .form-row
+      .form-content.action
+        button.btn 取消
+        button.btn.btn_primary 確定
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<div class="form-row is_required">
+        \<label class="form-label">名稱</label>
+        \<div class="form-content">
+          \<input class="form-control" type="text" />
+        \</div>
+      \</div><br>
+      \<div class="form-row">
+        \<label class="form-label">性別</label>
+        \<div class="form-content">
+          \<div class="group-radio">
+            \<label>\<input name="sex" type="radio">男</input></label>
+            \<label>\<input name="sex" type="radio">女</input></label>
+          \</div>
+        \</div>
+      \</div><br>
+      \<div class="form-row">
+        \<label class="form-label">興趣</label>
+        \<div class="form-content">
+          \<div class="group-checkbox">
+            \<label>\<input name="interest" type="checkbox">運動</input></label>
+            \<label>\<input name="interest" type="checkbox">電影</input></label>
+            \<label>\<input name="interest" type="checkbox">音樂</input></label>
+            \<label>\<input name="interest" type="checkbox">動漫</input></label>
+            \<label>\<input name="interest" type="checkbox">旅行</input></label>
+            \<label>\<input name="interest" type="checkbox">美食</input></label>
+          \</div>
+          \<div class="form-tip">
+            \<p>選擇你最喜歡的幾種興趣，可復選。</p>
+          \</div>
+        \</div>
+      \</div><br>
+      \<div class="form-row">
+        \<label class="form-label">職業</label>
+        \<div class="form-content">
+          \<select class="form-select">
+            \<option value="item">職業名稱</option>
+            \<option value="item">職業名稱</option>
+            \<option value="item">職業名稱</option>
+            \<option value="item">職業名稱</option>
+            \<option value="item">其他...</option>
+          \</select>
+        \</div>
+      \</div><br>
+      \<div class="form-row">
+        \<label class="form-label">上傳頭像</label>
+        \<div class="form-content">
+          \<input type="file" />
+        \</div>
+      \</div><br>
+      \<div class="form-row is_required">
+        \<label class="form-label">簡介</label>
+        \<div class="form-content">
+          \<textarea class="form-control" rows="4"></textarea>
+          \<div class="form-error">
+            \<p>你知道你過長了嗎</p>
+          \</div>
+          \<div class="form-tip">
+            \<p>建議字數於兩百字以內，不宜過長。</p>
+          \</div>
+        \</div>
+      \</div><br>
+      \<div class="form-row">
+        \<div class="form-content action">
+          \<button class="btn">取消</button><button class="btn btn_primary">確定</button>
+        \</div>
+      \</div>

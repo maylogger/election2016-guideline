@@ -1,23 +1,113 @@
 .demo-block {
-  @include trailer(2);
+  @include leader(-2.5);
+  @include padding-leader(3.5);
 
   .demo-block-title {
-    @include trailer(2);
+    @include trailer(0.5);
     border-bottom: 1px solid #ddd;
     @include padding-trailer(0.5);
-    @include adjust-font-size-to(24px, 1);
-    font-weight: bold;
+    @include adjust-font-size-to(24px, 1.25);
+    color: black;
   }
 
   .demo-block-subtitle {
-    @include trailer(1);
-    @include adjust-font-size-to(20px, 1);
+    @include leader(-3.5);
+    @include padding-leader(3.5);
+    @include trailer(0.25);
+    @include adjust-font-size-to(18px, 1);
+    color: black;
     font-weight: bold;
   }
 
+  .demo-block-title + .demo-block-subtitle {
+    @include padding-leader(4);
+  }
+
+  .demo-block-text {
+    @include trailer(1);
+    color: #444;
+    @include adjust-font-size-to(15px);
+  }
+
+  .demo-block-note {
+    @include adjust-font-size-to(13px, 3/4);
+    color: #666;
+  }
+
   .demo-block-content {
-    @include trailer(2);
     @include pie-clearfix;
+    @include trailer(0.5);
+  }
+
+  .demo-block-example {
+    @include leader(1);
+    @include trailer(1);
+    @include pie-clearfix;
+    background-color: $highlight-block-bg-color;
+    padding: 24px 24px 0 24px;
+    &.grid {
+      @include leader(0);
+    }
+    .grid-item {
+      @include trailer(1);
+    }
+    .btn {
+      display: block;
+      width: 100%;
+    }
+    input, select {
+      @include box-sizing(border-box);
+      width: 100%;
+    }
+    img {
+      display: block;
+    }
+    > *:last-child {
+      @include trailer(1);
+    }
+  }
+  .site-logo {
+    @include box-sizing(border-box);
+    padding-top: 100%;
+    width: 100%;
+    height: 0;
+    @include background-size(contain);
+    background-position: center;
+    background-repeat: no-repeat;
+    @include border-radius(10px);
+    background-color: #f7f7f7;
+    @include trailer(0.25);
+    img {
+      display: block;
+      @include trailer(0);
+    }
+  }
+
+  .site-logo_donate {
+    background-image: url('/images/footer/logo-donate-256.png');
+    background-image: none, url('/images/footer/logo-donate-256.svg');
+  }
+
+  .site-logo_melody {
+    background-image: url('/images/footer/logo-melody-256.png');
+    background-image: none, url('/images/footer/logo-melody-256.svg');
+  }
+
+  .site-logo_hope {
+    background-image: url('/images/footer/logo-hope-256.png');
+    background-image: none, url('/images/footer/logo-hope-256.svg');
+  }
+
+  .site-logo_main {
+    background-image: url('/images/footer/logo-main-256.png');
+    background-image: none, url('/images/footer/logo-main-256.svg');
+  }
+
+  .site-name {
+    text-align: center;
+    @include adjust-font-size-to(15px);
+    color: #444;
+    @include trailer(0.5);
   }
 
   .demo-icon-list {
@@ -27,20 +117,28 @@
     margin: 0 auto;
     li {
       display: inline-block;
-      margin: 0 6px 12px;
+      @include trailer(0.5);
+      @include box-sizing(border-box);
       text-align: center;
+      padding: 0 6px;
+      width: 33.3333%;
+      vertical-align: top;
     }
     [class^="icon-map-"], [class*=" icon-map-"] {
-      background-color: #444;
-      width: 72px;
-      height: 72px;
       display: block;
+      margin: 0 auto;
+      width: 64px;
+      height: 64px;
     }
     .icon-name {
       display: block;
       @include adjust-font-size-to(15px);
     }
-
+    .icon-class {
+      display: block;
+      @include adjust-font-size-to(13px, 3/4);
+      color: #999;
+    }
   }
 
   .color-item {
@@ -61,21 +159,108 @@
     font-weight: bold;
   }
 
-  .btn {
-    margin: 0 6px 6px 0;
+  // .rectangle-gradient, .circle-gradient {
+  //   padding-top: 50%;
+  // }
+  .rectangle-gradient {
+    @include trailer(1);
+    padding-top: 40%;
+    background-color: #50B584;
+    @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
   }
+  // .circle-gradient {
+  //   &:before {
+  //     content: '';
+  //     display: block;
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //     background-image: url('/images/blur-ball-post-header.png');
+  //     background-repeat: no-repeat;
+  //     background-position: center bottom;
+  //     @include background-size(cover);
+  //   }
+  // }
+
+  // .ui-demo {
+  //   .grid-item {
+  //     @include trailer(1);
+  //   }
+  //   .btn {
+  //     display: block;
+  //   }
+  // }
+
 
   @include at-breakpoint($pad) {
-    .demo-block-title {
-      @include adjust-font-size-to(32px, 1.5);
-    }
+    @include leader(-3);
+    @include padding-leader(4);
+
     .demo-block-subtitle {
-      @include adjust-font-size-to(24px, 1);
+      @include leader(-3);
+      @include padding-leader(3.5);
+    }
+
+    .demo-block-title + .demo-block-subtitle {
+      @include padding-leader(3.5);
+    }
+
+    .demo-block-text {
+      @include adjust-font-size-to(16px);
+    }
+
+    .demo-icon-list {
+      li {
+        width: 12.5%;
+      }
+      [class^="icon-map-"], [class*=" icon-map-"] {
+        // width: 128px;
+        // height: 128px;
+      }
     }
     .color-code {
       @include adjust-font-size-to(15px);
     }
 
+    .demo-block-example {
+      padding: 24px 24px 0 24px;
+      > *:last-child {
+        @include trailer(1);
+      }
+    }
+
+    // .ui-demo {
+    //   .grid-item {
+    //     @include trailer(1);
+    //   }
+    //   .btn {
+    //     display: block;
+    //   }
+    // }
+
+
+  }
+
+  @include at-breakpoint($desktop) {
+    @include leader(-1);
+    @include padding-leader(1);
+    @include trailer(2);
+
+    .demo-block-subtitle {
+      @include leader(0);
+      @include padding-leader(0.5);
+    }
+
+    .demo-block-title + .demo-block-subtitle {
+      @include padding-leader(0.5);
+    }
+
+  }
+
+  @include at-breakpoint($wide-desktop) {
+    // @include trailer(2.5);
   }
 
 

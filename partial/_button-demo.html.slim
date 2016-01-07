@@ -1,13 +1,41 @@
-.demo-block
+.demo-block#button
   h2.demo-block-title Button
-  h3.demo-block-subtitle Basic button
-  .demo-block-content
+  p.demo-block-text= zh_lorem_paragraphs(2)
+
+  h3.demo-block-subtitle#default-button Default Button
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
     a.btn href="#" Default Button
-    a.btn.btn_primary href="#" Primary Button
-    a.btn.btn_danger href="#" Danger Button
     a.btn.is-disabled href="#" Disabled Button
-  h3.demo-block-subtitle Outline Button
-  .demo-block-content
     a.btn.btn_outline href="#" Defualt Button
-    a.btn.btn_outline-primary href="#" Defualt Button
     a.btn.btn_outline.is-disabled href="#" Disabled Button
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<a class="btn" href="#">Default</a>
+      \<a class="btn is-disabled" href="#">Disabled</a>
+      \<a class="btn btn_outline" href="#">Defualt Button</a>
+      \<a class="btn btn_outline is-disabled" href="#">Disabled Button</a>
+
+  h3.demo-block-subtitle#primary-button Primary Button
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    a.btn.btn_primary href="#" Primary Button
+    a.btn.btn_outline-primary href="#" Primary Button
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<a class="btn btn_primary" href="#">Primary Button</a>
+      \<a class="btn btn_outline-primary" href="#">Primary Button</a>
+
+  h3.demo-block-subtitle#danger-button Danger Button
+  p.demo-block-text= zh_lorem_paragraph
+  .demo-block-example
+    a.btn.btn_danger href="#" Danger Button
+    a.btn.btn_outline-danger href="#" Danger Button
+  pre.html.demo-block-code.highlight: code
+    markdown:
+      \<a class="btn btn_danger" href="#">Danger Button</a>
+      \<a class="btn btn_outline-danger" href="#">Danger Button</a>
+
+
+
+

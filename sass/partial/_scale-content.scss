@@ -24,6 +24,11 @@
       @include transition(opacity .3s);
     }
 
+    .header {
+      @include opacity(1);
+      @include transition(opacity 0.75s 0.75s, width 0.75s); // 新增 width 變化是為了 hack safari bug
+    }
+
     .footer {
       padding: 0;
       position: absolute;
@@ -85,6 +90,10 @@
       .site-info {
         @include opacity(1);
         @include transition(opacity 1s 1s);
+      }
+      .header {
+        @include opacity(0);
+        @include transition(opacity 0s);
       }
       .footer {
         .site {

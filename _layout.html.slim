@@ -1,17 +1,18 @@
 doctype 5
-html lang="zh-TW"
+html.no-js lang="zh-TW"
   head
     = render "/layout_head"
     = render "/layout_siteinfo"
     = render "/layout_og"
-  body
+  body.off-canvas
     .page
-      .page-inner
-        = render "/partial/guideline-header"
-        = yield
-        .page-bottom-illustrator
-      = render "/partial/site-info"
-    = render "/partial/footer"
+      = render "/partial/header"
+      = yield
+        / .page-bottom-illustrator
+      / = render "/partial/site-info"
+    / = render "/partial/footer"
+    a.back-to-top.smooth-scroll-link href="#top" 返回頂部
+
 
     = render "/layout_foot"
     = render "/layout_livereload"

@@ -16,7 +16,7 @@ $pagination-color: #444 !default;
 $pagination-bg-color: transparent !default;
 
 $pagination-hover-color: #444 !default;
-$pagination-hover-bg-color: $color-gray-white !default;
+$pagination-hover-bg-color: $color-gray-light !default;
 
 $pagination-current-color: $pagination-hover-color !default;
 $pagination-current-bg-color: $pagination-hover-bg-color !default;
@@ -28,32 +28,37 @@ $pagination-disable-bg-color: $pagination-bg-color !default;
   @include pie-clearfix;
   @include reset-box-model;
   list-style: none;
-  li {
-    display: inline-block;
-  }
   .pagination-item {
+    display: inline-block;
+    margin: 0 3px;
+    width: 36px;
+    text-align: center;
+    @include adjust-font-size-to(15px);
+    &.current, &.gap {
+      padding: rhythm(0.25) 0;
+    }
+    &.current {
+      @include border-radius(5px);
+      color: $pagination-color;
+      background-color: $pagination-bg-color;
+      @include transition(color 0.25s, background-color 0.25s);
+      color: $pagination-current-color;
+      background-color: $pagination-current-bg-color;
+    }
+  }
+  .pagination-item > a {
     display: block;
-    padding: rhythm(0.25) rhythm(0.6);
+    @include border-radius(5px);
+    padding: rhythm(0.25) 0;
     color: $pagination-color;
     background-color: $pagination-bg-color;
     text-align: center;
-    @include adjust-font-size-to(15px);
-    @include border-radius(5px);
     @include transition(color 0.25s, background-color 0.25s);
+
     &:hover {
       text-decoration: none;
       color: $pagination-hover-color;
       background-color: $pagination-hover-bg-color;
-    }
-    &.is-current {
-      color: $pagination-current-color;
-      background-color: $pagination-current-bg-color;
-      cursor: default;
-    }
-    &.is-disabled {
-      color: $pagination-disable-color;
-      background-color: $pagination-disable-bg-color;
-      cursor: default;
     }
   }
 

@@ -17,14 +17,42 @@
 @import "component/block";
 
 // ==== partial ====
-@import "partial/guideline-header"; // guideline 專用
-@import "partial/site-info";
-@import "partial/footer";
-@import "partial/scale-content";
+@import "partial/header";
+// @import "partial/site-info";
+// @import "partial/footer";
+@import "partial/off-canvas";
+// @import "partial/scale-content";
 @import "partial/demo-block"; // guideline 專用
-@import "partial/page-bottom-illustrator"; // guideline 專用
+// @import "partial/page-bottom-illustrator"; // guideline 專用
+@import "partial/highlight";
 
 // ==== page ====
 
 
 // ==== inbox ====
+.back-to-top {
+  position: fixed;
+  z-index: 500;
+  left: 50%;
+  bottom: 24px;
+  @include box-shadow(0px 0px 5px rgba(black, 0.15));
+  @include border-radius(24px);
+  padding: 6px 24px;
+  @include adjust-font-size-to(15px, 1);
+  font-weight: bold;
+  text-align: center;
+  @include transition(transform 0.5s);
+  @include translate3d(-50%, 72px, 0);
+  background-color: rgba(white, 0.9);
+  color: $color-primary;
+  &:hover {
+    text-decoration: none;
+    color: $color-primary;
+  }
+  &.is-hide {
+    @include translate3d(-50%, 72px, 0);
+  }
+  &.is-active {
+    @include translate3d(-50%, 0, 0);
+  }
+}

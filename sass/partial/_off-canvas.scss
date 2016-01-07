@@ -1,0 +1,64 @@
+.off-canvas {
+
+  .off-canvas-menu {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 248px;
+    overflow: auto;
+    background-color: #183840;
+    @include translate3d(248px, 0, 0);
+    @include transition(transform 0.5s);
+    -webkit-overflow-scrolling: touch;
+    z-index: 1100;
+  }
+
+  .off-canvas-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  &.is-open-menu {
+
+    .off-canvas-menu {
+      @include transform(none);
+    }
+
+    .off-canvas-mask {
+      bottom: 0;
+    }
+
+  }
+
+  @include at-breakpoint($desktop) {
+
+    .off-canvas-menu {
+      position: static;
+      width: auto;
+      right: 0;
+      @include transform(none);
+      background-color: transparent;
+      @include transition(none);
+    }
+
+    &.is-open-menu {
+
+      .off-canvas-menu {
+        position: static;
+        width: auto;
+        right: 0;
+        @include transform(none);
+      }
+
+      .off-canvas-mask {
+        bottom: auto;
+      }
+    }
+
+  }
+
+}
