@@ -1014,9 +1014,9 @@ childrenPercent = _.map(function(it){
   return {
     "languageText": "客家人的下一代",
     "identity": it <= 57
-      ? "子女認為自己是客家人 57%"
-      : it <= 57 + 8 ? "不知道 8%" : "子女認為自己不是客家人 35%",
-    "language": it <= 50 ? "子女不會講客家語 50%" : "子女會講客家語 50%",
+      ? "自認是客家人 57%"
+      : it <= 57 + 8 ? "不知道 8%" : "自認不是 35%",
+    "language": it <= 50 ? "不會講客家語 50%" : "會講客家語 50%",
     "value": 1,
     "color": colorbrewer["RdYlBu"][9][~~(Math.random() * 7 + 2)]
   };
