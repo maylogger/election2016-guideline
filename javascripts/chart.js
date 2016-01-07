@@ -1015,7 +1015,7 @@ childrenPercent = _.map(function(it){
     "languageText": "客家人的下一代",
     "identity": it <= 57
       ? "自認是客家人 57%"
-      : it <= 57 + 8 ? "不知道 8%" : "自認不是 35",
+      : it <= 57 + 8 ? "不知道 8%" : "自認不是 35%",
     "language": it <= 50 ? "不會講客家語 50%" : "會講客家語 50%",
     "value": 1,
     "color": function(it){
