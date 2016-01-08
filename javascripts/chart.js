@@ -1,4 +1,4 @@
-var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, i, tick;
+var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, i, tick, clock;
 _ = require("prelude-ls");
 barChart = function(){
   var chrt, gradientData, build, i$;
@@ -1014,15 +1014,14 @@ childrenPercent = _.map(function(it){
   return {
     "languageText": "客家人的下一代",
     "identity": it <= 57
-      ? "自認是客家人 57%"
-      : it <= 57 + 8 ? "不知道 8%" : "自認不是 35%",
-    "language": it <= 50 ? "不會講客家語 50%" : "會講客家語 50%",
+      ? "子女自認是客家人 57%"
+      : it <= 57 + 8 ? "不知道 8%" : "子女自認不是 35%",
+    "language": it <= 50 ? "子女不會講客家語 50%" : "子女會講客家語 50%",
     "value": 1,
     "color": function(it){
       return it[~~(Math.random() * 6)];
     }(
     ['#88C8AB', '#89C693', '#50B584', '#55B36C', '#A7CD6B', '#E7E879'])
-    // "color": colorbrewer["RdYlBu"][9][~~(Math.random() * 7 + 2)]
   };
 })(
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
@@ -1227,9 +1226,12 @@ i = -1;
   firstBar.draw();
   d3.select('.chart-line').select("svg").remove();
   drawRatio();
-  return drawRatio.draw();
+  drawRatio.draw();
+  if (i > 5) {
+    return clearInterval(clock);
+  }
 })();
-setInterval(tick, 5000);
+clock = setInterval(tick, 5000);
 function curry$(f, bound){
   var context,
   _curry = function(args) {
