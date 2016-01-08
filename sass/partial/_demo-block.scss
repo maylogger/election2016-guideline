@@ -144,7 +144,7 @@
     }
     .icon-name {
       display: block;
-      @include adjust-font-size-to(15px);
+      @include adjust-font-size-to(12px);
     }
     .icon-class {
       display: block;
@@ -169,6 +169,16 @@
     padding: 10px;
     @include adjust-font-size-to(13px);
     font-weight: bold;
+  }
+  .demo-logo {
+    padding: 20px;
+    border: 1px dashed #ccc;
+    img {
+      margin: 0;
+    }
+    & + .demo-logo {
+      margin-top: 20px;
+    }
   }
 
   // .rectangle-gradient, .circle-gradient {
