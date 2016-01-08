@@ -6,7 +6,7 @@
     @include trailer(0.5);
     border-bottom: 1px solid #ddd;
     @include padding-trailer(0.5);
-    @include adjust-font-size-to(24px, 1.25);
+    @include adjust-font-size-to(20px, 1);
     color: black;
   }
 
@@ -14,7 +14,8 @@
     @include leader(-3.5);
     @include padding-leader(3.5);
     @include trailer(0.25);
-    @include adjust-font-size-to(18px, 1);
+    @include adjust-font-size-to(15px, 1);
+    letter-spacing: 0.15em;
     color: black;
     font-weight: bold;
   }
@@ -27,6 +28,7 @@
     @include trailer(1);
     color: #444;
     @include adjust-font-size-to(15px);
+    max-width: 600px;
   }
 
   .demo-block-note {
@@ -48,6 +50,9 @@
     &.grid {
       @include leader(0);
     }
+    .grid {
+      margin-bottom: 0 !important;
+    }
     .grid-item {
       @include trailer(1);
     }
@@ -66,6 +71,13 @@
       @include trailer(1);
     }
   }
+
+  .demo-block-example-tip {
+    @include margin-leader(-0.75);
+    @include trailer(1);
+    @include adjust-font-size-to(13px, 3/4);
+  }
+
   .site-logo {
     @include box-sizing(border-box);
     padding-top: 100%;
@@ -132,7 +144,7 @@
     }
     .icon-name {
       display: block;
-      @include adjust-font-size-to(15px);
+      @include adjust-font-size-to(12px);
     }
     .icon-class {
       display: block;
@@ -157,6 +169,16 @@
     padding: 10px;
     @include adjust-font-size-to(13px);
     font-weight: bold;
+  }
+  .demo-logo {
+    padding: 20px;
+    border: 1px dashed #ccc;
+    img {
+      margin: 0;
+    }
+    & + .demo-logo {
+      margin-top: 20px;
+    }
   }
 
   // .rectangle-gradient, .circle-gradient {
@@ -195,8 +217,9 @@
 
 
   @include at-breakpoint($pad) {
-    @include leader(-3);
-    @include padding-leader(4);
+    @include leader(0);
+    @include trailer(0);
+    @include padding-leader(3);
 
     .demo-block-subtitle {
       @include leader(-3);
@@ -243,25 +266,25 @@
 
   }
 
-  @include at-breakpoint($desktop) {
-    @include leader(-1);
-    @include padding-leader(1);
-    @include trailer(2);
+  // @include at-breakpoint($desktop) {
+  //   @include leader(-1);
+  //   @include padding-leader(1);
+  //   @include trailer(2);
 
-    .demo-block-subtitle {
-      @include leader(0);
-      @include padding-leader(0.5);
-    }
+  //   .demo-block-subtitle {
+  //     @include leader(0);
+  //     @include padding-leader(0.5);
+  //   }
 
-    .demo-block-title + .demo-block-subtitle {
-      @include padding-leader(0.5);
-    }
+  //   .demo-block-title + .demo-block-subtitle {
+  //     @include padding-leader(0.5);
+  //   }
 
-  }
+  // }
 
-  @include at-breakpoint($wide-desktop) {
-    // @include trailer(2.5);
-  }
+  // @include at-breakpoint($wide-desktop) {
+  //   // @include trailer(2.5);
+  // }
 
 
 }

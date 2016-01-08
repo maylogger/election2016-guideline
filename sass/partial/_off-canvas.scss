@@ -19,7 +19,13 @@
     top: 0;
     left: 0;
     right: 0;
+    bottom: 0;
     cursor: pointer;
+    z-index: 1000;
+    visibility: hidden;
+    @include opacity(0);
+    background-color: rgba(black, 0.25);
+    @include transition(opacity 0.5s, visibility 0s 0.5s);
   }
 
   &.is-open-menu {
@@ -29,36 +35,38 @@
     }
 
     .off-canvas-mask {
-      bottom: 0;
+      visibility: visible;
+      @include opacity(1);
+      @include transition(opacity 0.5s);
     }
 
   }
 
-  @include at-breakpoint($desktop) {
+  // @include at-breakpoint($desktop) {
 
-    .off-canvas-menu {
-      position: static;
-      width: auto;
-      right: 0;
-      @include transform(none);
-      background-color: transparent;
-      @include transition(none);
-    }
+  //   .off-canvas-menu {
+  //     position: static;
+  //     width: auto;
+  //     right: 0;
+  //     @include transform(none);
+  //     background-color: transparent;
+  //     @include transition(none);
+  //   }
 
-    &.is-open-menu {
+  //   &.is-open-menu {
 
-      .off-canvas-menu {
-        position: static;
-        width: auto;
-        right: 0;
-        @include transform(none);
-      }
+  //     .off-canvas-menu {
+  //       position: static;
+  //       width: auto;
+  //       right: 0;
+  //       @include transform(none);
+  //     }
 
-      .off-canvas-mask {
-        bottom: auto;
-      }
-    }
+  //     .off-canvas-mask {
+  //       bottom: auto;
+  //     }
+  //   }
 
-  }
+  // }
 
 }
