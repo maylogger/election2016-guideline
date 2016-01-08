@@ -1,0 +1,30 @@
+.demo-block#chart
+  h2.demo-block-title 圖表
+  p.demo-block-text 包含進場畫面的圖表，使用向量方式生成，支持跨裝置瀏覽，由<a href="http://muyueh.com/" target="_blank">李慕約公司</a>設計、GPL v2 開源釋出。（<a href="https://github.com/sheethub/2016electionchart" target="_blank">Github 原始碼</a>）
+
+  h3.demo-block-subtitle 原力佈局 (Force Layout)
+  p.demo-block-text 原力佈局 (Force Layout)，適合拿來做為「人口統計分佈」的圖表，背後使用撞擊測試演算法，來模擬粒子互動的物理限制
+  .demo-block-example
+    .chart-force
+  p.demo-block-example-tip style="text-align: center;": small 資料來源：<a href="http://www.hakka.gov.tw/np.asp?ctNode=1893" target="_blank">客委會 客語使用情況調查101-102</a>
+
+  h3.demo-block-subtitle 甜甜圈圖
+  p.demo-block-text 有進場畫面的甜甜圈圖 (Donut Chart)，適合做比例的比較
+  .demo-block-example
+    .grid.grid_3-3-3
+      .grid-item
+        #donut1(style="")
+      .grid-item
+        #donut2(style="")
+      .grid-item
+        #donut3(style="")
+
+  h3.demo-block-subtitle 直條圖
+  p.demo-block-text 有進場畫面的直條圖 (Bar Chart)，適合做跨項目的比較
+  .demo-block-example
+    .chart-bar
+
+  h3.demo-block-subtitle 折線圖
+  p.demo-block-text 有進場畫面的折線圖 (Line Chart)，適合做跨時間的比較
+  .demo-block-example
+    .chart-line

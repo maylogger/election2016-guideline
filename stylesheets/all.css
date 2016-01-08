@@ -937,11 +937,13 @@ img { max-width: 100%; margin-bottom: 24px; }
 .demo-block .demo-block-example { margin-top: 24px; margin-bottom: 24px; background-color: #f7f7f7; padding: 24px 24px 0 24px; }
 .demo-block .demo-block-example:after { content: ""; display: table; clear: both; }
 .demo-block .demo-block-example.grid { margin-top: 0px; }
+.demo-block .demo-block-example .grid { margin-bottom: 0 !important; }
 .demo-block .demo-block-example .grid-item { margin-bottom: 24px; }
 .demo-block .demo-block-example .btn { display: block; width: 100%; }
 .demo-block .demo-block-example input, .demo-block .demo-block-example select { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; width: 100%; }
 .demo-block .demo-block-example img { display: block; }
 .demo-block .demo-block-example > *:last-child { margin-bottom: 24px; }
+.demo-block .demo-block-example-tip { margin-top: -18px; margin-bottom: 24px; font-size: 13px; line-height: 18px; }
 .demo-block .site-logo { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding-top: 100%; width: 100%; height: 0; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; background-position: center; background-repeat: no-repeat; -webkit-border-radius: 10px; -moz-border-radius: 10px; -ms-border-radius: 10px; -o-border-radius: 10px; border-radius: 10px; background-color: #f7f7f7; margin-bottom: 6px; }
 .demo-block .site-logo img { display: block; margin-bottom: 0px; }
 .demo-block .site-logo_donate { background-image: url("/images/footer/logo-donate-256.png"); background-image: none, url("/images/footer/logo-donate-256.svg"); }
