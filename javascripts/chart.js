@@ -1221,17 +1221,30 @@ i = -1;
   secDonut.update({
     "value": s
   });
-  d3.select('.chart-bar').select("svg").remove();
-  firstBar();
-  firstBar.draw();
-  d3.select('.chart-line').select("svg").remove();
-  drawRatio();
-  drawRatio.draw();
-  if (i > 5) {
-    return clearInterval(clock);
+  if (i === 0) {
+    firstBar();
+    firstBar.draw();
+  } else {
+    d3.select('.chart-bar svg').transition().duration(1000).style({
+      "opacity": 0
+    }).remove().each("end", function(){
+      firstBar();
+      return firstBar.draw();
+    });
+  }
+  if (i === 0) {
+    drawRatio();
+    return drawRatio.draw();
+  } else {
+    return d3.select('.chart-line svg').transition().duration(1000).style({
+      "opacity": 0
+    }).remove().each("end", function(){
+      drawRatio();
+      return drawRatio.draw();
+    });
   }
 })();
-clock = setInterval(tick, 5000);
+clock = setInterval(tick, 10000);
 function curry$(f, bound){
   var context,
   _curry = function(args) {
