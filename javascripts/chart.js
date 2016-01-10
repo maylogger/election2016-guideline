@@ -1,4 +1,4 @@
-var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, i, tick, clock;
+var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, endAll, i, tick, clock;
 _ = require("prelude-ls");
 barChart = function(){
   var chrt, gradientData, build, i$;
@@ -1199,9 +1199,23 @@ _.map(function(c){
   lineChartData));
 })(
 columns));
-drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(it){
-  return "醫療鑑定" + it.value + " 件";
+drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(){
+  return "";
 }).tickValues([new Date(1987, 1, 1), new Date(2011, 1, 1)]);
+endAll = function(transition, callback){
+  var n;
+  if (transition.size() === 0) {
+    callback();
+  }
+  n = 0;
+  return transition.each(function(){
+    return ++n;
+  }).each("end", function(){
+    if (!--n) {
+      return callback.apply(this, arguments);
+    }
+  });
+};
 i = -1;
 (tick = function(){
   var l, d, h, m, s;
@@ -1225,10 +1239,9 @@ i = -1;
     firstBar();
     firstBar.draw();
   } else {
-    d3.select('.chart-bar svg').transition().duration(1000).style({
+    d3.selectAll('.chart-bar svg rect,.number').transition().duration(1000).style({
       "opacity": 0
-    }).remove().each("end", function(){
-      firstBar();
+    }).remove().call(endAll, function(){
       return firstBar.draw();
     });
   }
@@ -1236,10 +1249,9 @@ i = -1;
     drawRatio();
     return drawRatio.draw();
   } else {
-    return d3.select('.chart-line svg').transition().duration(1000).style({
+    return d3.selectAll('.chart-line svg path,circle,text').transition().duration(1000).style({
       "opacity": 0
-    }).remove().each("end", function(){
-      drawRatio();
+    }).remove().call(endAll, function(){
       return drawRatio.draw();
     });
   }
