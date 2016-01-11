@@ -1238,7 +1238,7 @@ i = -1;
   if (i === 0) {
     firstBar();
     firstBar.draw();
-  } else {
+  } else if (i % 2 === 0) {
     d3.select(".chart-bar").selectAll('rect,.number').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
@@ -1248,7 +1248,7 @@ i = -1;
   if (i === 0) {
     drawRatio();
     return drawRatio.draw();
-  } else {
+  } else if (i % 2 === 0) {
     return d3.select(".chart-line").selectAll('.line,circle,.number,.numberGroup,.axis').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
@@ -1256,7 +1256,7 @@ i = -1;
     });
   }
 })();
-clock = setInterval(tick, 10000);
+clock = setInterval(tick, 5000);
 function curry$(f, bound){
   var context,
   _curry = function(args) {
