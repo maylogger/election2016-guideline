@@ -1036,24 +1036,24 @@ listForce = [
     return forceChildren.draw("language");
   }
 ];
-hourDonut = null;
-minDonut = null;
+// hourDonut = null;
+// minDonut = null;
 secDonut = null;
 (firstTick = function(){
-  hourDonut = donutChart().data({
-    "total": 24,
-    "value": 0
-  }).container('#donut1').textFunc(function(it){
-    return it.toFixed(0);
-  }).ease("elastic");
-  hourDonut().draw();
-  minDonut = donutChart().data({
-    "total": 60,
-    "value": 0
-  }).container('#donut2').textFunc(function(it){
-    return it.toFixed(0);
-  }).ease("elastic");
-  minDonut().draw();
+  // hourDonut = donutChart().data({
+  //   "total": 24,
+  //   "value": 0
+  // }).container('#donut1').textFunc(function(it){
+  //   return it.toFixed(0);
+  // }).ease("elastic");
+  // hourDonut().draw();
+  // minDonut = donutChart().data({
+  //   "total": 60,
+  //   "value": 0
+  // }).container('#donut2').textFunc(function(it){
+  //   return it.toFixed(0);
+  // }).ease("elastic");
+  // minDonut().draw();
   secDonut = donutChart().data({
     "total": 60,
     "value": 0
@@ -1223,15 +1223,15 @@ i = -1;
   l = listForce.length;
   listForce[this.i % l]();
   d = new Date();
-  h = d.getHours();
-  m = d.getMinutes();
+  // h = d.getHours();
+  // m = d.getMinutes();
   s = d.getSeconds();
-  hourDonut.update({
-    "value": h
-  });
-  minDonut.update({
-    "value": m
-  });
+  // hourDonut.update({
+  //   "value": h
+  // });
+  // minDonut.update({
+  //   "value": m
+  // });
   secDonut.update({
     "value": s
   });
