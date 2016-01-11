@@ -1256,7 +1256,7 @@ i = -1;
     });
   }
 })();
-clock = setInterval(tick, 5000);
+clock = setInterval(tick, 3000);
 function curry$(f, bound){
   var context,
   _curry = function(args) {

@@ -56,3 +56,25 @@
     @include translate3d(-50%, 0, 0);
   }
 }
+
+
+.chart-line {
+  .numberGroup {
+    opacity: 1 !important;
+    text.number:first-child {
+      opacity: 1 !important;
+    }
+  }
+
+  circle.head {
+    opacity: 1 !important;
+  }
+
+  g.axis {
+    opacity: 1 !important;
+    g {
+      opacity: 1 !important;
+    }
+  }
+
+}
