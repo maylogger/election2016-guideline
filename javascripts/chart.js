@@ -1249,7 +1249,7 @@ i = -1;
     drawRatio();
     return drawRatio.draw();
   } else {
-    return d3.select(".chart-line").selectAll('.line,circle,.number,.numberGroup.axis').transition().duration(1000).style({
+    return d3.select(".chart-line").selectAll('.line,circle,.number,.numberGroup,.axis').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
       return drawRatio.draw();
