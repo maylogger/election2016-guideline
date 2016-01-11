@@ -16,10 +16,10 @@ hljs.initHighlightingOnLoad();
 var didScroll;
 var lastScrollTop = 0;
 var delta = 120;
-var offset_top = $('#guideline-summary').offset().top;
+// var offset_top = $('#guideline-summary').offset().top;
 var window_height = $(window).height();
 $(window).resize(function(){
-  offset_top = $('#guideline-summary .demo-block-title').offset().top;
+  // offset_top = $('#guideline-summary .demo-block-title').offset().top;
   window_height = $(window).height();
   detectTouchTop();
 })
