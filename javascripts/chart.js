@@ -1,4 +1,4 @@
-var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, i, tick;
+var _, barChart, donutChart, forceChart, lineChart, childrenPercent, forceChildren, listForce, hourDonut, minDonut, secDonut, firstTick, interData, colorFunc, firstBar, lineChartData, columns, ratio, drawRatio, endAll, i, tick, clock;
 _ = require("prelude-ls");
 barChart = function(){
   var chrt, gradientData, build, i$;
@@ -154,10 +154,10 @@ donutChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0
+    top: 100,
+    left: 50,
+    right: 50,
+    bottom: 50
   };
   chrt.w = 500 - chrt.margin.left - chrt.margin.right;
   chrt.h = 500 - chrt.margin.top - chrt.margin.bottom;
@@ -173,7 +173,7 @@ donutChart = function(){
   chrt.ease = "linear";
   chrt.svg = null;
   chrt.textStyle = function(){};
-  chrt.fontSize = 72;
+  chrt.fontSize = 50;
   svg = null;
   tau = 2 * Math.PI;
   foreground = undefined;
@@ -304,10 +304,10 @@ forceChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0
+    top: 10,
+    left: 10,
+    right: 20,
+    bottom: 20
   };
   chrt.w = 800 - chrt.margin.left - chrt.margin.right;
   chrt.h = 400 - chrt.margin.top - chrt.margin.bottom;
@@ -1014,15 +1014,14 @@ childrenPercent = _.map(function(it){
   return {
     "languageText": "客家人的下一代",
     "identity": it <= 57
-      ? "自認是客家人 57%"
-      : it <= 57 + 8 ? "不知道 8%" : "自認不是 35%",
-    "language": it <= 50 ? "不會講客家語 50%" : "會講客家語 50%",
+      ? "子女自認是客家人 57%"
+      : it <= 57 + 8 ? "不知道 8%" : "子女自認不是 35%",
+    "language": it <= 50 ? "子女不會講客家語 50%" : "子女會講客家語 50%",
     "value": 1,
     "color": function(it){
       return it[~~(Math.random() * 6)];
     }(
     ['#88C8AB', '#89C693', '#50B584', '#55B36C', '#A7CD6B', '#E7E879'])
-    // "color": colorbrewer["RdYlBu"][9][~~(Math.random() * 7 + 2)]
   };
 })(
 [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
@@ -1200,9 +1199,23 @@ _.map(function(c){
   lineChartData));
 })(
 columns));
-drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(it){
-  return "醫療鑑定" + it.value + " 件";
+drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(){
+  return "";
 }).tickValues([new Date(1987, 1, 1), new Date(2011, 1, 1)]);
+endAll = function(transition, callback){
+  var n;
+  if (transition.size() === 0) {
+    callback();
+  }
+  n = 0;
+  return transition.each(function(){
+    return ++n;
+  }).each("end", function(){
+    if (!--n) {
+      return callback.apply(this, arguments);
+    }
+  });
+};
 i = -1;
 (tick = function(){
   var l, d, h, m, s;
@@ -1222,14 +1235,28 @@ i = -1;
   secDonut.update({
     "value": s
   });
-  d3.select('.chart-bar').select("svg").remove();
-  firstBar();
-  firstBar.draw();
-  d3.select('.chart-line').select("svg").remove();
-  drawRatio();
-  return drawRatio.draw();
+  if (i === 0) {
+    firstBar();
+    firstBar.draw();
+  } else {
+    d3.selectAll('.chart-bar svg rect,.number').transition().duration(1000).style({
+      "opacity": 0
+    }).remove().call(endAll, function(){
+      return firstBar.draw();
+    });
+  }
+  if (i === 0) {
+    drawRatio();
+    return drawRatio.draw();
+  } else {
+    return d3.selectAll('.chart-line svg path,circle,text').transition().duration(1000).style({
+      "opacity": 0
+    }).remove().call(endAll, function(){
+      return drawRatio.draw();
+    });
+  }
 })();
-setInterval(tick, 5000);
+clock = setInterval(tick, 6000);
 function curry$(f, bound){
   var context,
   _curry = function(args) {
