@@ -1199,8 +1199,8 @@ _.map(function(c){
   lineChartData));
 })(
 columns));
-drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(){
-  return "";
+drawRatio = lineChart().data(ratio).container('.chart-line').w(960).xGridNumber(13).strokeWidth(4).numberFormat(function(it){
+  return "醫療事件 " + it.value + " 個";
 }).tickValues([new Date(1987, 1, 1), new Date(2011, 1, 1)]);
 endAll = function(transition, callback){
   var n;
@@ -1239,7 +1239,7 @@ i = -1;
     firstBar();
     firstBar.draw();
   } else {
-    d3.selectAll('.chart-bar svg rect,.number').transition().duration(1000).style({
+    d3.select(".chart-bar").selectAll('rect,.number').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
       return firstBar.draw();
@@ -1249,7 +1249,7 @@ i = -1;
     drawRatio();
     return drawRatio.draw();
   } else {
-    return d3.selectAll('.chart-line svg path,circle,text').transition().duration(1000).style({
+    return d3.select(".chart-line").selectAll('.line,circle,.number,.numberGroup,.axis').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
       return drawRatio.draw();
