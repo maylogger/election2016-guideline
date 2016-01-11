@@ -1256,7 +1256,17 @@ i = -1;
     });
   }
 })();
-clock = setInterval(tick, 3000);
+// clock = setInterval(tick, 3000);
+
+// 開始圖表繪製
+var chart_start = setInterval(tick, 3000);
+$(window).blur(function(){
+  clearInterval(chart_start);
+});
+$(window).focus(function(){
+  chart_start = setInterval(tick, 3000);
+});
+
 function curry$(f, bound){
   var context,
   _curry = function(args) {
