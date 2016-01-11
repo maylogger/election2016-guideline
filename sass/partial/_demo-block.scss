@@ -215,6 +215,34 @@
   //   }
   // }
 
+  .share-btns {
+    @include leader(0.25);
+    display: block;
+  }
+  .share-title {
+    display: inline-block;
+    font-size: 13px;
+    line-height: 32px;
+    vertical-align: text-bottom;
+    margin-right: 6px;
+  }
+  .fb-share-btn, .twitter-share-btn {
+    display: inline-block;
+    @include filter(brightness(0%));
+    opacity: .25;
+    &:hover {
+      @include filter(brightness(100%));
+      opacity: 1;
+    }
+  }
+  .fb-share-btn {
+    @include replace-text-with-svg("icon-share-facebook");
+  }
+  .twitter-share-btn {
+    @include replace-text-with-svg("icon-share-twitter");
+  }
+
+
 
   @include at-breakpoint($pad) {
     @include leader(0);
