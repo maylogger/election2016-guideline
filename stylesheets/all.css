@@ -950,9 +950,9 @@ img { max-width: 100%; margin-bottom: 24px; }
 .demo-block .site-logo_hope { background-image: url("/images/footer/logo-hope-256.png"); background-image: none, url("/images/footer/logo-hope-256.svg"); }
 .demo-block .site-logo_main { background-image: url("/images/footer/logo-main-256.png"); background-image: none, url("/images/footer/logo-main-256.svg"); }
 .demo-block .site-name { text-align: center; font-size: 15px; line-height: 24px; color: #444; margin-bottom: 12px; }
-.demo-block .demo-icon-list { margin: 0; padding: 0; border: 0; list-style: none; margin: 0 auto; }
+.demo-block .demo-icon-list { margin: 0; padding: 0; border: 0; list-style: none; margin: 0 -6px; }
 .demo-block .demo-icon-list:after { content: ""; display: table; clear: both; }
-.demo-block .demo-icon-list li { display: inline-block; margin-bottom: 12px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; text-align: center; padding: 0 6px; width: 33.3333%; vertical-align: top; }
+.demo-block .demo-icon-list li { display: inline-block; margin-bottom: 12px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; text-align: center; padding: 0 6px; vertical-align: top; }
 .demo-block .demo-icon-list [class^="icon-map-"], .demo-block .demo-icon-list [class*=" icon-map-"] { display: block; margin: 0 auto; width: 64px; height: 64px; }
 .demo-block .demo-icon-list .icon-name { display: block; font-size: 12px; line-height: 24px; }
 .demo-block .demo-icon-list .icon-class { display: block; font-size: 13px; line-height: 18px; color: #999; }
@@ -967,16 +967,18 @@ img { max-width: 100%; margin-bottom: 24px; }
 .demo-block .share-title { display: inline-block; font-size: 13px; line-height: 32px; vertical-align: text-bottom; margin-right: 6px; }
 .demo-block .fb-share-btn, .demo-block .twitter-share-btn { display: inline-block; -webkit-filter: brightness(0%); -moz-filter: brightness(0%); filter: brightness(0%); opacity: .25; }
 .demo-block .fb-share-btn:hover, .demo-block .twitter-share-btn:hover { -webkit-filter: brightness(100%); -moz-filter: brightness(100%); filter: brightness(100%); opacity: 1; }
-.demo-block .fb-share-btn { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-facebook.png?1452064033'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-facebook.svg?1452064033'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
-.demo-block .twitter-share-btn { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-twitter.png?1452064033'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-twitter.svg?1452064033'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.demo-block .fb-share-btn { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-facebook.png?1452522151'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-facebook.svg?1452522151'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
+.demo-block .twitter-share-btn { text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/icon-share-twitter.png?1452522151'); background-repeat: no-repeat; background-position: 50% 50%; width: 32px; height: 32px; background-image: none, url('/images/icon-share-twitter.svg?1452522151'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
 @media (min-width: 640px) { .demo-block { margin-top: 0px; margin-bottom: 0px; padding-top: 72px; }
   .demo-block .demo-block-subtitle { margin-top: -72px; padding-top: 84px; }
   .demo-block .demo-block-title + .demo-block-subtitle { padding-top: 84px; }
   .demo-block .demo-block-text { font-size: 16px; line-height: 24px; }
-  .demo-block .demo-icon-list li { width: 12.5%; }
+  .demo-block .demo-icon-list { margin: 0 -12px; }
+  .demo-block .demo-icon-list li { padding: 0 12px; }
   .demo-block .color-code { font-size: 15px; line-height: 24px; }
   .demo-block .demo-block-example { padding: 24px 24px 0 24px; }
-  .demo-block .demo-block-example > *:last-child { margin-bottom: 24px; } }
+  .demo-block .demo-block-example > *:last-child { margin-bottom: 24px; }
+  .demo-block .demo-block-example.taiwan-icon { padding: 36px 36px 0 36px; } }
 
 .highlight .hljs, .highlight .hljs-subst { color: #444; }
 .highlight .hljs-built_in, .highlight .hljs-literal, .highlight .hljs-bullet, .highlight .hljs-code, .highlight .hljs-addition { color: #1F811F; }
