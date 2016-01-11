@@ -16,12 +16,16 @@ hljs.initHighlightingOnLoad();
 var didScroll;
 var lastScrollTop = 0;
 var delta = 120;
-var navbarHeight = $('.header-inner').outerHeight();
+// var offset_top = $('#guideline-summary').offset().top;
+var window_height = $(window).height();
 $(window).resize(function(){
-  navbarHeight = $('.header-inner').outerHeight();
+  // offset_top = $('#guideline-summary .demo-block-title').offset().top;
+  window_height = $(window).height();
+  detectTouchTop();
 })
 
 $(window).scroll(function(event){
+  detectTouchTop();
   didScroll = true;
 });
 
@@ -34,7 +38,7 @@ setInterval(function() {
 
 function hasScrolled() {
   var st = $(this).scrollTop();
-  var touch_bottom = $(document).height() - $(window).height() - 120;
+  var touch_bottom = $(document).height() - window_height - 120;
 
   // Make sure they scroll more than delta
   if(Math.abs(lastScrollTop - st) <= delta)
@@ -42,7 +46,7 @@ function hasScrolled() {
 
   // If they scrolled down and are past the navbar, add class .nav-up.
   // This is necessary so you never see what is "behind" the navbar.
-  if (st > lastScrollTop && st > navbarHeight){
+  if (st > lastScrollTop && st > window_height){
     // Scroll Down
     $('.header-top, .back-to-top').removeClass('is-active').addClass('is-hide');
     $('body').removeClass('is-open-menu');
@@ -54,95 +58,108 @@ function hasScrolled() {
     }
   } else {
     // Scroll Up
-    if(st + $(window).height() < $(document).height()) {
+
+    // 當滾到底部
+    if(st + window_height < $(document).height()) {
       $('.header-top, .back-to-top').removeClass('is-hide').addClass('is-active');
       $('body').removeClass('is-open-menu');
     }
   }
-  // 當捲動還沒超出 menu 高度的時候
-  if (st < navbarHeight) {
+  // 當捲動還沒超出一個畫面的高度的時候
+  if (st < window_height) {
     $('.back-to-top').removeClass('is-active');
   }
-  // 當滾到底部
 
   lastScrollTop = st;
 }
 
-// 桌面版 menu sticky
-if (!Modernizr.touchevents && !is_mobile) {
-  $('.header-inner').hcSticky({
-      top: 24,
-      bottomEnd: 100,
-      noContainer: true,
-      responsive: true,
-      offResolutions: -960,
-      stickTo: '.page',
-  });
+// 偵測是否在頂部
+function detectTouchTop(st) {
+  var st = $(this).scrollTop();
+  // 目前無法自動偵測觸發點，rwd 時可能會失效
+  if (st > 78) {
+    $('.header-top').removeClass('is-top');
+  } else {
+    $('.header-top').addClass('is-top');
+  }
 }
+detectTouchTop();
+
+// 桌面版 menu sticky
+// if (!Modernizr.touchevents && !is_mobile) {
+//   $('.header-inner').hcSticky({
+//       top: 24,
+//       bottomEnd: 100,
+//       noContainer: true,
+//       responsive: true,
+//       offResolutions: -960,
+//       stickTo: '.page',
+//   });
+// }
 
 // 手機版 menu sticky
-if (Modernizr.touchevents && is_mobile) {
+// if (Modernizr.touchevents && is_mobile) {
 
-  var menu_height = $('.header-inner').outerHeight();
-  var touch_top = 36;
-  var touch_buttom = 120;
-  var menu_offset_top = menu_height - $(window).height();
-  var touch_bottom = $(document).height() - $(window).height() - touch_buttom;
+//   var menu_height = $('.header-inner').outerHeight();
+//   var touch_top = 36;
+//   var touch_buttom = 120;
+//   var menu_offset_top = menu_height - $(window).height();
+//   var touch_bottom = $(document).height() - $(window).height() - touch_buttom;
 
-  $(window).resize(function(){
-    menu_height = $('.header-inner').outerHeight();
-    touch_top = 36;
-    touch_buttom = 120;
-    menu_offset_top = menu_height - $(window).height();
-    touch_bottom = $(document).height() - $(window).height() - touch_buttom;
-    mobileMenuSticky();
-  })
+//   $(window).resize(function(){
+//     menu_height = $('.header-inner').outerHeight();
+//     touch_top = 36;
+//     touch_buttom = 120;
+//     menu_offset_top = menu_height - $(window).height();
+//     touch_bottom = $(document).height() - $(window).height() - touch_buttom;
+//     mobileMenuSticky();
+//   })
 
-  $(window).on('scroll', function(){
-    mobileMenuSticky();
-  })
+//   $(window).on('scroll', function(){
+//     mobileMenuSticky();
+//   })
 
-  function mobileMenuSticky() {
+//   function mobileMenuSticky() {
 
-    if ( $(window).width() > 960 ) {
-      $('.header').css({
-        'height': menu_height
-      })
-      var st = $(this).scrollTop();
-      if ( menu_offset_top < 0 ) {
-        $('.header-inner').css({
-          'position': 'fixed',
-          'top': touch_top
-        })
-      } else if ( st >= menu_offset_top + touch_top ) {
-        $('.header-inner').css({
-          'position': 'fixed',
-          'top': -menu_offset_top
-        })
-        if (st >= touch_bottom ){
-          $('.header-inner').css({
-            'position': 'absolute',
-            'top': touch_bottom - menu_offset_top
-          })
-        }
-      } else if (st < menu_offset_top + touch_top) {
-        $('.header-inner').css({
-          'position': 'static',
-          'top': 'auto',
-        })
-      }
-    } else {
-      $('.header').css({
-        'height': 'auto'
-      })
-      $('.header-inner').css({
-        'position': 'static',
-        'top': 'auto'
-      })
-    }
-  }
+//     if ( $(window).width() > 960 ) {
+//       $('.header').css({
+//         'height': menu_height
+//       })
+//       var st = $(this).scrollTop();
+//       if ( menu_offset_top < 0 ) {
+//         $('.header-inner').css({
+//           'position': 'fixed',
+//           'top': touch_top
+//         })
+//       } else if ( st >= menu_offset_top + touch_top ) {
+//         $('.header-inner').css({
+//           'position': 'fixed',
+//           'top': -menu_offset_top
+//         })
+//         if (st >= touch_bottom ){
+//           $('.header-inner').css({
+//             'position': 'absolute',
+//             'top': touch_bottom - menu_offset_top
+//           })
+//         }
+//       } else if (st < menu_offset_top + touch_top) {
+//         $('.header-inner').css({
+//           'position': 'static',
+//           'top': 'auto',
+//         })
+//       }
+//     } else {
+//       $('.header').css({
+//         'height': 'auto'
+//       })
+//       $('.header-inner').css({
+//         'position': 'static',
+//         'top': 'auto'
+//       })
+//     }
+//   }
 
-}
+// }
 
 
 // scrollfix

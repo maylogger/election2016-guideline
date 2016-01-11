@@ -154,10 +154,10 @@ donutChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 100,
-    left: 50,
-    right: 50,
-    bottom: 50
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
   };
   chrt.w = 500 - chrt.margin.left - chrt.margin.right;
   chrt.h = 500 - chrt.margin.top - chrt.margin.bottom;
@@ -173,7 +173,7 @@ donutChart = function(){
   chrt.ease = "linear";
   chrt.svg = null;
   chrt.textStyle = function(){};
-  chrt.fontSize = 50;
+  chrt.fontSize = 72;
   svg = null;
   tau = 2 * Math.PI;
   foreground = undefined;
@@ -304,10 +304,10 @@ forceChart = function(){
   chrt.container = null;
   chrt.data = null;
   chrt.margin = {
-    top: 10,
-    left: 10,
-    right: 20,
-    bottom: 20
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0
   };
   chrt.w = 800 - chrt.margin.left - chrt.margin.right;
   chrt.h = 400 - chrt.margin.top - chrt.margin.bottom;
@@ -1238,7 +1238,7 @@ i = -1;
   if (i === 0) {
     firstBar();
     firstBar.draw();
-  } else {
+  } else if (i % 2 === 0) {
     d3.select(".chart-bar").selectAll('rect,.number').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
@@ -1248,7 +1248,7 @@ i = -1;
   if (i === 0) {
     drawRatio();
     return drawRatio.draw();
-  } else {
+  } else if (i % 2 === 0) {
     return d3.select(".chart-line").selectAll('.line,circle,.number,.numberGroup,.axis').transition().duration(1000).style({
       "opacity": 0
     }).remove().call(endAll, function(){
@@ -1256,7 +1256,17 @@ i = -1;
     });
   }
 })();
-clock = setInterval(tick, 6000);
+// clock = setInterval(tick, 3000);
+
+// 開始圖表繪製
+var chart_start = setInterval(tick, 3000);
+$(window).blur(function(){
+  clearInterval(chart_start);
+});
+$(window).focus(function(){
+  chart_start = setInterval(tick, 3000);
+});
+
 function curry$(f, bound){
   var context,
   _curry = function(args) {
