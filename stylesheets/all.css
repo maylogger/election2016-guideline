@@ -891,8 +891,8 @@ img { max-width: 100%; margin-bottom: 24px; }
 .header .header-top.is-hide { -webkit-transform: translate3d(0, -60px, 0); -moz-transform: translate3d(0, -60px, 0); -ms-transform: translate3d(0, -60px, 0); -o-transform: translate3d(0, -60px, 0); transform: translate3d(0, -60px, 0); opacity: 0; }
 .header .logo { font-size: 24px; line-height: 24px; margin-bottom: 0px; padding: 6px 0 6px 12px; float: left; }
 .header .logo a { display: block; text-indent: -119988px; overflow: hidden; text-align: left; background-image: url('/images/guideline-logo.png?1452523876'); background-repeat: no-repeat; background-position: 50% 50%; width: 222px; height: 48px; background-image: none, url('/images/guideline-logo.svg?1452523876'); background-position: center center; -webkit-background-size: contain; -moz-background-size: contain; -o-background-size: contain; background-size: contain; }
-.header .menu-btn { position: absolute; top: 15px; right: 12px; cursor: pointer; background-color: white; color: #bbb; border-color: #bbb; padding: 1px 6px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
-.header .menu-btn:hover { border-color: #666; color: #666; }
+.header .menu-btn { position: absolute; top: 15px; right: 12px; cursor: pointer; background-color: white; color: #c1c1c1; border-color: #ccc; padding: 1px 6px; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.header .menu-btn:hover { border-color: #777; color: #777; }
 .header .menu-btn:focus { outline: none; }
 .header .close-btn { position: absolute; top: 15px; right: 12px; cursor: pointer; border: none; background-color: transparent; color: #50b584; width: 32px; height: 32px; padding: 4px; margin: 0; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
 .header .close-btn:focus { outline: none; }
@@ -997,3 +997,9 @@ img { max-width: 100%; margin-bottom: 24px; }
 .back-to-top:hover { text-decoration: none; color: #50b584; }
 .back-to-top.is-hide { -webkit-transform: translate3d(-50%, 72px, 0); -moz-transform: translate3d(-50%, 72px, 0); -ms-transform: translate3d(-50%, 72px, 0); -o-transform: translate3d(-50%, 72px, 0); transform: translate3d(-50%, 72px, 0); }
 .back-to-top.is-active { -webkit-transform: translate3d(-50%, 0, 0); -moz-transform: translate3d(-50%, 0, 0); -ms-transform: translate3d(-50%, 0, 0); -o-transform: translate3d(-50%, 0, 0); transform: translate3d(-50%, 0, 0); }
+
+.chart-line .numberGroup { opacity: 1 !important; }
+.chart-line .numberGroup text.number:first-child { opacity: 1 !important; }
+.chart-line circle.head { opacity: 1 !important; }
+.chart-line g.axis { opacity: 1 !important; }
+.chart-line g.axis g { opacity: 1 !important; }
