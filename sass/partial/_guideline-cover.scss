@@ -1,0 +1,33 @@
+.guideline-cover {
+  position: relative;
+  margin: 0 auto rhythm(1);
+  max-width: 1440px;
+  background-color: #50B584;
+  @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
+  &:before {
+    content: '';
+    display: block;
+    width: 100%;
+    padding-top: 50%;
+    @include background-size(cover);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('/images/guideline-cover.jpg');
+  }
+  @include at-breakpoint($pad) {
+    &:before {
+      padding-top: 40%;
+    }
+  }
+  @include at-breakpoint($desktop) {
+    &:before {
+      padding-top: 32.5%;
+    }
+  }
+  @include at-breakpoint($desktop) {
+    &:before {
+      padding-top: 25%;
+    }
+  }
+}
+

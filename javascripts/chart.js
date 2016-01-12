@@ -256,8 +256,6 @@ donutChart = function(){
     }).attr({
       "d": arc
     }).call(chrt.foregroundStyle);
-    console.log(
-    chrt.fontSize);
     number = chrt.svg.append("text").text(function(){
       if (chrt.textFunc) {
         return chrt.textFunc(0);
@@ -1266,15 +1264,19 @@ i = -1;
     });
   }
 })();
-// clock = setInterval(tick, 3000);
 
 // 開始圖表繪製
 var chart_start = setInterval(tick, 3000);
+var chart_states = 1;
 $(window).blur(function(){
   clearInterval(chart_start);
+  chart_states = 0;
 });
 $(window).focus(function(){
-  chart_start = setInterval(tick, 3000);
+  if (chart_states != 1) {
+    chart_start = setInterval(tick, 3000);
+    chart_states = 1;
+  }
 });
 
 function curry$(f, bound){

@@ -19,51 +19,18 @@ $page-container: ".container";
 
 // ---- container setting ----
 
-// body {
-  // background-color: #183840;
-  // position: relative;
-// }
-
 .page {
   overflow-x: hidden;
 }
 
-// .page-inner {
-  // background-color: white;
-// }
-
-.page {
-  max-width: 960px;
-  margin: 0 auto;
-  // @include at-breakpoint($desktop) {
-  //   margin: 0 auto;
-  //   padding: 40px 48px 0;
-  // }
-  // @include at-breakpoint($wide-desktop) {
-  //   padding: 60px 96px 0;
-  // }
-}
-
-.header {
-  // @include at-breakpoint($desktop) {
-  //   float: left;
-  //   padding: 0 24px 0 0;
-  // }
-  // @include at-breakpoint($wide-desktop) {
-  //   padding-right: 48px;
-  // }
-}
 
 .content {
-  padding: 60px 16px 160px;
+  @include box-sizing(border-box);
+  margin: 0 auto;
+  padding: 0px 16px 160px;
+  max-width: 960px;
+
   @include at-breakpoint($pad) {
-    padding: 168px 48px 160px;
+    padding: 0px 48px 160px;
   }
-  // @include at-breakpoint($desktop) {
-  //   overflow: hidden;
-  //   padding: 0 0 160px 24px;
-  // }
-  // @include at-breakpoint($wide-desktop) {
-  //   padding: 0 0 160px 36px;
-  // }
 }

@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(white, 0.9);
+    background-color: rgba(white, 0.95);
     z-index: 1000;
     max-width: 960px;
     margin: 0 auto;
@@ -43,7 +43,7 @@
     top: 15px;
     right: 12px;
     cursor: pointer;
-    background-color: white;
+    background-color: transparent;
     color: #c1c1c1;
     border-color: #ccc;
     padding: 1px 6px;
@@ -164,17 +164,17 @@
 
   @include at-breakpoint($pad) {
 
-    .header-top {
-      top: 0px;
+    // .header-top {
+      // top: 0px;
       // @include transition(opacity 0.5s, transform 0.5s, padding-top 0.5s);
-      &.is-hide {
-        @include translate3d(0, -84px, 0);
-      }
-      &.is-top {
-        padding-top: 78px;
-        position: absolute;
-      }
-    }
+      // &.is-hide {
+      //   @include translate3d(0, -84px, 0);
+      // }
+      // &.is-top {
+        // padding-top: 78px;
+        // position: absolute;
+      // }
+    // }
 
     .logo {
       padding: 18px 44px;
