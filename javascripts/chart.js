@@ -1036,31 +1036,31 @@ listForce = [
     return forceChildren.draw("language");
   }
 ];
-// hourDonut = null;
-// minDonut = null;
+hourDonut = null;
+minDonut = null;
 secDonut = null;
 (firstTick = function(){
-  // hourDonut = donutChart().data({
-  //   "total": 24,
-  //   "value": 0
-  // }).container('#donut1').textFunc(function(it){
-  //   return it.toFixed(0);
-  // }).ease("elastic");
-  // hourDonut().draw();
-  // minDonut = donutChart().data({
-  //   "total": 60,
-  //   "value": 0
-  // }).container('#donut2').textFunc(function(it){
-  //   return it.toFixed(0);
-  // }).ease("elastic");
-  // minDonut().draw();
+  hourDonut = donutChart().data({
+    "total": 100,
+    "value": 0
+  }).container('#donut1').textFunc(function(it){
+    return it.toFixed(0) + " %";
+  }).ease("elastic");
+  hourDonut().draw();
+  minDonut = donutChart().data({
+    "total": 100,
+    "value": 0
+  }).container('#donut2').textFunc(function(it){
+    return it.toFixed(0) + " %";
+  }).ease("elastic");
+  minDonut().draw();
   secDonut = donutChart().data({
     "total": 60,
     "value": 0
   }).container('#donut3').textFunc(function(it){
     return it.toFixed(0);
   }).ease("elastic");
-  return secDonut().draw();
+  return secDonut().draw() + " %";
 })();
 interData = [
   {
@@ -1222,19 +1222,29 @@ i = -1;
   ++this.i;
   l = listForce.length;
   listForce[this.i % l]();
-  d = new Date();
-  // h = d.getHours();
-  // m = d.getMinutes();
-  s = d.getSeconds();
-  // hourDonut.update({
-  //   "value": h
-  // });
-  // minDonut.update({
-  //   "value": m
-  // });
-  secDonut.update({
-    "value": s
-  });
+
+  if (i % 2 === 1) {
+    hourDonut.update({
+      "value": 0
+    });
+    minDonut.update({
+      "value": 0
+    });
+    secDonut.update({
+      "value": 0
+    });
+  } else if (i % 2 === 0) {
+    hourDonut.update({
+      "value": 80
+    });
+    minDonut.update({
+      "value": 20
+    });
+    secDonut.update({
+      "value": 30
+    });
+  }
+
   if (i === 0) {
     firstBar();
     firstBar.draw();
