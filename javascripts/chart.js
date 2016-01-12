@@ -1045,21 +1045,21 @@ secDonut = null;
     "value": 0
   }).container('#donut1').textFunc(function(it){
     return it.toFixed(0) + " %";
-  }).ease("elastic");
+  }).ease("bounce");
   hourDonut().draw();
   minDonut = donutChart().data({
     "total": 100,
     "value": 0
   }).container('#donut2').textFunc(function(it){
     return it.toFixed(0) + " %";
-  }).ease("elastic");
+  }).ease("bounce");
   minDonut().draw();
   secDonut = donutChart().data({
     "total": 60,
     "value": 0
   }).container('#donut3').textFunc(function(it){
     return it.toFixed(0);
-  }).ease("elastic");
+  }).ease("bounce");
   return secDonut().draw() + " %";
 })();
 interData = [
