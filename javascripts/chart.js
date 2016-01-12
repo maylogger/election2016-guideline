@@ -1055,12 +1055,12 @@ secDonut = null;
   }).ease("bounce");
   minDonut().draw();
   secDonut = donutChart().data({
-    "total": 60,
+    "total": 100,
     "value": 0
   }).container('#donut3').textFunc(function(it){
-    return it.toFixed(0);
+    return it.toFixed(0) + " %";
   }).ease("bounce");
-  return secDonut().draw() + " %";
+  secDonut().draw();
 })();
 interData = [
   {
