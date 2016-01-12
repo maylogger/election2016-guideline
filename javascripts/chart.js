@@ -1264,7 +1264,6 @@ i = -1;
     });
   }
 })();
-// clock = setInterval(tick, 3000);
 
 // 開始圖表繪製
 var chart_start = setInterval(tick, 3000);
@@ -1278,7 +1277,6 @@ $(window).focus(function(){
     chart_start = setInterval(tick, 3000);
     chart_states = 1;
   }
-  // chart_start = setInterval(tick, 3000);
 });
 
 function curry$(f, bound){
