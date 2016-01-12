@@ -1040,21 +1040,21 @@ secDonut = null;
 (firstTick = function(){
   hourDonut = donutChart().data({
     "total": 100,
-    "value": 0
+    "value": 5
   }).container('#donut1').textFunc(function(it){
     return it.toFixed(0) + " %";
   }).ease("bounce");
   hourDonut().draw();
   minDonut = donutChart().data({
     "total": 100,
-    "value": 0
+    "value": 10
   }).container('#donut2').textFunc(function(it){
     return it.toFixed(0) + " %";
   }).ease("bounce");
   minDonut().draw();
   secDonut = donutChart().data({
     "total": 100,
-    "value": 0
+    "value": 15
   }).container('#donut3').textFunc(function(it){
     return it.toFixed(0) + " %";
   }).ease("bounce");
@@ -1223,13 +1223,13 @@ i = -1;
 
   if (i % 2 === 1) {
     hourDonut.update({
-      "value": 0
+      "value": 2
     });
     minDonut.update({
-      "value": 0
+      "value": 2
     });
     secDonut.update({
-      "value": 0
+      "value": 2
     });
   } else if (i % 2 === 0) {
     hourDonut.update({
