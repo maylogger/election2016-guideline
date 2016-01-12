@@ -44,7 +44,8 @@
     right: 12px;
     cursor: pointer;
     background-color: white;
-    color: #ccc;
+    color: #bbb;
+    border-color: #bbb;
     padding: 1px 6px;
     @include box-sizing(border-box);
     &:hover {
