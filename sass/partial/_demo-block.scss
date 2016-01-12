@@ -180,65 +180,41 @@
     }
   }
 
-  // .rectangle-gradient, .circle-gradient {
-  //   padding-top: 50%;
-  // }
   .rectangle-gradient {
     @include trailer(1);
     padding-top: 40%;
     background-color: #50B584;
     @include background-image(linear-gradient(140deg, #E7E879  0%, #50B584  87%));
   }
-  // .circle-gradient {
-  //   &:before {
-  //     content: '';
-  //     display: block;
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //     bottom: 0;
-  //     left: 0;
-  //     background-image: url('/images/blur-ball-post-header.png');
-  //     background-repeat: no-repeat;
-  //     background-position: center bottom;
-  //     @include background-size(cover);
-  //   }
-  // }
-
-  // .ui-demo {
-  //   .grid-item {
-  //     @include trailer(1);
-  //   }
-  //   .btn {
-  //     display: block;
-  //   }
-  // }
 
   .share-btns {
-    @include leader(0.25);
+    @include leader(1);
     display: block;
   }
-  .share-title {
+
+  .share-btn {
     display: inline-block;
-    font-size: 13px;
-    line-height: 32px;
-    vertical-align: text-bottom;
-    margin-right: 6px;
-  }
-  .fb-share-btn, .twitter-share-btn {
-    display: inline-block;
-    @include filter(brightness(0%));
-    opacity: .25;
+    margin-right: 12px;
+    color: #999;
+    @include transition(color 0.5s);
+    @include adjust-font-size-to(15px);
     &:hover {
-      @include filter(brightness(100%));
-      opacity: 1;
+      text-decoration: none;
+      color: #777;
+      .share-btn-icon {
+        color: #aaa;
+      }
     }
   }
-  .fb-share-btn {
-    @include replace-text-with-svg("icon-share-facebook");
-  }
-  .twitter-share-btn {
-    @include replace-text-with-svg("icon-share-twitter");
+
+  .share-btn-icon {
+    display: inline-block;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
+    font-size: 19px;
+    color: #ccc;
+    @include transition(color 0.5s);
   }
 
 
@@ -281,6 +257,15 @@
       }
     }
 
+    .share-btn {
+      margin-right: 16px;
+    }
+
+    .share-btn-icon {
+      font-size: 19px;
+      margin-right: 5px;
+      top: 2px;
+    }
 
 
     // .ui-demo {
