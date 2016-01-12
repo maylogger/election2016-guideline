@@ -1042,21 +1042,21 @@ secDonut = null;
 (firstTick = function(){
   hourDonut = donutChart().data({
     "total": 100,
-    "value": 2
+    "value": 5
   }).container('#donut1').textFunc(function(it){
     return it.toFixed(0) + " %";
   }).ease("elastic");
   hourDonut().draw();
   minDonut = donutChart().data({
     "total": 100,
-    "value": 2
+    "value": 10
   }).container('#donut2').textFunc(function(it){
     return it.toFixed(0) + " %";
   }).ease("elastic");
   minDonut().draw();
   secDonut = donutChart().data({
     "total": 100,
-    "value": 2
+    "value": 15
   }).container('#donut3').textFunc(function(it){
     return it.toFixed(0);
   }).ease("elastic");
