@@ -220,9 +220,9 @@
 
 
   @include at-breakpoint($pad) {
-    @include leader(0);
+    @include leader(-1);
     @include trailer(0);
-    @include padding-leader(3);
+    @include padding-leader(4);
 
     .demo-block-subtitle {
       @include leader(-3);
