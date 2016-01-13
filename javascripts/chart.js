@@ -256,8 +256,6 @@ donutChart = function(){
     }).attr({
       "d": arc
     }).call(chrt.foregroundStyle);
-    console.log(
-    chrt.fontSize);
     number = chrt.svg.append("text").text(function(){
       if (chrt.textFunc) {
         return chrt.textFunc(0);
@@ -318,7 +316,7 @@ forceChart = function(){
   chrt.grpColLength = null;
   chrt.grpEntry = null;
   chrt.labelYOffset = 30;
-  chrt.isCollide = true;
+  chrt.isCollide = false;
   chrt.isGooeye = false;
   updateModel = undefined;
   build = function(){
@@ -1013,10 +1011,10 @@ barChart = function(){
 childrenPercent = _.map(function(it){
   return {
     "languageText": "客家人的下一代",
-    "identity": it <= 57
-      ? "子女自認是客家人 57%"
-      : it <= 57 + 8 ? "不知道 8%" : "子女自認不是 35%",
-    "language": it <= 50 ? "子女不會講客家語 50%" : "子女會講客家語 50%",
+    "identity": it <= 39
+      ? "自認是客家人 57%"
+      : it <= 45 ? "不知道 8%" : "自認不是 35%",
+    "language": it <= 35 ? "不會講客家語 50%" : "會講客家語 50%",
     "value": 1,
     "color": function(it){
       return it[~~(Math.random() * 6)];
@@ -1024,7 +1022,7 @@ childrenPercent = _.map(function(it){
     ['#88C8AB', '#89C693', '#50B584', '#55B36C', '#A7CD6B', '#E7E879'])
   };
 })(
-[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100]);
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70]);
 forceChildren = forceChart().container('.chart-force').data(childrenPercent).labelYOffset(150);
 forceChildren();
 listForce = [
@@ -1041,26 +1039,26 @@ minDonut = null;
 secDonut = null;
 (firstTick = function(){
   hourDonut = donutChart().data({
-    "total": 24,
-    "value": 0
+    "total": 100,
+    "value": 2
   }).container('#donut1').textFunc(function(it){
-    return it.toFixed(0);
-  }).ease("elastic");
+    return it.toFixed(0) + " %";
+  }).ease("bounce");
   hourDonut().draw();
   minDonut = donutChart().data({
-    "total": 60,
-    "value": 0
+    "total": 100,
+    "value": 2
   }).container('#donut2').textFunc(function(it){
-    return it.toFixed(0);
-  }).ease("elastic");
+    return it.toFixed(0) + " %";
+  }).ease("bounce");
   minDonut().draw();
   secDonut = donutChart().data({
-    "total": 60,
-    "value": 0
+    "total": 100,
+    "value": 2
   }).container('#donut3').textFunc(function(it){
-    return it.toFixed(0);
-  }).ease("elastic");
-  return secDonut().draw();
+    return it.toFixed(0) + " %";
+  }).ease("bounce");
+  secDonut().draw();
 })();
 interData = [
   {
@@ -1222,19 +1220,29 @@ i = -1;
   ++this.i;
   l = listForce.length;
   listForce[this.i % l]();
-  d = new Date();
-  h = d.getHours();
-  m = d.getMinutes();
-  s = d.getSeconds();
-  hourDonut.update({
-    "value": h
-  });
-  minDonut.update({
-    "value": m
-  });
-  secDonut.update({
-    "value": s
-  });
+
+  if (i % 2 === 1) {
+    hourDonut.update({
+      "value": useround(1,50)
+    });
+    minDonut.update({
+      "value": useround(50,90)
+    });
+    secDonut.update({
+      "value": useround(1,50)
+    });
+  } else if (i % 2 === 0) {
+    hourDonut.update({
+      "value": useround(50,90)
+    });
+    minDonut.update({
+      "value": useround(1,50)
+    });
+    secDonut.update({
+      "value": useround(50,90)
+    });
+  }
+
   if (i === 0) {
     firstBar();
     firstBar.draw();
@@ -1256,16 +1264,44 @@ i = -1;
     });
   }
 })();
-// clock = setInterval(tick, 3000);
 
-// 開始圖表繪製
-var chart_start = setInterval(tick, 3000);
+// 開始圖表繪製（搭配 waypoint.js）
+var chart_start;
+var chart_states = 0; // 紀錄 chart 是否啟動：0 代表未啟動，1 代表已啟動
+var waypoint_state = 0; // 紀錄圖表展示區塊是否在可視範圍內： 0 代表不再可視範圍，1 代表在可視範圍
+var window_state = 1; // 紀錄視窗是否使用者主要執行視窗：0 代表不是使用者主要執行視窗，1 代表為主要執行視窗
+var stopChart = function(){
+  if (chart_states == 1) {
+    clearInterval(chart_start);
+    chart_states = 0;
+  }
+}
+var srartChart = function(){
+  if (chart_states == 0 && waypoint_state == 1 && window_state == 1) {
+    chart_start = setInterval(tick, 3000);
+    chart_states = 1;
+  }
+}
 $(window).blur(function(){
-  clearInterval(chart_start);
+  window_state = 0;
+  stopChart();
 });
 $(window).focus(function(){
-  chart_start = setInterval(tick, 3000);
+  window_state = 1;
+  srartChart();
 });
+var waypoints = $('#chart').waypoint({
+  handler: function(direction) {
+    if (direction == "down") {
+      waypoint_state = 1;
+      srartChart();
+    } else {
+      waypoint_state = 0;
+      stopChart();
+    }
+  },
+  offset: '90%'
+})
 
 function curry$(f, bound){
   var context,
@@ -1279,4 +1315,8 @@ function curry$(f, bound){
     } : f;
   };
   return _curry();
+}
+
+function useround(min,max) {
+  return Math.round(Math.random()*(max-min)+min);
 }

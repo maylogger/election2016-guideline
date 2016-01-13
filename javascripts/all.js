@@ -9,9 +9,6 @@ $('.menu-btn, .off-canvas-mask, .close-btn, .menu-list-item-title, .menu-sub-lis
 // smooth scroll
 $('.smooth-scroll-link').smoothScroll();
 
-// 程式展示區塊自動上色
-hljs.initHighlightingOnLoad();
-
 // Hide Header on on scroll down
 var didScroll;
 var lastScrollTop = 0;
@@ -21,11 +18,11 @@ var window_height = $(window).height();
 $(window).resize(function(){
   // offset_top = $('#guideline-summary .demo-block-title').offset().top;
   window_height = $(window).height();
-  detectTouchTop();
+  // detectTouchTop();
 })
 
 $(window).scroll(function(event){
-  detectTouchTop();
+  // detectTouchTop();
   didScroll = true;
 });
 
@@ -74,16 +71,16 @@ function hasScrolled() {
 }
 
 // 偵測是否在頂部
-function detectTouchTop(st) {
-  var st = $(this).scrollTop();
-  // 目前無法自動偵測觸發點，rwd 時可能會失效
-  if (st > 78) {
-    $('.header-top').removeClass('is-top');
-  } else {
-    $('.header-top').addClass('is-top');
-  }
-}
-detectTouchTop();
+// function detectTouchTop(st) {
+//   var st = $(this).scrollTop();
+//   // 目前無法自動偵測觸發點，rwd 時可能會失效
+//   if (st > 78) {
+//     $('.header-top').removeClass('is-top');
+//   } else {
+//     $('.header-top').addClass('is-top');
+//   }
+// }
+// detectTouchTop();
 
 // 桌面版 menu sticky
 // if (!Modernizr.touchevents && !is_mobile) {
